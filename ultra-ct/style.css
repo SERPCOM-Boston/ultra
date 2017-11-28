@@ -1,0 +1,22 @@
+/**
+* Theme Name:   Ultra Outdoors WP Bootstrap Starter CHILD THEME
+* Theme URL:    http://www.serpcom.com
+* Description:  WP Bootstrap Starter Child Theme
+* Author:       SERPCOM
+* Author URI:   http://www.serpcom.com
+* Template:     wp-bootstrap-starter
+* Version:      1.0.0
+* Tags:       
+*/
+
+@import url("../wp-bootstrap-starter/style.css");
+
+/* CUSTOM */
+
+@media (max-width: 575px) { ... }
+
+@media (max-width: 767px) { ... }
+
+@media (max-width: 991px) { ... }
+
+@media (max-width: 1199px) { ... }
