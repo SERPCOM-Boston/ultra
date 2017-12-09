@@ -18,3 +18,15 @@ function social_icons( $atts ) {
 	return $social_icons;
 
 };
+
+// JQuery, Swiper, Unveil
+$theme_dir = get_stylesheet_directory_uri();
+
+wp_register_script( 'jquery', $theme_dir . '/js/jquery-3.1.0.min.js' );
+wp_enqueue_script( 'jquery', $theme_dir . '/js/jquery-3.1.0.min.js' );
+
+wp_register_script( 'swiper', $theme_dir . '/js/swiper.min.js' );
+wp_enqueue_script( 'swiper', $theme_dir . '/js/swiper.min.js' );
+
+wp_register_script( 'unveil', $theme_dir . '/js/jquery.unveil.min.js' );
+wp_enqueue_script( 'unveil', $theme_dir . '/js/jquery.unveil.min.js' );
