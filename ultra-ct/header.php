@@ -45,8 +45,7 @@
 		
 		
         <div class="container">
-			<div class="row">
-				<div class="col">
+			<div class="navbar navbar-expand-lg navbar-light p-0">
 			        <div class="navbar-brand">
 			            <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
 			                <a href="<?php echo esc_url( home_url( '/' )); ?>">
@@ -56,16 +55,32 @@
 			                <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
 			            <?php endif; ?>
 			        </div>
+					
+					
+					<form class="top_search_form" role="search" method="get">
+					  <div class="form-row align-items-center">
+					    <div class="col-auto">
+					      <label class="sr-only" for="inlineFormInput">Search photos, manufacturers, & more</label>
+					      <input type="search" value="" name="s" title="Search photos, manufacturers, & more:" class="form-control mb-2 mb-sm-0 	d-none d-sm-block" id="inlineFormInput" placeholder="Search photos, manufacturers, & more">
+						  <!-- Mobile -->
+						  <input type="search" value="" name="s" title="Search photos, manufacturers, & more:" class="form-control mb-2 mb-sm-0 d-block d-sm-none" id="inlineFormInput" placeholder="Search">
+					    </div>
+					    <div class="col-auto">
+					      <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+					    </div>
+					  </div>
+					</form>
+					
+					
 			        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
 			            <span class="navbar-toggler-icon"></span>
 			        </button>
 				</div>
-			</div>
 		</div>
 
 		
 		
-            <nav class="navbar navbar-expand-xl navbar-dark p-0">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
 
                 <?php
                 wp_nav_menu(array(

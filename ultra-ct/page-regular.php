@@ -48,13 +48,13 @@ get_header(); ?>
 
 
 
-	<section id="primary" class="content-area col-sm-12">
+	<section id="primary" class="content-area col-sm-12 shadow_above">
 		<main id="main" class="site-main" role="main">
 
         <div class="container profile_section1">
 			<div class="row">
 				
-				<div class="col-sm-2">				
+				<div class="col-12 col-md-2">				
 					<div class="logo_img_wrapper">
 						<a href="http://hessla.com" target="blank">
 						<img src="https://ultraoutdoors.net/stock/blank.gif" data-src="https://ultraoutdoors.net/logos/hess-landscape-architects.jpg" alt="Hess Landscape Architects" class="unveil_img">
@@ -62,7 +62,7 @@ get_header(); ?>
 					</div>
 				</div>
 				
-				<div class="col-sm-6">
+				<div class="col-12 col-md-7">
 					<h1>Hess Landscape Architects</h1>			
 					<address>1570A Sumneytown Pike<br>
 						Lansdale PA 19446<br>
@@ -94,9 +94,9 @@ get_header(); ?>
 					</div>
 				</div>
 				
-				<div class="col-sm-4 col_profile_right">
+				<div class="col-12 col-md-3 col_profile_right">
 					<div class="profile_contact_button">
-						<button type="button" class="btn btn-dark btn-lg">Contact Company</button>
+						<button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#modal-contact-company" onclick="this.blur();">Contact Company</button>
 					</div>
 
 					<div class="profile_regions">
@@ -139,7 +139,6 @@ get_header(); ?>
 				
 			</div>
 		</div>
-
 
 
 
