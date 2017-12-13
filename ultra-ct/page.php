@@ -3,40 +3,59 @@
  * The template for displaying all pages
 	Fullwidth
  */
+ //Testing Use (TODO Program add-on for SEO plugin to load the correct business based on SEO
+ //$rules = get_option( 'rewrite_rules' );
+	//print_r($rules);
+ 
+if(isset($wp_query->query_vars['seovar3'])) {
+	$account_seo = urldecode($wp_query->query_vars['seovar3']);
+}
+else {
+	//echo "no account found";
+	$account_seo = 'ams-landscape-design-studios-inc';
+}
+$account_details = get_account_details($suitecrm_link, $account_seo);
+ //echo get_permalink();
+ //var_dump($wp_query->query_vars);
+//print_r($account_details);
+get_header();
 
-get_header(); ?>
+ ?>
 
 	<section id="primary" class="content-area col-sm-12">
 		<main id="main" class="site-main" role="main">
 
+<?php 
 
-<h1>Business Name: </h1>
-<p>Short Name: </p>
+//print_r($account_details);
+?>
+<h1>Business Name: <?php echo $account_details['name']; ?></h1>
+<p>Short Name: <?php echo $account_details['short_name_c']; ?></p>
 <br>
 
-<p>Account Type:</p>
-<p>Categories: (comma-separated list)</p>
-<p>Description:</p>
-<p>Business Regions: (comma-separated list)</p>
+<p>Account Type: <?php echo $account_details['account_type']; ?></p>
+<p>Categories:  <?php echo $account_details['category_c']; ?></p>
+<p>Description: <?php echo $account_details['description']; ?></p>
+<p>Business Regions:  <?php echo $account_details['regions_c']; ?></p>
 <br>
 
 <h4>Headquarters</h4>
-<p>HQ Address Line 1: </p>
-<p>HQ Address Line 2: </p>
-<p>HQ City:</p>
-<p>HQ State:</p>
-<p>HQ Country:</p>
-<p>HQ Postal Code:</p>
-<p>HQ Phone:</p>
-<p>Website: </p>
+<p>HQ Address Line 1: <?php echo $account_details['billing_address_street_1_c']; ?> </p>
+<p>HQ Address Line 2: <?php echo $account_details['billing_address_street_2_c']; ?> </p>
+<p>HQ City: <?php echo $account_details['billing_address_city']; ?></p>
+<p>HQ State: <?php echo $account_details['billing_address_state']; ?></p>
+<p>HQ Country: <?php echo $account_details['billing_address_country']; ?></p>
+<p>HQ Postal Code: <?php echo $account_details['billing_address_postalcode']; ?></p>
+<p>HQ Phone: <?php echo $account_details['phone_office']; ?></p>
+<p>Website: <?php echo $account_details['website']; ?> </p>
 <br>
 
 <p>Logo Image: 
-<img src="" alt="echo_business_name">
+<img src="<?php echo $account_details['logo_image_url_c']; ?>" alt="<?php echo $account_details['name']; ?>">
 <br>
 
 <p>Splash Image #1:</p>
-<img src="" alt="">
+<img src="<?php echo $account_details['splash_image_url_c']; ?>" alt="Splash Image">
 <br>
 
 <h4>Galleries:</h4>
