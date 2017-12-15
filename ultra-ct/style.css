@@ -27,6 +27,10 @@
 	color: #006260;
 }
 
+.deep_blue {
+	color: #0A6260;
+}
+
 body {
 	font-family: 'Open Sans', sans-serif;	
 }
@@ -77,6 +81,12 @@ address {
 	opacity: 0.8;
 }
 
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+	background-color: #000;
+    outline: 3px solid #000 !important;
+}
+
 /* :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -118,9 +128,15 @@ address {
 /* Header */
 header#masthead {
     background-color: #fff;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.2), inset 0 -1px 0 rgba(0,0,0,.1);
     padding: .74rem 1rem;
     border-bottom: none;
+	z-index: 100;
+}
+
+.shadow_above {
+    -webkit-box-shadow: 0px -0.5rem 8px rgba(0,0,0,0,.2), inset 0 -1px 0 rgba(0,0,0,.1);
+            box-shadow: 0px -0.5rem 8px rgba(0,0,0,.2), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 
 .top_bar {
@@ -131,6 +147,11 @@ header#masthead {
 .top_bar p {
 	margin: 0;
 	padding: 3px;
+}
+
+.navbar-brand {
+    padding-top: 0; 
+    padding-bottom: 0; 
 }
 
 .navbar-nav {
@@ -152,12 +173,13 @@ header#masthead {
 
 /* Swiper */
 .swiper-container {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
 }
+
 .swiper-slide {
   text-align: center;
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -170,7 +192,7 @@ header#masthead {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  height: 500px;
+  height: 1000px;
 }
 
 .swiper-splash .swiper-slide {
@@ -198,6 +220,49 @@ header#masthead {
 .swiper-lazy-preloader {
 	opacity: 0.1;
 }
+
+@media (max-width: 1999px) { 
+	.swiper-slide {
+	  height: 900px;
+	}
+}
+
+@media (max-width: 1799px) { 
+	.swiper-slide {
+	  height: 800px;
+	}
+}
+
+@media (max-width: 1599px) { 
+	.swiper-slide {
+	  height: 700px;
+	}
+}
+
+@media (max-width: 1399px) { 
+	.swiper-slide {
+	  height: 600px;
+	}
+}
+
+@media (max-width: 1199px) { 
+	.swiper-slide {
+	  height: 500px;
+	}
+}
+
+@media (max-width: 991px) { 
+	.swiper-slide {
+	  height: 400px;
+	}
+}
+
+@media (max-width: 767px) { 
+	.swiper-slide {
+	  height: 300px;
+	}
+}
+
 
 /* Business Account Detail Page */
 .profile_section1 {
@@ -235,7 +300,7 @@ header#masthead {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    padding: 10px;
+    padding: 11px 9px 9px 11px;
 }
 
 .profile_socials .fab.fa-facebook-f {
@@ -261,23 +326,57 @@ header#masthead {
 	font-size: .85rem;
 }
 
+@media (max-width: 1199px) { 
+	.logo_img_wrapper img {
+		max-width: 120px;
+	}
+}
+
+@media (max-width: 991px) { 
+	.logo_img_wrapper img {
+		max-width: 90px;
+	}
+}
+
+@media (max-width: 767px) { 
+	.logo_img_wrapper img {
+		max-width: 200px;
+		margin-bottom: 30px;
+	}
+	.profile_contact_button {
+		text-align: center;
+	}
+}
+
 /* Footer */
-footer#colophon {
-	border-top: 4px solid #006260;
+footer#colophon, #footer-widget {
     color: #b9b9b9;
     background-color: #000;
     font-size: 85%;
 }
 
-footer#colophon a {
-    color: #fff;
+footer#colophon a, #footer-widget a {
+    color: #fff !important;
+}
+
+#footer-widget .bg-light, #footer-widget {
+    background-color: #000 !important;
+	color: #b9b9b9 !important;
+	border: 1px solid #000 !important;
+}
+
+#footer-widget {
+	border-top: 5px solid #006260 !important;	
+}
+
+#footer-widget li a:hover {
+	background-color: #2d2d2d !important;
 }
 
 .footer_socials {
 	text-align: center;
-	background-color: #333132;
+	background-color: #272525;
 	padding: 20px 15px;
-	margin-top: 50px;
 }
 
 .footer_socials .fab {
@@ -293,12 +392,155 @@ footer#colophon a {
     padding: 12px;
 }
 
+@media (min-width: 768px) {
+	#footer-widget .p-md-5 {
+	    padding-bottom: 1rem!important;
+	}
+}
 
+/* Forms */
+#modal-contact-company .close {
+	text-align: right;
+	padding-top: 6px;
+	padding-right: 10px;
+}
 
+.modal-content {
+	padding-top: 0;
+    -webkit-box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.4);
+            box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.4);
+}
 
+.modal-body {
+	padding: 0 35px 25px;
+}
 
+.modal-title {
+	margin-top: 0;
+}
 
+.gform_wrapper {
+	margin-top: 10px;
+}
 
+.gform_body {
+	padding: 0;
+}
+
+.gfield_required {
+	display: none;
+}
+
+.gform_wrapper .field_description_below .gfield_description {
+    padding-top: 4px !important;
+	font-size: 11px;
+}
+
+.gfield {
+	margin-bottom: 10px;
+}
+
+input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], textarea.textarea {
+    width: 100%;
+	font-size: 16px;
+	padding: 8px 12px;
+	border: 1px solid #aaa;
+	border-radius: 2px;
+}
+
+textarea {
+	height: 135px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 13px;
+	font-family: 'Palanquin', sans-serif;
+}
+
+form ul {
+    list-style-type: none;
+	padding-left: 0;
+}
+
+.gform_footer.top_label {
+	text-align: center;
+}
+
+input[type=submit] {
+    padding: .5rem 1.3rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    border-radius: 0;
+	background-color: #000;
+	color: #fff;	
+}
+
+input[type=submit]:focus {
+	opacity: 0.8;
+}
+
+.top_search_form {
+	padding: 2px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	float: right;
+    margin-left: 56px;
+}
+
+.top_search_form input[type=search] {
+	width: 470px;
+	border: none !important;
+    -webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.top_search_form button {
+	background-color: #0A6260 !important;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@media (max-width: 1199px) { 
+	.top_search_form input[type=search] {
+		width: 310px;
+	}
+}
+
+@media (max-width: 991px) {
+	.top_search_form input[type=search] {
+		width: 306px;
+	}
+	.top_search_form {
+	    margin-left: 100px;
+	}
+}
+
+@media (max-width: 767px) { 
+	.top_search_form input[type=search] {
+		width: 290px;
+	}
+	.top_search_form {
+	    margin-left: 10px;
+	}
+}
+
+@media (max-width: 575px) { 
+	.top_search_form input[type=search] {
+		width: 290px;
+	    padding: .5rem .75rem .0rem .75rem;
+	}
+	.top_search_form {
+	    margin-left: 10px;
+	}
+}
+
+@media (max-width: 450px) { 
+	.top_search_form input[type=search] {
+		width: 240px;
+	}
+}
 
 
 

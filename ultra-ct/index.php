@@ -6,12 +6,17 @@
  //Testing Use (TODO Program add-on for SEO plugin to load the correct business based on SEO
  //$rules = get_option( 'rewrite_rules' );
 	//print_r($rules);
-
-if(isset($wp_query->query['name'])) {
-	$account_seo = urldecode($wp_query->query['name']);
-
-$account_details = get_account_details($suitecrm_link, $account_seo);
+ 
+if(isset($wp_query->query_vars['seovar2'])) {
+	$account_seo = urldecode($wp_query->query_vars['seovar2']);
+	
 }
+else {
+	//Load homepage
+	//echo "no account found";
+	$account_seo = 'ams-landscape-design-studios-inc';
+}
+$account_details = get_account_details($suitecrm_link, $account_seo);
  //echo get_permalink();
  //var_dump($wp_query->query_vars);
 //print_r($account_details);
