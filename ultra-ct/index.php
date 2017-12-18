@@ -24,10 +24,6 @@ get_header();
 
 ?>
 
-<?php if (is_blog()) { ?>
-	<?php require("blog.php"); ?>
-<?php } else { ?>
-
 
 <style>
 	#content.site-content {
@@ -173,7 +169,7 @@ get_header();
 		</div>
 		</main><!-- #main -->
 	</section><!-- #primary -->
-<?php } ?>
+
 
 
 
