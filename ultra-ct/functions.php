@@ -1,7 +1,5 @@
 <?php 
 
-
-
 // Social Icons
 add_shortcode( 'social_icons', 'social_icons' );
 function social_icons( $atts ) {
@@ -125,7 +123,12 @@ function wpd_do_stuff_on_404(){
 add_action( 'template_redirect', 'wpd_do_stuff_on_404' );
 
 
-// JQuery, Swiper, Unveil
+// If Page is Blog or Archive
+function is_blog () {
+    return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
+}
+
+// JQuery, Swiper, Unveil, Images Loaded, Isotope
 $theme_dir = get_stylesheet_directory_uri();
 
 wp_register_script( 'jquery', $theme_dir . '/js/jquery-3.1.0.min.js' );
@@ -136,3 +139,9 @@ wp_enqueue_script( 'swiper', $theme_dir . '/js/swiper.min.js' );
 
 wp_register_script( 'unveil', $theme_dir . '/js/jquery.unveil.min.js' );
 wp_enqueue_script( 'unveil', $theme_dir . '/js/jquery.unveil.min.js' );
+
+wp_register_script( 'imagesloaded', $theme_dir . '/js/imagesloaded.pkgd.min.js' );
+wp_enqueue_script( 'imagesloaded', $theme_dir . '/js/imagesloaded.pkgd.min.js' );
+
+wp_register_script( 'isotope', $theme_dir . '/js/isotope.pkgd.min.js' );
+wp_enqueue_script( 'isotope', $theme_dir . '/js/isotope.pkgd.min.js' );

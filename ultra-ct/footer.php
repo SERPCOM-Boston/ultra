@@ -37,7 +37,7 @@
 		
 		<div class="container-fluid p-3 p-md-5">
             <div class="site-info text-center">
-                &copy; <?php echo date('Y'); ?> RMS Media Group, Inc. and ultraoutdoors.com. All Rights Reserved.<br>Use of our website is subject to our Terms of Use and Privacy Policy. Website by <a class="credits" href="https://serpcom.com" target="_blank">SERPCOM</a>
+                &copy; <?php echo date('Y'); ?> <a class="credits" href="https://www.rmsmg.com/" target="_blank">RMS Media Group, Inc.</a> and <a class="credits" href="https://ultraoutdoors.com">ultraoutdoors.com</a>. All Rights Reserved.<br>Use of our website is subject to our Terms of Use and Privacy Policy. Website by <a class="credits" href="https://serpcom.com" target="_blank">SERPCOM</a>.
             </div><!-- close .site-info -->
 		</div>
 	</footer><!-- #colophon -->

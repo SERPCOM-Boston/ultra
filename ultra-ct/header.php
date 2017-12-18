@@ -1,8 +1,5 @@
 <?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+/*
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -72,10 +69,10 @@
 					</form>
 					
 					
-			        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+			        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
 			            <span class="navbar-toggler-icon"></span>
 			        </button>
-				</div>
+			</div>
 		</div>
 
 		
@@ -97,11 +94,14 @@
                 ?>
 
             </nav>
-        </div>
+
 	</header><!-- #masthead -->
 
 
+
+	</div><!-- End Top Band -->
+	
 	<div id="content" class="site-content">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
                 <?php endif; ?>
