@@ -58,7 +58,7 @@
 					  <div class="form-row align-items-center">
 					    <div class="col-auto">
 					      <label class="sr-only" for="inlineFormInput">Search photos, manufacturers, & more</label>
-					      <input type="search" value="" name="s" title="Search photos, manufacturers, & more:" class="form-control mb-2 mb-sm-0 	d-none d-sm-block" id="inlineFormInput" placeholder="Search photos, manufacturers, & more">
+					      <input type="search" value="" name="s" title="Search photos, manufacturers, & more:" class="form-control mb-2 mb-sm-0 d-none d-sm-block" id="inlineFormInput" placeholder="Search photos, manufacturers, & more">
 						  <!-- Mobile -->
 						  <input type="search" value="" name="s" title="Search photos, manufacturers, & more:" class="form-control mb-2 mb-sm-0 d-block d-sm-none" id="inlineFormInput" placeholder="Search">
 					    </div>
@@ -97,9 +97,20 @@
 
 	</header><!-- #masthead -->
 
+	<?php if (is_single()) { 
+	    /* grab the url for the full size featured image */
+	           $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+	?>
+		<!-- Top Band -->
+		<div class="row no-gutters">
 
+			<div class="col-12">
+				 <div class="post_band" style="background-image:url(<?php echo esc_url($featured_img_url); ?>);"></div>
+			</div>
 
-	</div><!-- End Top Band -->
+		</div><!-- End Top Band -->
+	<?php } ?>
+
 	
 	<div id="content" class="site-content">
 		<div class="container-fluid">

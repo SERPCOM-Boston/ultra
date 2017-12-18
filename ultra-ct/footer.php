@@ -47,15 +47,5 @@
 
 <?php wp_footer(); ?>
 
-<?php include("modal-contact-company.php"); ?>
-<script>
-	jQuery(document).ready(function($) {
-		$('#modal-contact-company').on('shown.bs.modal', function () {
-		  $('#input_1_1').trigger('focus')
-		})
-		$('.btn').mouseup(function() { this.blur() })
-	});
-</script>
-
 </body>
 </html>
