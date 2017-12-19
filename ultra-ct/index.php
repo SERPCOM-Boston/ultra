@@ -7,16 +7,19 @@
  //$rules = get_option( 'rewrite_rules' );
 	//print_r($rules);
  
-if(isset($wp_query->query_vars['seovar2'])) {
-	$account_seo = urldecode($wp_query->query_vars['seovar2']);
+if(isset($wp_query->query['name'])) {
+	$account_seo = urldecode($wp_query->query['name']);
 	
 }
 else {
 	//Load homepage
 	//echo "no account found";
+	//Testing 
 	$account_seo = 'ams-landscape-design-studios-inc';
 }
-$account_details = get_account_details($suitecrm_link, $account_seo);
+
+//$account_seo = 'ams-landscape-design-studios-inc';
+$account_details = get_account_details($account_seo);
  //echo get_permalink();
  //var_dump($wp_query->query_vars);
 //print_r($account_details);
@@ -106,7 +109,7 @@ get_header();
 	$clean_url = preg_replace('/^(www\.)/i', '', $clean_url);
 ?>	
 
-	<section id="primary" class="content-area col-sm-12 shadow_above">
+	<section id="primary" class="content-area col-sm-12">
 		<main id="main" class="site-main" role="main">
 
         <div class="container profile_section1">
@@ -211,7 +214,7 @@ get_header();
 						Residential/Garden Design – 27th Street</p>
 
 						<p class="award"><strong>2011 Pennsylvania Historic Preservation Awards</strong>
-						<br>"Construction Project Award - Single Family Residence"
+						<br>"Construction Project Award - Single Family Residence"
 						- The Jayne House</p>
 
 						<p class="award"><strong>2011 Preservation Alliance</strong>
@@ -257,28 +260,22 @@ get_header();
 	</div><!-- End FW Header -->
 
 	<!-- Galleries -->
-    <div class="container profile_section1">
-		<div class="row">
+		<div class="row no-gutters">
 			<div class="col-sm-6 text-center mb-5">
 				<h4>Gallery Headline Goes Here</h4>
 				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
-			</div>
-			<div class="col-sm-6 text-center mb-5">
+				
 				<h4>Gallery Headline Goes Here</h4>
 				<img src="http://ultraoutdoors.net/stock/400-300-2.jpg">
 			</div>
-		</div>
-		<div class="row">
 			<div class="col-sm-6 text-center mb-5">
 				<h4>Gallery Headline Goes Here</h4>
 				<img src="http://ultraoutdoors.net/stock/400-300-3.jpg">
-			</div>
-			<div class="col-sm-6 text-center mb-5">
+				
 				<h4>Gallery Headline Goes Here</h4>
 				<img src="http://ultraoutdoors.net/stock/400-300-4.jpg">
 			</div>
 		</div>
-	</div>
 
 
 	<!-- FW Header -->
@@ -291,42 +288,40 @@ get_header();
 	</div><!-- End FW Header -->
 
 	<!-- Posts -->
-    <div class="container profile_section1">
-		<div class="row">
-			<div class="col-sm-6 text-center mb-5">
-				<img src="http://ultraoutdoors.net/stock/400-300-2.jpg">
-				<h4>Post Headline Goes Here</h4>
-			</div>
-			<div class="col-sm-6 text-center mb-5">
-				<img src="http://ultraoutdoors.net/stock/400-300-3.jpg">
-				<h4>Post Headline Goes Here</h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 text-center mb-5">
-				<img src="http://ultraoutdoors.net/stock/400-300-4.jpg">
-				<h4>Post Headline Goes Here</h4>
-			</div>
-			<div class="col-sm-6 text-center mb-5">
-				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
-				<h4>Post Headline Goes Here</h4>
-			</div>
-		</div>
-		
-		<?php
-	    global $post;
-	    $args = array( 'category' => 8 );
-	    $myposts = get_posts( $args );
-	    foreach( $myposts as $post ) :  setup_postdata($post); ?>
-			<?php
-				the_title();
-				the_post_thumbnail();
-				the_excerpt(); 
-			?>
-		<?php endforeach; ?>
-		
-	</div>
+		<div class="row no-gutters profile_blog_cards">
+			<div class="col-12">
 
+			<?php
+			$blog_cat_id = $account_details['blog_category_id_c'];
+			
+			add_filter( 'the_title', 'max_title_length');
+	    	global $post;
+	    	$args = array( 'category' => $blog_cat_id );
+	    	$myposts = get_posts( $args );
+	    	foreach( $myposts as $post ) :  setup_postdata($post); ?>
+			
+			<div class="card">
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail(); ?>
+		  		</a>
+				<div class="card-body">
+				  <h4 class="card-title"><?php the_title(); ?></h4>
+				  <p class="entry-meta"><?php wp_bootstrap_starter_posted_on(); ?></p>
+				  <p class="card-text"><?php echo excerpt(25); ?></p>
+				  <a href="<?php the_permalink(); ?>" class="card-link">Read More »</a>
+				</div>
+			</div>
+			
+			<?php endforeach; ?>
+				<div class="clearfix"></div>
+			</div>
+		</div>	
+
+		<div class="row no-gutters">
+			<div class="col-12 text-center mb-5">
+				<p><a href="https://ultraoutdoors.net/ultra/index.php?cat=<?php echo $blog_cat_id; ?>">More News From <?php echo $account_details['name']; ?> »</a></p>
+			</div>
+		</div>	
 
 
 		</main><!-- #main -->

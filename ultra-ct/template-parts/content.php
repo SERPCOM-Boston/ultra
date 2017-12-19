@@ -41,10 +41,10 @@
 			echo '<p><a class="single_more" href="' . esc_url( get_permalink() ) .'">Read More »</a></p>';
         endif;
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-bootstrap-starter' ),
-				'after'  => '</div>',
-			) );
+			// wp_link_pages( array(
+				// 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-bootstrap-starter' ),
+				// 'after'  => '</div>',
+			// ) );
 		?>
 	</div><!-- .entry-content -->
 
