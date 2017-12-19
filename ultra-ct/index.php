@@ -260,7 +260,8 @@ get_header();
 	</div><!-- End FW Header -->
 
 	<!-- Galleries -->
-		<div class="row no-gutters">
+		<div class="container container_wide">
+		<div class="row pt-5 pb-5">
 			<div class="col-sm-6 text-center mb-5">
 				<h4>Gallery Headline Goes Here</h4>
 				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
@@ -276,6 +277,7 @@ get_header();
 				<img src="http://ultraoutdoors.net/stock/400-300-4.jpg">
 			</div>
 		</div>
+		</div>
 
 
 	<!-- FW Header -->
@@ -288,7 +290,8 @@ get_header();
 	</div><!-- End FW Header -->
 
 	<!-- Posts -->
-		<div class="row no-gutters profile_blog_cards">
+		<div class="container container_wide">
+		<div class="row card_section pt-5 pb-5">
 			<div class="col-12">
 
 			<?php
@@ -296,7 +299,7 @@ get_header();
 			
 			add_filter( 'the_title', 'max_title_length');
 	    	global $post;
-	    	$args = array( 'category' => $blog_cat_id );
+	    	$args = array( 'category' => $blog_cat_id, 'posts_per_page' => 6 );
 	    	$myposts = get_posts( $args );
 	    	foreach( $myposts as $post ) :  setup_postdata($post); ?>
 			
@@ -307,7 +310,7 @@ get_header();
 				<div class="card-body">
 				  <h4 class="card-title"><?php the_title(); ?></h4>
 				  <p class="entry-meta"><?php wp_bootstrap_starter_posted_on(); ?></p>
-				  <p class="card-text"><?php echo excerpt(25); ?></p>
+				  <p class="card-text"><?php echo excerpt(36); ?></p>
 				  <a href="<?php the_permalink(); ?>" class="card-link">Read More »</a>
 				</div>
 			</div>
@@ -315,7 +318,8 @@ get_header();
 			<?php endforeach; ?>
 				<div class="clearfix"></div>
 			</div>
-		</div>	
+		</div>
+		</div>
 
 		<div class="row no-gutters">
 			<div class="col-12 text-center mb-5">

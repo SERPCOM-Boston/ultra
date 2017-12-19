@@ -241,7 +241,7 @@ function content($limit) {
 
 // Limit Post Length
 function max_title_length( $title ) {
-	$max = 120;
+	$max = 240;
 	if( strlen( $title ) > $max ) {
 		return substr( $title, 0, $max ). " &hellip;";
 	} else {
