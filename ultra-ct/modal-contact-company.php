@@ -7,9 +7,14 @@
 	  
       <div class="modal-body">
 		  
-       <h5 class="modal-title">Send a Message to BUSINESSNAME</h5>
+       <h5 class="modal-title">Send a Message to <?php echo $account_details['name']; ?></h5>
 	   
-        <?php echo do_shortcode( '[gravityform id=1 title=false name=false description=false]' ); ?>
+	   	<?php 
+	   	$gravity_form = "[gravityform id=" . $account_details['gravity_form_id_c'] . " title=false name=false description=false]";
+		?>
+	   
+        <?php echo do_shortcode($gravity_form); ?>
+
       </div>
 
     </div>
