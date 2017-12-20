@@ -20,6 +20,7 @@ RewriteRule ^ - [L]
 RewriteRule ^([_0-9a-zA-Z-]+/)(wp-(content|admin|includes).*) $2 [L]
 RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
 
+
 # END WordPress
 
 RewriteCond %{REQUEST_URI} ([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)$
@@ -51,7 +52,7 @@ RewriteRule ^([^/]*)/$ index.php?page_id=4&seovar1=$1&%{QUERY_STRING} [L]
 RewriteCond %{REQUEST_URI} ([^/]*)$
 RewriteRule ^([^/]*)$ index.php?page_id=4&seovar1=$1&%{QUERY_STRING} [L]
 
-RewriteRule . index.php?page_id=4 [L]
+RewriteRule . index.php [L]
 
 
 # Wordfence WAF

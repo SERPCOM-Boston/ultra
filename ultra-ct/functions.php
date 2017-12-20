@@ -19,7 +19,7 @@ if(!isset($suitecrm_link)) $suitecrm_link = pdo_db_connect();
 
 
 $app_list_strings = array('account_type_dom' => array(), 'category_list' => '', 'regions_list' => '');
-require_once('suitecrm/custom/include/language/en_us.lang.php');
+
 
 function get_account_details($seo_url){
 	//echo getcwd();
@@ -51,6 +51,7 @@ function get_account_details($seo_url){
 }
 
 function format_scrm_account($result){
+	require_once('suitecrm/custom/include/language/en_us.lang.php');
 	global $app_list_strings;
 	
 	if(!$result) return false;
@@ -165,33 +166,75 @@ function my_query_vars( $query_vars ){
 }
 add_filter( 'query_vars', 'my_query_vars' );
 
-function check_for_suitecrm_page(){
+function check_for_pages(){
+	global $wp_query;
 	
-    if( is_404() ){
-		global $wp_query;
-		$show_404 = false;
-		if(isset($wp_query->query_vars['name'])) {
-			//If a business or other page
-			$page = get_page_by_title($wp_query->query_vars['name']);
-			if(!$page || !is_page($page->ID) ) { 
-				//print_r($wp_query);
-				if(isset($wp_query->query['name'])) {
-					$account_seo = urldecode($wp_query->query['name']);
-					$account_details = get_account_details($account_seo);
-					if($account_details){
-						 $wp_query->is_404 = false;
-						//require_once('page.php');
+	if( $wp_query->is_404 && $wp_query->query['pagename'] != 'blog'){
+		//print_r($wp_query);
+		$check_suitecrm = true;
+        $currentURI = !empty($_SERVER['REQUEST_URI']) ? trim($_SERVER['REQUEST_URI'], '/') : '';
+        if ($currentURI) {
+           // $categoryBaseName = trim(get_option('category_base'), '/.'); // Remove / and . from base
+		   $categoryBaseName = "category";
+            if ($categoryBaseName) {
+                // Perform fixes for category_base matching start of permalink custom structure
+
+                if ( $wp_query->query['seovar2'] == $categoryBaseName ) {
+                    // Find the proper category
+                    $childCategoryObject = get_category_by_slug($wp_query->query['category_name']);
+
+                    // Make sure we have a category
+                    if (is_object($childCategoryObject)) {
+                        $paged = ($wp_query->query['paged']) ? $wp_query->query['paged']: 1;
+                        $wp_query->query(array(
+                                              'cat' => $childCategoryObject->term_id,
+                                              'paged'=> $paged
+                                         )
+                        );
+                        // Set our accepted header
+                        status_header( 200 ); // Prevents 404 status
+						$check_suitecrm = false;
+                    }
+                    unset($childCategoryObject);
+                }
+            }
+            unset($categoryBaseName);
+        }
+        unset($currentURI);
+    
+		//Check for SuiteCRM
+		if($check_suitecrm){
+			$show_404 = false;
+			if(isset($wp_query->query_vars['name'])) {
+				//If a business or other page
+				$page = get_page_by_title($wp_query->query_vars['name']);
+				
+				if(!$page || !is_page($page->ID) ) { 
+					//print_r($wp_query);
+					if(isset($wp_query->query['name'])) {
+						$account_seo = urldecode($wp_query->query['name']);
+						$account_details = get_account_details($account_seo);
+						if($account_details){
+							 $wp_query->is_404 = false;
+							 status_header( 200 ); // Prevents 404 status
+							//require_once('page.php');
+						}
 					}
 				}
 			}
 		}
     }
+	/*
+	else if( $wp_query->query['pagename'] == 'blog'){
+		print_r($wp_query);
+		exit;
+	}*/
 }
-add_action( 'template_redirect', 'check_for_suitecrm_page' );
+add_action( 'template_redirect', 'check_for_pages' );
 
 
 
-
+//print_r($_SERVER);
 // If Page is Blog or Archive
 function is_blog () {
     return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
