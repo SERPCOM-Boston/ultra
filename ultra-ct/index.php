@@ -18,11 +18,11 @@ else {
 	$account_seo = 'ams-landscape-design-studios-inc';
 }
 
-//$account_seo = 'ams-landscape-design-studios-inc';
+
 $account_details = get_account_details($account_seo);
- //echo get_permalink();
- //var_dump($wp_query->query_vars);
-//print_r($account_details);
+
+$account_associations = get_associations($account_details['id']);
+//print_r($account_associations);
 get_header();
 
 ?>
@@ -234,8 +234,13 @@ get_header();
 					</div>
 
 					<div class="profile_associations">
+					<?php if(isset($account_associations['associations']) && count($account_associations['associations']) > 0) { ?>
 						<h4>Association Memberships</h4>
-						<p>American Nursery and Landscape Association</p>
+						<?php foreach($account_associations['associations'] as $a) { 
+							echo "<p><a href='" . get_site_url() . "/" . $a['url_c'] . "' >" . $a['name'] . "</a></p>
+							";
+						}
+					} ?>
 					</div>
 				</div>
 				

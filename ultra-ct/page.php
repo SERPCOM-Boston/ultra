@@ -7,15 +7,6 @@
  //$rules = get_option( 'rewrite_rules' );
 	//print_r($rules);
 
-if(isset($wp_query->query['name'])) {
-	$account_seo = urldecode($wp_query->query['name']);
-
-$account_details = get_account_details( $account_seo);
-}
-
- //echo get_permalink();
- //var_dump($wp_query->query_vars);
-//print_r($account_details);
 get_header();
 
 ?>

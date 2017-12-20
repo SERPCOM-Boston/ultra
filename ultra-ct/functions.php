@@ -103,36 +103,39 @@ function get_accounts($account_type){
 
 
 function get_associations($id){
+
+	
 	global $suitecrm_link;
 	
 	//member of associations	
 	$handle = $suitecrm_link->prepare(
-		"SELECT *
-		from accounts a, accounts_cstm ac, accounts_accounts_1_c a_to_a
+		"SELECT name, url_c
+		from accounts a, accounts_cstm ac, accounts_accounts_2_c a_to_a
 		WHERE a.id = ac.id_c
-		AND a.id = a_to_c.accounts_accounts_1accountsida
+		AND a.id = a_to_a.accounts_accounts_2accounts_ida
 		AND a.deleted = 0
-		AND a_to_c.deleted = 0
-		AND a_to_c.accounts_accounts_1accountsidb = :id;"
+		AND a_to_a.deleted = 0
+		AND a_to_a.accounts_accounts_2accounts_idb = :id;"
 	);
 	
 	$handle->bindValue(':id', $id);
 	$handle->execute();	
 	
 	$associations = $handle->fetchAll(PDO::FETCH_ASSOC);
-	for($i=0;$i<count($associations);$i++){
+	//print_r($associations);
+	/*for($i=0;$i<count($associations);$i++){
 		$associations[$i] = format_account($associations[$i]);
-	}
+	}*/
 	
 	//association members
 	$handle = $suitecrm_link->prepare(
-		"SELECT *
-		from accounts a, accounts_cstm ac, accounts_accounts_1_c a_to_a
+		"SELECT name, url_c
+		from accounts a, accounts_cstm ac, accounts_accounts_2_c a_to_a
 		WHERE a.id = ac.id_c
-		AND a.id = a_to_c.accounts_accounts_1accountsidb
+		AND a.id = a_to_a.accounts_accounts_2accounts_idb
 		AND a.deleted = 0
-		AND a_to_c.deleted = 0
-		AND a.accounts_accounts_1accountsida = :id;"
+		AND a_to_a.deleted = 0
+		AND a_to_a.accounts_accounts_2accounts_ida = :id;"
 	);
 	
 	$handle->bindValue(':id', $id);
@@ -140,9 +143,9 @@ function get_associations($id){
 	
 	$members = $handle->fetchAll(PDO::FETCH_ASSOC);
 
-	for($i=0;$i<count($members);$i++){
+	/*for($i=0;$i<count($members);$i++){
 		$members[$i] = format_account($members[$i]);
-	}
+	}*/
 	
 	return array(
 		'associations' => $associations,
