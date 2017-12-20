@@ -249,7 +249,7 @@ get_header();
 		</div>
 
 
-
+	<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
 	<!-- FW Header -->
 	<div class="row no-gutters">
 		<div class="col-12">
@@ -261,28 +261,84 @@ get_header();
 
 	<!-- Galleries -->
 		<div class="container container_wide">
+			
+		<?php if ($account_details['gallery_1_shortcode_c']) { ?>
 		<div class="row pt-5 pb-5">
-			<div class="col-sm-6 text-center mb-5">
-				<h4>Gallery Headline Goes Here</h4>
+			<div class="col-sm-6 text-center">
 				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
-				
-				<h4>Gallery Headline Goes Here</h4>
-				<img src="http://ultraoutdoors.net/stock/400-300-2.jpg">
 			</div>
-			<div class="col-sm-6 text-center mb-5">
-				<h4>Gallery Headline Goes Here</h4>
-				<img src="http://ultraoutdoors.net/stock/400-300-3.jpg">
-				
-				<h4>Gallery Headline Goes Here</h4>
-				<img src="http://ultraoutdoors.net/stock/400-300-4.jpg">
+
+			<div class="col-sm-6">
+				<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
+					<h3><?php echo $account_details['gallery_1_title_c']; ?></h3>
+					<p><?php echo $account_details['gallery_1_description_c']; ?></p>
+					<?php echo $account_details['gallery_1_shortcode_c']; ?>
+					<?php echo do_shortcode($account_details['gallery_1_shortcode_c']); ?>
+				<?php } ?>
 			</div>
 		</div>
+		<?php } ?>
+			
+		<?php if ($account_details['gallery_2_shortcode_c']) { ?>
+		<div class="row pt-5 pb-5">
+			<div class="col-sm-6 text-center">
+				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
+			</div>
+
+			<div class="col-sm-6">
+				<?php if (($account_details['gallery_2_shortcode_c']) && ($account_details['premium_c'])) { ?>
+					<h3><?php echo $account_details['gallery_2_title_c']; ?></h3>
+					<p><?php echo $account_details['gallery_2_description_c']; ?></p>
+					<?php echo $account_details['gallery_2_shortcode_c']; ?>
+					<?php echo do_shortcode($account_details['gallery_2_shortcode_c']); ?>
+				<?php } ?>
+			</div>
 		</div>
+		<?php } ?>
+			
+		<?php if ($account_details['gallery_3_shortcode_c']) { ?>
+		<div class="row pt-5 pb-5">
+			<div class="col-sm-6 text-center">
+				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
+			</div>
+
+			<div class="col-sm-6">
+				<?php if (($account_details['gallery_3_shortcode_c']) && ($account_details['premium_c'])) { ?>
+					<h3><?php echo $account_details['gallery_3_title_c']; ?></h3>
+					<p><?php echo $account_details['gallery_3_description_c']; ?></p>
+					<?php echo $account_details['gallery_3_shortcode_c']; ?>
+					<?php echo do_shortcode($account_details['gallery_3_shortcode_c']); ?>
+				<?php } ?>
+			</div>
+		</div>
+		<?php } ?>
+			
+		<?php if ($account_details['gallery_4_shortcode_c']) { ?>
+		<div class="row pt-5 pb-5">
+			<div class="col-sm-6 text-center">
+				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
+			</div>
+
+			<div class="col-sm-6">
+				<?php if (($account_details['gallery_4_shortcode_c']) && ($account_details['premium_c'])) { ?>
+					<h3><?php echo $account_details['gallery_4_title_c']; ?></h3>
+					<p><?php echo $account_details['gallery_4_description_c']; ?></p>
+					<?php echo $account_details['gallery_4_shortcode_c']; ?>
+					<?php echo do_shortcode($account_details['gallery_4_shortcode_c']); ?>
+				<?php } ?>
+			</div>
+		</div>
+		<?php } ?>
+			
+		</div>
+	<?php } ?>
 
 
+
+	<?php if (($account_details['blog_category_id_c']) && ($account_details['premium_c'])) { ?>
 	<!-- FW Header -->
 	<div class="row no-gutters">
-		<div class="col-12">
+		<div class="col-12" style="background-color: rgba(0,0,0,0.4);">
 			 <div class="fullwidth_header" style="background-image:url(<?php echo $account_details['splash_image_url_c']; ?>)">
 		 		 <h2>News From <?php echo $account_details['name']; ?></h2>
 			 </div>
@@ -308,7 +364,7 @@ get_header();
 					<?php the_post_thumbnail(); ?>
 		  		</a>
 				<div class="card-body">
-				  <h4 class="card-title"><?php the_title(); ?></h4>
+				  <h4 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 				  <p class="entry-meta"><?php wp_bootstrap_starter_posted_on(); ?></p>
 				  <p class="card-text"><?php echo excerpt(36); ?></p>
 				  <a href="<?php the_permalink(); ?>" class="card-link">Read More »</a>
@@ -326,6 +382,20 @@ get_header();
 				<p><a href="https://ultraoutdoors.net/ultra/index.php?cat=<?php echo $blog_cat_id; ?>">More News From <?php echo $account_details['name']; ?> »</a></p>
 			</div>
 		</div>	
+	<?php } ?>
+
+
+
+	<?php if ($account_details['premium_c']) { ?>
+	<div class="row no-gutters" style="background: #272525;">
+		<div class="col-12 pt-5">
+			<div class="profile_contact_button text-center">
+				<button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#modal-contact-company" onclick="this.blur();">Contact Company</button>
+			</div>
+		</div>
+	</div>
+	<?php } ?>
+
 
 
 		</main><!-- #main -->

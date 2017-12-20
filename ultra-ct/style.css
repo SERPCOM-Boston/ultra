@@ -176,12 +176,12 @@ header#masthead {
 
 .top_bar {
 	background-color: #000;
-	color: #fff;
 }
 
 .top_bar p {
 	margin: 0;
 	padding: 3px;
+	color: #fff;
 }
 
 .navbar-brand {
@@ -993,6 +993,10 @@ h3.widget-title:first-of-type {
     -webkit-box-orient: vertical;
 	text-overflow: ellipsis;
 	line-height: 22px;
+}
+
+.card-title a {
+	color: #3c3c3c;
 }
 
 .featured_card_section .card-title {
