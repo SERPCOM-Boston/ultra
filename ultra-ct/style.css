@@ -48,14 +48,18 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul, address, blockquote {
 	word-wrap: break-word;
 }
 
-.single h1 {
+.single h1, .archive h2, .search h2 {
 	font-size: 18px;
 	line-height: 1.5em;
 	font-weight: normal;
 }
 
+.search h2 {
+	margin-bottom: 5px;
+}
+
 @media (max-width: 991px) {
-	.single h1 {
+	.single h1, .archive h2 {
 		font-size: 16px;
 	}
 }
@@ -850,17 +854,22 @@ h3.widget-title:first-of-type {
 
 /* Single */
 .post.hentry {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
-.serp_meta {
-	margin-bottom: 25px;
+.serp_meta, .archive-description p {
+	margin-top: 50px;
+	margin-bottom: 0;
 	padding-left: 15px;
 	padding-bottom: 10px;
 	border-left: 18px solid #008E87;
 }
 
-.single h1.entry-title, .blog .entry-title {
+.archive-description p {
+	margin-top: 20px;
+}
+
+.single h1.entry-title, .archive h2.entry-title, .blog .entry-title {
 	margin-bottom: 5px;
 }
 
@@ -868,7 +877,7 @@ h3.widget-title:first-of-type {
 	margin: 0;
 }
 
-.single .post-thumbnail {
+.single .post-thumbnail, .archive .post-thumbnail {
 	margin: 0 auto;
 	text-align: center;
 	border: 1px solid #eee;
@@ -1109,7 +1118,7 @@ h3.widget-title:first-of-type {
 /* Search Page */
 .search article, .author article, .archive article, .archive .entry {
 	border-bottom: solid 1px #eaecef;
-	margin-bottom: 40px;
+	margin-bottom: 10px !important;
 	padding-bottom: 30px;
 }
 

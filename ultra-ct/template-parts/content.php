@@ -11,8 +11,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="serp_meta"><em> Faneuil Hall Boston, MA | Things to Do in Boston | Boston Attractions | Boston Restaurants | Boston Mall | Shopping in Boston | Best Restaurants in Boston | What to Do in Boston</em></div>
-
 	<div class="post-thumbnail">
 		<?php the_post_thumbnail(); ?>
 	</div>
