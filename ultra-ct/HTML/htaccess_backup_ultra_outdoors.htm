@@ -69,3 +69,57 @@ RewriteRule . index.php?page_id=4 [L]
 </Files>
 
 # END Wordfence WAF
+
+
+
+
+
+---------
+UPDATE BELOW
+
+
+
+
+php_value memory_limit 640M
+php_value upload_max_filesize 18M
+php_value post_max_size 18M
+php_value max_execution_time 800
+php_value max_input_time 8000
+
+
+# BEGIN WordPress
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# add a trailing slash to /wp-admin
+RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)(wp-(content|admin|includes).*) $2 [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
+RewriteRule . index.php [L]
+
+# END WordPress
+
+
+
+
+# Wordfence WAF
+<IfModule mod_php7.c>
+	php_value auto_prepend_file '/var/www/ultraoutdoors.net/public_html/wordfence-waf.php'
+</IfModule>
+<Files ".user.ini">
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order deny,allow
+	Deny from all
+</IfModule>
+</Files>
+
+# END Wordfence WAF

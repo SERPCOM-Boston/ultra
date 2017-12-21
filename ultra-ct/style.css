@@ -522,6 +522,10 @@ header#masthead {
 
 .profile_contact_button {
 	text-align: right;
+	margin-bottom: 50px;
+}
+
+.col_profile_right .profile_contact_button {
 	margin-bottom: 80px;
 }
 
@@ -832,6 +836,10 @@ form button {
 .side_browse_block li, .sidebar .widget li {
 	padding-bottom: 5px;
 	border-bottom: 1px solid #ddd;
+}
+
+.side_browse_block li, .sidebar .widget li {
+	padding-top: 5px;
 }
 
 .sidebar .widget li a {
