@@ -12,7 +12,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+		<?php if (!is_single() ) { ?>
+			<a href="<?php the_permalink(); ?>">
+		<?php } ?>
+			<?php the_post_thumbnail(); ?>
+		<?php if (!is_single() ) { ?>
+			</a>
+		<?php } ?>
 	</div>
 	<header class="entry-header">
 		<?php

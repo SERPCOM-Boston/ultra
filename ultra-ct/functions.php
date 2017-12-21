@@ -331,3 +331,26 @@ function wp_bootstrap_starter_posted_on() {
         echo '</span>';
     }
 }
+
+// Replace Parent Theme's entry footer function 
+function wp_bootstrap_starter_entry_footer() {
+	// Hide category and tag text for pages.
+	if ( 'post' === get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( esc_html__( ', ', 'wp-bootstrap-starter' ) );
+		if ( $categories_list && wp_bootstrap_starter_categorized_blog() ) {
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'wp-bootstrap-starter' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'wp-bootstrap-starter' ) );
+		if ( $tags_list ) {
+			echo '<div class="tags-links-title">Tags:</div><div class="tag_block">';
+			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'wp-bootstrap-starter' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			echo '</div>';
+		}
+	}
+}
+
+
+
+

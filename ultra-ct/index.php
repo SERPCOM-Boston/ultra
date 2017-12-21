@@ -14,11 +14,6 @@ if(isset($wp_query->query['name'])) {
 	$account_details = get_account_details($account_seo);
 	$account_associations = get_associations($account_details['id']);
 }
-else {
-	//Load Blog or Static page or something
-
-
-}
 
 //print_r($account_associations);
 get_header();
@@ -26,6 +21,8 @@ get_header();
 ?>
 
 
+<?php // If a Business Page 
+if(isset($wp_query->query['name'])) { ?>
 <style>
 	#content.site-content {
 	    padding-bottom: 0;
@@ -413,6 +410,14 @@ get_header();
 		$('.btn').mouseup(function() { this.blur() })
 	});
 </script>
+
+<?php // If Home  
+} elseif ( is_home() ) { 
+	require('home-page-content.php');
+} 
+// Otherwise, it goes to page.php 
+?>
+
 
 <?php
 get_footer();

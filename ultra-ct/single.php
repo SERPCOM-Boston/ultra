@@ -16,9 +16,9 @@ get_header();
 			<div class="container">
 				<div class="row">
 					
-					<div class="col-md-9">
+					<div class="col-md-9 col_custom_padding1">
 
-						<div class="serp_meta"><em> Faneuil Hall Boston, MA | Things to Do in Boston | Boston Attractions | Boston Restaurants | Boston Mall | Shopping in Boston | Best Restaurants in Boston | What to Do in Boston</em></div>
+						<div class="serp_meta"><em> <strong>Ultra Outdoors</strong> is your source for Everything in Outdoor Living. Find manufacturers, local pros, stores, and inspiration for landscape architecture, landscape design, home builders, architect & architecture ideas, outdoor interior design, luxury swimming pool installation, tree service and more. </em><br><span style="font-family: 'Palanquin', sans-serif;font-weight: 600;border-top: 1px solid #ddd;margin-top: 10px;padding-top: 5px;display: block;">Search Photos. Get Ideas. Find Products. Meet Local Experts. Build Your Dream.</span></div>
 
 
 					<?php
