@@ -9,7 +9,11 @@
 
 get_header();
 
-?>
+// If Blog
+if ( is_page(74) ) { 
+	require('blog.php');
+} else { ?>
+
 	<section id="primary" class="content-area col-sm-12">
 		<main id="main" class="site-main" role="main">
 
@@ -37,6 +41,7 @@ get_header();
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
+<?php } ?>
 
 <?php
 get_footer();

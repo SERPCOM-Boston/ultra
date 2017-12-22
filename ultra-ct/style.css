@@ -104,6 +104,10 @@ address {
 	padding-bottom: 3px;
 }
 
+.no_underline {
+	border-bottom: none;
+}
+
 .btn-group-lg>.btn, .btn-lg {
     padding: .8rem 1.2rem;
     font-size: 1.1rem;
@@ -988,24 +992,25 @@ h3.widget-title:first-of-type {
 	float: left;
 	width: 31.333%;
 	margin: 15px 1%;
-	height: auto;
+	height: 510px;
 	position: relative;
 	overflow: hidden;
+	display: block;
 	border-radius: 0;
 	-webkit-box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.4);
 	box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.4);
-}
-
-.card_section4 .card {
-	width: 23%;
-	margin: 30px 1%;
-	height: 540px;
 }
 
 .featured_card_section .card {
 	width: 31.333%;
 	margin: 15px 1%;
 	height: auto;
+}
+
+.blog_card_section .card {
+	width: 19%;
+	margin: 15px .5%;
+	height: 480px;
 }
 
 .card_section .card:after {
@@ -1033,17 +1038,14 @@ h3.widget-title:first-of-type {
     height: 320px;
 }
 
-.card_section4 .card .attachment-post-thumbnail {
-    width: 100%;
-	padding: 8px 8px 0 8px !important;
-    object-fit: cover;
-    height: 320px;
-}
-
 .featured_card_section .card img {
     width: 100%;
     height: 320px;
     object-fit: cover;
+}
+
+.blog_card_section .card img {
+	height: 260px;
 }
 
 .featured_card_section .card img.icon, .media-city img.icon {
@@ -1054,6 +1056,33 @@ h3.widget-title:first-of-type {
 
 .featured_card_section .card .attachment-post-thumbnail {
     height: 260px;
+}
+
+.card_section .img_wrapper {
+    position: relative;
+    height: 260px;
+	width: 100%;
+    overflow: hidden;
+}
+
+.featured_card_section .img_wrapper {
+	width: auto;
+    height: 260px;
+}
+
+.blog_card_section .img_wrapper {
+    height: 230px;
+}
+
+.card_section .img_wrapper .attachment-post-thumbnail, .featured_card_section .card img {
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease;
+}
+
+.card_section .img_wrapper .attachment-post-thumbnail:hover, .featured_card_section .card img:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+	overflow: hidden;
 }
 
 .featured_cat {
@@ -1141,21 +1170,36 @@ h3.widget-title:first-of-type {
 @media (max-width: 1599px) { 
 	.card_section .card {
 		margin: 15px 1%;
-		height: 440px;
-	}
-	.card_section4 .card {
-		margin: 30px 1%;
-		height: 440px;
 	}
 	.featured_card_section .card {
 		margin: 15px 1%;
 		height: auto;
 	}
-	.card_section .card .attachment-post-thumbnail {
+	.blog_card_section .card {
+		width: 24%;
+		margin: 10px .5%;
+		height: 580px;
+	}
+	.blog_card_section .card {
+	    height: 510px;
+	}
+	.blog_card_section .card img {
+		height: 220px;
+	}
+	.blog_card_section .img_wrapper {
 	    height: 220px;
 	}
-	.card_section4 .card .attachment-post-thumbnail {
-	    height: 220px;
+}
+
+@media (max-width: 1399px) { 
+	.blog_card_section .card {
+	    height: 480px;
+	}
+	.blog_card_section .card img {
+		height: 190px;
+	}
+	.blog_card_section .img_wrapper {
+	    height: 190px;
 	}
 }
 
@@ -1163,26 +1207,34 @@ h3.widget-title:first-of-type {
 	.card_section .card {
 		width: 48%;
 		margin: 10px 1%;
-		height: 540px;
-	}
-	.card_section4 .card {
-		width: 48%;
-		margin: 10px 1%;
-		height: 540px;
 	}
 	.featured_card_section .card {
 		margin: 15px 1%;
 		height: auto;
 	}
-	.card_section .card .attachment-post-thumbnail {
-	    height: 320px;
+	.blog_card_section .card {
+		width: 32.3333%;
+		margin: 10px .5%;
+		height: 550px;
 	}
-	.card_section4 .card .attachment-post-thumbnail {
-	    height: 320px;
+	.blog_card_section .card img {
+		height: 260px;
+	}
+	.blog_card_section .img_wrapper {
+	    height: 260px;
 	}
 }
 
 @media (max-width: 991px) {
+	.blog_card_section .card {
+	    height: 480px;
+	}
+	.blog_card_section .card img {
+		height: 190px;
+	}
+	.blog_card_section .img_wrapper {
+	    height: 190px;
+	}
 	.browse_links li {
 		margin-bottom: 5px;
 		border-bottom: 1px solid #eee;
@@ -1210,6 +1262,12 @@ h3.widget-title:first-of-type {
 	.card_section .card:after {
 		visibility: hidden !important;
 		display: none;
+	}
+	.blog_card_section .card img {
+		height: auto;
+	}
+	.blog_card_section .img_wrapper {
+	    height: auto;
 	}
 	.browse_links {
 		margin-bottom: 0;

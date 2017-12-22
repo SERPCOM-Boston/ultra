@@ -80,10 +80,12 @@
 
 						
 			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
-					<p class="featured_cat">FEATURED: <span>CONSERVATORIES</span></p>
+					<p class="featured_cat">FEATURED: <span>KITCHEN CABINETS</span></p>
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
@@ -92,10 +94,12 @@
 			
 						
 			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
-					<p class="featured_cat">FEATURED: <span>CONSERVATORIES</span></p>
+					<p class="featured_cat">FEATURED: <span>SWIMMING POOLS</span></p>
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
@@ -104,10 +108,12 @@
 			
 						
 			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
-					<p class="featured_cat">FEATURED: <span>CONSERVATORIES</span></p>
+					<p class="featured_cat">FEATURED: <span>DECKS, PERGOLA & GAZEBOS</span></p>
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
@@ -116,10 +122,12 @@
 			
 						
 			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy3.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
-					<p class="featured_cat">FEATURED: <span>CONSERVATORIES</span></p>
+					<p class="featured_cat">FEATURED: <span>HOT TUBS</span></p>
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
@@ -128,10 +136,12 @@
 			
 						
 			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy4.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
-					<p class="featured_cat">FEATURED: <span>CONSERVATORIES</span></p>
+					<p class="featured_cat">FEATURED: <span>ARCHITECTS</span></p>
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
@@ -140,10 +150,12 @@
 			
 						
 			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy5.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
-					<p class="featured_cat">FEATURED: <span>CONSERVATORIES</span></p>
+					<p class="featured_cat">FEATURED: <span>SHADE PRODUCTS</span></p>
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
@@ -182,10 +194,11 @@
 			<div class="row card_section featured_card_section pt-5 pb-2">
 			<div class="col-12">
 
-						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy6.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -195,9 +208,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy7.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -207,9 +222,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy8.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -219,9 +236,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy9.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -231,9 +250,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy11.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -243,16 +264,18 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 					<p class="card-text featured_card_cats gray">Conservatories, Fountains, Decks</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
 				</div>
-			</div>	
+			</div>
 			
 					
 				<div class="clearfix"></div>
@@ -325,9 +348,11 @@
 			<div class="col-12">
 
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -337,9 +362,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy3.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -349,9 +376,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy4.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -361,9 +390,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy5.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -373,9 +404,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy6.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -385,16 +418,18 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy7.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 					<p class="card-text featured_card_cats gray">Conservatories, Fountains, Decks</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
 				</div>
-			</div>	
+			</div>
 
 
 				<div class="clearfix"></div>
@@ -463,9 +498,11 @@
 			<div class="col-12">
 
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy8.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -475,9 +512,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy9.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -487,9 +526,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy10.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -499,9 +540,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy11.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -511,9 +554,11 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
@@ -523,16 +568,18 @@
 			</div>
 			
 						
-			<div class="card">
-				<a href="">
-					<img width="640" height="580" src="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1.jpg 640w, https://ultraoutdoors.net/ultra/wp-content/uploads/sites/2/2017/12/download-1-300x272.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />		  		</a>
+			<div class="card">						
+				<div class="img_wrapper">
+					<a href="">
+						<img width="640" height="580" src="https://ultraoutdoors.net/stock/dummy2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  />		  			</a>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">Conservatories Collection</h4>
 				  	<p class="card-text gray"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> WINDSOR, PA</p>
 					<p class="card-text featured_card_cats gray">Conservatories, Fountains, Decks</p>
 				  	<a href="" class="card-link">VIEW PROFILE »</a>
 				</div>
-			</div>	
+			</div>
 			
 				<div class="clearfix"></div>
 			</div>

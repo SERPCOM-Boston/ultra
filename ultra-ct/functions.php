@@ -352,7 +352,3 @@ function wp_bootstrap_starter_entry_footer() {
 		}
 	}
 }
-
-
-
-

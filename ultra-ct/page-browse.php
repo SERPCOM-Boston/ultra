@@ -122,7 +122,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 
 
 			<div class="side_block side_browse_block">
-				<h4 class="">Find Local Professionals</h4>
+				<h4 class="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals">Find Local Professionals</h4>
 				<ul>
 					<li><a href="">All Local Professionals »</a></li>
 					<li><a href="">Architects »</a></li>
@@ -138,7 +138,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 			</div>
 			
 			<div class="side_block side_browse_block">
-				<h4 class="">Find Local Stores</h4>
+				<h4 class="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores">Find Local Stores</h4>
 				<ul>
 					<li><a href="">All Local Stores »</a></li>
 					<li><a href="">Appliance & Grills »</a></li>
@@ -155,7 +155,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 			</div>
 			
 			<div class="side_block side_browse_block">
-				<h4 class="">Find Manufacturers</h4>
+				<h4 class="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers">Find Manufacturers</h4>
 				<ul>
 					<li><a href="">All Manufacturers »</a></li>
 					<li><a href="">Appliance & Grill »</a></li>
@@ -172,7 +172,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 			</div>
 			
 			<div class="side_block side_browse_block">
-				<h4 class="">Find Associations</h4>
+				<h4 class="<?php echo esc_url( home_url( '/' ) ); ?>find-associations">Find Associations</h4>
 				<ul>
 					<li><a href="">All Associations »</a></li>
 				</ul>

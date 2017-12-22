@@ -99,7 +99,7 @@
 
 	<?php if (is_single()) { 
 	    /* grab the url for the full size featured image */
-	           $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+		$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
 	?>
 		<!-- Top Band -->
 		<div class="row no-gutters">
@@ -110,7 +110,6 @@
 
 		</div><!-- End Top Band -->
 	<?php } ?>
-
 	
 	<div id="content" class="site-content">
 		<div class="container-fluid">

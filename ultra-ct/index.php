@@ -344,9 +344,11 @@ if(isset($wp_query->query['name'])) { ?>
 	    	foreach( $myposts as $post ) :  setup_postdata($post); ?>
 			
 			<div class="card">
+				<div class="img_wrapper">
 				<a href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail(); ?>
 		  		</a>
+			</div>
 				<div class="card-body">
 				  <h4 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 				  <p class="entry-meta"><?php wp_bootstrap_starter_posted_on(); ?></p>
