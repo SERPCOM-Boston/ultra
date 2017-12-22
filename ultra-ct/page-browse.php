@@ -3,10 +3,29 @@
 Template Name: Browse Template
 */
 
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 get_header();
 global $wp;
 $actual_link = home_url( $wp->request );
-?>
+if(is_numeric($wp_query->query['page'])) {$page_num = $wp_query->query['page']; } else {$page_num = 1;}
+$results_per_page = 20;
+if(strpos($actual_link, 'find-local-professionals')) {
+	$page_title = "Local Professionals";	
+	$accounts = get_accounts('local_professionals', $results_per_page, $page_num);
+ } elseif(strpos($actual_link, 'find-local-stores')) {	 
+ 	$page_title = "Local Stores";	
+	$accounts = get_accounts('store', $results_per_page, $page_num);
+ } elseif(strpos($actual_link, 'find-manufacturers')) { 
+ 	$page_title = "Local Manufacturers";	
+	$accounts = get_accounts('manufacturer', $results_per_page, $page_num);
+ } elseif(strpos($actual_link, 'find-associations')) { 
+ 	$page_title = "Associations";	
+	$accounts = get_accounts('association', $results_per_page, $page_num);
+ } 
+ 
+ ?>
+
 
 <!-- Top Band -->
 <div class="row no-gutters">
@@ -37,62 +56,46 @@ $actual_link = home_url( $wp->request );
 <div class="entry_list">
 
 
-<?php if(strpos($actual_link, 'find-local-professionals')) { ?>
-	<h2>Local Professionals</h2>
-<?php } elseif(strpos($actual_link, 'find-local-stores')) { ?>
-	<h2>Local Stores</h2>
-<?php } elseif(strpos($actual_link, 'find-local-manufacturers')) { ?>
-	<h2>Local Manufacturers</h2>
-<?php } elseif(strpos($actual_link, 'find-associations')) { ?>
-	<h2>Associations</h2>
-<?php } ?>
 
+	<h2><?php echo $page_title; ?></h2>
+
+	<?php foreach($accounts as $account_details){
+	
+	?>
 	<div class="media">
-		<a href="">
-	  	  <img class="mr-3 browse_img unveil_img" src="https://ultraoutdoors.net/stock/blank.gif" data-src="https://ultraoutdoors.net/logos/hess-landscape-architects.jpg" alt="<?php echo $account_details['name']; ?>">
+		<a href="<?php echo site_url() . "/" . $account_details['url_c']; ?>">
+	  	  <img class="mr-3 browse_img unveil_img" src="<?php if ($account_details['logo_image_url_c']) { 
+							echo $account_details['logo_image_url_c']; } 
+							else { echo 'https://ultraoutdoors.net/logos/uo-icon-gray.png'; } ?>" data-src="<?php if ($account_details['logo_image_url_c']) { 
+							echo $account_details['logo_image_url_c']; } 
+							else { echo 'https://ultraoutdoors.net/logos/uo-icon-gray.png'; } ?>" alt="<?php echo $account_details['name']; ?>">
 		</a>
 	  <div class="media-body">
-	    <h4 class="mt-0 mb-0">Hess Landscape Architects, Inc.</h4>
-	    <p class="media-city"><i class="fa fa-map-pin" aria-hidden="true"></i> Landscape, PA</p>
-		<p>Hess Landscape Architects works with the industry’s top architects, interior designers, and engineers to provide clients with amazing backyards that reflect their own sophisticated styles. Founding Principal Chuck Hess achieves this by listening to every member of the design and construction team, the homeowners, as well as his own instincts. ...</p>
-		<p><a href="">See Full Profile »</a></p>
+	    <h4 class="mt-0 mb-0"><?php echo $account_details['name']; ?></h4>
+	    <p class="media-city"><i class="fa fa-map-pin" aria-hidden="true"></i><?php if ($account_details['billing_address_city']) { 
+							echo $account_details['billing_address_city'] . ', '; } ?>
+						<?php if ($account_details['billing_address_state']) { 
+							echo $account_details['billing_address_state'] . ' '; } ?></p>
+		<p><?php echo wp_trim_words($account_details['description'], 55, "...");  ?></p>
+		<p><a href="<?php echo site_url() . "/" . $account_details['url_c']; ?>">See Full Profile »</a></p>
 	  </div>
 	</div>
-
-	<div class="media">
-		<a href="">
-	  	  <img class="mr-3 browse_img unveil_img" src="https://ultraoutdoors.net/stock/blank.gif" data-src="https://ultraoutdoors.net/logos/hess-landscape-architects.jpg" alt="<?php echo $account_details['name']; ?>">
-		</a>
-	  <div class="media-body">
-	    <h4 class="mt-0 mb-0">Hess Landscape Architects, Inc.</h4>
-	    <p class="media-city"><i class="fa fa-map-pin" aria-hidden="true"></i> Landscape, PA</p>
-		<p>Hess Landscape Architects works with the industry’s top architects, interior designers, and engineers to provide clients with amazing backyards that reflect their own sophisticated styles. Founding Principal Chuck Hess achieves this by listening to every member of the design and construction team, the homeowners, as well as his own instincts. ...</p>
-		<p><a href="">See Full Profile »</a></p>
-	  </div>
-	</div>
-
-	<div class="media">
-		<a href="">
-	  	  <img class="mr-3 browse_img unveil_img" src="https://ultraoutdoors.net/stock/blank.gif" data-src="https://ultraoutdoors.net/logos/hess-landscape-architects.jpg" alt="<?php echo $account_details['name']; ?>">
-		</a>
-	  <div class="media-body">
-	    <h4 class="mt-0 mb-0">Hess Landscape Architects, Inc.</h4>
-	    <p class="media-city"><i class="fa fa-map-pin" aria-hidden="true"></i> Landscape, PA</p>
-		<p>Hess Landscape Architects works with the industry’s top architects, interior designers, and engineers to provide clients with amazing backyards that reflect their own sophisticated styles. Founding Principal Chuck Hess achieves this by listening to every member of the design and construction team, the homeowners, as well as his own instincts. ...</p>
-		<p><a href="">See Full Profile »</a></p>
-	  </div>
-	</div>
-
+<?php 
+	}
+?>
 </div><!-- End Browse Entries -->
 
 <!-- Pagination -->
 <nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous »</a></li>
-    <li class="page-item"><a class="page-link" href="#">1 »</a></li>
-    <li class="page-item"><a class="page-link" href="#">2 »</a></li>
-    <li class="page-item"><a class="page-link" href="#">3 »</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next »</a></li>
+   <?php if($page_num > 1) { 
+   ?><li class="page-item"><a class="page-link" href="<?php echo "../" . $page_num-1; ?>">Previous »</a></li> <?php } ?>
+   <?php for($i=1;$i< $page_num;$i++) { ?>   
+	 <li class="page-item"><a class="page-link" href="<?php echo "../" . $i;  ?>"><?php echo $i; ?> »</a></li>
+ <?php 
+   }
+ if(count($accounts) == $results_per_page) { 
+ ?>  <li class="page-item"><a class="page-link" href="<?php if($page_num == 1) { echo "2/"; } else { echo "../" . $page_num+1; } ?>">Next »</a></li> <?php } ?>
   </ul>
 </nav>
 

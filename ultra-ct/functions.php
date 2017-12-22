@@ -60,7 +60,6 @@ function format_scrm_account($result){
 	$result['account_type'] = $app_list_strings['account_type_dom'][str_replace("^","",$result['account_type'])];
 	
 	$result['category_c'] = explode(",",str_replace("^","",$result['category_c']));
-	
 	$return_list = "";
 	foreach($result['category_c'] as $c){
 		if(strlen($return_list)) $return_list .= ", ";
@@ -68,6 +67,7 @@ function format_scrm_account($result){
 	}
 	$result['category_c'] = $return_list;
 	
+	$result['regions_c'] =explode(",",str_replace("^","",$result['regions_c']));
 	$return_list = "";
 	foreach($result['regions_c'] as $c){
 		if(strlen($return_list)) $return_list .= ", ";
@@ -78,7 +78,7 @@ function format_scrm_account($result){
 	return $result;
 }
 
-function get_accounts($account_type){
+function get_accounts($account_type, $results_per_page, $page_num){
 	global $suitecrm_link;
 	
 	$handle = $suitecrm_link->prepare(
@@ -86,20 +86,22 @@ function get_accounts($account_type){
 		from accounts, accounts_cstm
 		WHERE id = id_c
 		AND deleted = 0
-		AND accounts_cstm.category_c like :search_val
-		LIMIT 1;"
+		AND accounts.account_type like :search_val
+		LIMIT :pn, :rpp;"
 	);
 	
-	$handle->bindValue(':search_val', '%' . $accounty_type . '%');
+	$handle->bindValue(':search_val', '%' . $account_type . '%');
+	$handle->bindValue(':pn', $results_per_page * ($page_num -1), PDO::PARAM_INT);
+	$handle->bindValue(':rpp', $results_per_page, PDO::PARAM_INT);
 	$handle->execute();
 	
 	$accounts = $handle->fetchAll(PDO::FETCH_ASSOC);
 	
 	for($i=0;$i<count($accounts);$i++){
-		$accounts[$i] = format_account($accounts[$i]);
+		$accounts[$i] = format_scrm_account($accounts[$i]);
 	}
 	
-	return $accounts();
+	return $accounts;
 }
 
 
@@ -169,10 +171,10 @@ add_filter( 'query_vars', 'my_query_vars' );
 function check_for_pages(){
 	global $wp_query;
 	
-	if( $wp_query->is_404 && $wp_query->query['pagename'] != 'blog'){
+	if( $wp_query->is_404){
 		//print_r($wp_query);
 		$check_suitecrm = true;
-        $currentURI = !empty($_SERVER['REQUEST_URI']) ? trim($_SERVER['REQUEST_URI'], '/') : '';
+        /*$currentURI = !empty($_SERVER['REQUEST_URI']) ? trim($_SERVER['REQUEST_URI'], '/') : '';
         if ($currentURI) {
            // $categoryBaseName = trim(get_option('category_base'), '/.'); // Remove / and . from base
 		   $categoryBaseName = "category";
@@ -201,7 +203,7 @@ function check_for_pages(){
             unset($categoryBaseName);
         }
         unset($currentURI);
-    
+    */
 		//Check for SuiteCRM
 		if($check_suitecrm){
 			$show_404 = false;

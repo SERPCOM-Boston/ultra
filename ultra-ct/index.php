@@ -7,13 +7,14 @@
  //$rules = get_option( 'rewrite_rules' );
 	//print_r($rules);
 if(isset($wp_query->query['name'])) {
+	
+}
 	//check if is a page name in the wp schema
 	$page = get_page_by_title($wp_query->query_vars['name']);
 	print_r($page);
 	$account_seo = urldecode($wp_query->query['name']);
 	$account_details = get_account_details($account_seo);
 	$account_associations = get_associations($account_details['id']);
-}
 
 //print_r($account_associations);
 get_header();
@@ -412,7 +413,7 @@ if(isset($wp_query->query['name'])) { ?>
 </script>
 
 <?php // If Home  
-} elseif ( is_home() ) { 
+} elseif ( is_front_page() ) { 
 	require('home-page-content.php');
 } 
 // Otherwise, it goes to page.php 
