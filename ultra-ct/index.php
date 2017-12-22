@@ -202,42 +202,25 @@ if(isset($wp_query->query['name'])) { ?>
 						<p><?php echo $account_details['regions_c']; ?></p>
 					</div>
 
+
+					<?php if ($account_details['award_textarea_c']) { ?>
 					<div class="profile_awards">
 						<h4>Awards</h4>
-						
-						<p class="award"><strong>2012 NJ ASLA Chapter Awards Program</strong>
-						<br>"Honor Award" Landscape Architectural Design
-						Residential/Garden Design – 27th Street</p>
-
-						<p class="award"><strong>2011 Pennsylvania Historic Preservation Awards</strong>
-						<br>"Construction Project Award - Single Family Residence"
-						- The Jayne House</p>
-
-						<p class="award"><strong>2011 Preservation Alliance</strong>
-						<br>"Preservation Achievement Grand Jury Award" - The Jayne House</p>
-
-						<p class="award"><strong>2008 ASLA (American Society of Landscape Architects)</strong>
-						<br>"Merit Award" Residential Design - Gladwyne Overlook Residence</p>
-
-						<p class="award"><strong>2007 Pool & Spa</strong> 
-						<br>"Masters of Design" - Residential Spa</p>
-
-						<p class="award"><strong>2007 APLD (Association of Professional Landscape Designers)</strong>
-						<br>"Gold Award" for the Villanova Residence in the residential category of more than $175K to design /install</p>
-
-						<p class="award"><strong>2007 APLD (Association of Professional Landscape Designers)</strong>
-						<br>"Residential Best of Show" for the Villanova Residence</p>
+						<?php echo nl2br($account_details['award_textarea_c']); ?>
 					</div>
+					<?php } ?>
 
-					<div class="profile_associations">
+
 					<?php if(isset($account_associations['associations']) && count($account_associations['associations']) > 0) { ?>
+					<div class="profile_associations">
 						<h4>Association Memberships</h4>
 						<?php foreach($account_associations['associations'] as $a) { 
-							echo "<p><a href='" . get_site_url() . "/" . $a['url_c'] . "' >" . $a['name'] . "</a></p>
+							echo "<p class='award'><a href='" . get_site_url() . "/" . $a['url_c'] . "' >" . $a['name'] . "</a></p>
 							";
-						}
-					} ?>
+						} ?>
 					</div>
+					<?php } ?>
+
 				</div>
 				
 			</div><!-- End Row -->
@@ -413,7 +396,7 @@ if(isset($wp_query->query['name'])) { ?>
 </script>
 
 <?php // If Home  
-} elseif ( is_front_page() ) { 
+} elseif ( is_home() ) { 
 	require('home-page-content.php');
 } 
 // Otherwise, it goes to page.php 
@@ -422,4 +405,3 @@ if(isset($wp_query->query['name'])) { ?>
 
 <?php
 get_footer();
-

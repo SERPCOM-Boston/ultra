@@ -265,7 +265,15 @@
 		<div class="container container_wide mb-5">
 			<div class="row pl-3 pr-3">
 				<div class="col-12">
-					<h3 class="underline">Browse Manufacturers by Category</h3>
+					<div class="row underline browse_link_row">
+						<div class="col-sm-9" style="padding: 0;">
+							<h3 class="browse_link_row_headline">Browse Manufacturers by Category</h3>
+						</div>
+						<div class="col-sm-3" style="padding: 0;">
+							<p class="browse_link_all"><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers">See All »</a></p>
+							</h3>
+						</div>
+					</div>
 				</div>
 			</div>
 			
@@ -399,7 +407,15 @@
 		<div class="container container_wide mb-5">
 			<div class="row pl-3 pr-3">
 				<div class="col-12">
-					<h3 class="underline">Browse Local Professionals by Category</h3>
+					<div class="row underline browse_link_row">
+						<div class="col-sm-9" style="padding: 0;">
+							<h3 class="browse_link_row_headline">Browse Local Professionals by Category</h3>
+						</div>
+						<div class="col-sm-3" style="padding: 0;">
+							<p class="browse_link_all"><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals">See All »</a></p>
+							</h3>
+						</div>
+					</div>
 				</div>
 			</div>
 			
@@ -528,7 +544,15 @@
 		<div class="container container_wide mb-5">
 			<div class="row pl-3 pr-3">
 				<div class="col-12">
-					<h3 class="underline">Browse Local Stores by Category</h3>
+					<div class="row underline browse_link_row">
+						<div class="col-sm-9" style="padding: 0;">
+							<h3 class="browse_link_row_headline">Browse Local Stores by Category</h3>
+						</div>
+						<div class="col-sm-3" style="padding: 0;">
+							<p class="browse_link_all"><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores">See All »</a></p>
+							</h3>
+						</div>
+					</div>
 				</div>
 			</div>
 			

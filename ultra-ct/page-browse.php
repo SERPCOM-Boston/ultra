@@ -24,7 +24,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 	$accounts = get_accounts('association', $results_per_page, $page_num);
  } 
  
- ?>
+?>
 
 
 <!-- Top Band -->
@@ -71,8 +71,10 @@ if(strpos($actual_link, 'find-local-professionals')) {
 							else { echo 'https://ultraoutdoors.net/logos/uo-icon-gray.png'; } ?>" alt="<?php echo $account_details['name']; ?>">
 		</a>
 	  <div class="media-body">
-	    <h4 class="mt-0 mb-0"><?php echo $account_details['name']; ?></h4>
-	    <p class="media-city"><i class="fa fa-map-pin" aria-hidden="true"></i><?php if ($account_details['billing_address_city']) { 
+		<a href="<?php echo site_url() . "/" . $account_details['url_c']; ?>">
+	    	 <h4 class="mt-0 mb-0"><?php echo $account_details['name']; ?></h4>
+		</a>
+	    <p class="media-city"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> <?php if ($account_details['billing_address_city']) { 
 							echo $account_details['billing_address_city'] . ', '; } ?>
 						<?php if ($account_details['billing_address_state']) { 
 							echo $account_details['billing_address_state'] . ' '; } ?></p>
