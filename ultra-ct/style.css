@@ -1341,7 +1341,7 @@ h3.widget-title:first-of-type {
 	border-top: 3px solid #ddd;border-bottom: 3px solid #ddd;
 }
 
-.search .tags-links-title, .search .tag_block {
+.search .tags-links-title, .search .tag_block, .category .tags-links-title, .category .tag_block, .author .tags-links-title, .author .tag_block {
 	display: none;
 }
 
