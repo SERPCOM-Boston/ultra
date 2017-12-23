@@ -180,6 +180,17 @@
 
 
 
+<!-- Ad -->
+<div class="col-12 no-gutters pl-0 pr-0 text-center">
+	<a href="http://qz.com" target="blank">
+		<img src="https://ultraoutdoors.net/stock/rolex-quartz-ad.jpg" style="width: 100%;height: auto;">
+	</a>
+</div>
+<!-- End Ad -->
+
+
+
+
 	<!-- FW Header -->
 	<div class="row no-gutters">
 		<div class="col-12">
@@ -294,7 +305,6 @@
 						</div>
 						<div class="col-sm-3" style="padding: 0;">
 							<p class="browse_link_all"><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers">See All »</a></p>
-							</h3>
 						</div>
 					</div>
 				</div>
@@ -448,7 +458,6 @@
 						</div>
 						<div class="col-sm-3" style="padding: 0;">
 							<p class="browse_link_all"><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals">See All »</a></p>
-							</h3>
 						</div>
 					</div>
 				</div>
@@ -597,7 +606,6 @@
 						</div>
 						<div class="col-sm-3" style="padding: 0;">
 							<p class="browse_link_all"><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores">See All »</a></p>
-							</h3>
 						</div>
 					</div>
 				</div>

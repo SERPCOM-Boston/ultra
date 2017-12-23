@@ -59,9 +59,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 
 	<h2><?php echo $page_title; ?></h2>
 
-	<?php foreach($accounts as $account_details){
-	
-	?>
+	<?php foreach($accounts as $account_details) { ?>
 	<div class="media">
 		<a href="<?php echo site_url() . "/" . $account_details['url_c']; ?>">
 	  	  <img class="mr-3 browse_img unveil_img" src="<?php if ($account_details['logo_image_url_c']) { 
@@ -74,32 +72,43 @@ if(strpos($actual_link, 'find-local-professionals')) {
 		<a href="<?php echo site_url() . "/" . $account_details['url_c']; ?>">
 	    	 <h4 class="mt-0 mb-0"><?php echo $account_details['name']; ?></h4>
 		</a>
-	    <p class="media-city"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> <?php if ($account_details['billing_address_city']) { 
-							echo $account_details['billing_address_city'] . ', '; } ?>
-						<?php if ($account_details['billing_address_state']) { 
-							echo $account_details['billing_address_state'] . ' '; } ?></p>
+	    <p class="media-city"><img src="http://ultraoutdoors.net/stock/map-marker.png" alt="Map Marker icon" class="icon"> 
+			<?php if ($account_details['billing_address_city']) { 
+				echo $account_details['billing_address_city'] . ', '; } ?>
+				<?php if ($account_details['billing_address_state']) { 
+				echo $account_details['billing_address_state'] . ' '; } ?></p>
 		<p><?php echo wp_trim_words($account_details['description'], 55, "...");  ?></p>
 		<p><a href="<?php echo site_url() . "/" . $account_details['url_c']; ?>">See Full Profile »</a></p>
 	  </div>
 	</div>
-<?php 
-	}
-?>
+<?php } ?>
 </div><!-- End Browse Entries -->
 
 <!-- Pagination -->
 <nav aria-label="Page navigation example">
   <ul class="pagination">
-   <?php if($page_num > 1) { 
-   ?><li class="page-item"><a class="page-link" href="<?php echo "../" . $page_num-1; ?>">Previous »</a></li> <?php } ?>
-   <?php for($i=1;$i< $page_num;$i++) { ?>   
+<?php if($page_num > 1) { ?>
+	   <li class="page-item"><a class="page-link" href="<?php echo "../" . $page_num-1; ?>">Previous »</a></li> <?php } ?>
+<?php for($i=1;$i< $page_num;$i++) { ?>   
 	 <li class="page-item"><a class="page-link" href="<?php echo "../" . $i;  ?>"><?php echo $i; ?> »</a></li>
- <?php 
-   }
- if(count($accounts) == $results_per_page) { 
- ?>  <li class="page-item"><a class="page-link" href="<?php if($page_num == 1) { echo "2/"; } else { echo "../" . $page_num+1; } ?>">Next »</a></li> <?php } ?>
+<?php } if(count($accounts) == $results_per_page) { ?>
+	 <li class="page-item"><a class="page-link" href="<?php if($page_num == 1) { echo "2/"; } else { echo "../" . $page_num+1; } ?>">Next »</a></li> 
+<?php } ?>
   </ul>
 </nav>
+
+
+
+<!-- Ad -->
+<div class="col-12 no-gutters pt-5 pl-0 pr-0 pb-5 text-center d-none d-xl-block">
+	<a href="http://www.atlanticpediatricdentistry.com/" target="blank">
+		<img src="https://ultraoutdoors.net/stock/728ad-1.gif" style="width: 728px;height: 90px;">
+	</a>
+</div>
+<!-- End Ad -->
+
+
+
 
 		</div><!-- End Col -->
 
@@ -122,7 +131,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 
 
 			<div class="side_block side_browse_block">
-				<h4 class="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals">Find Local Professionals</h4>
+				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals" class="dark_link">Find Local Professionals</a></h4>
 				<ul>
 					<li><a href="">All Local Professionals »</a></li>
 					<li><a href="">Architects »</a></li>
@@ -138,7 +147,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 			</div>
 			
 			<div class="side_block side_browse_block">
-				<h4 class="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores">Find Local Stores</h4>
+				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores" class="dark_link">Find Local Stores</a></h4>
 				<ul>
 					<li><a href="">All Local Stores »</a></li>
 					<li><a href="">Appliance & Grills »</a></li>
@@ -155,7 +164,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 			</div>
 			
 			<div class="side_block side_browse_block">
-				<h4 class="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers">Find Manufacturers</h4>
+				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers" class="dark_link">Find Manufacturers</a></h4>
 				<ul>
 					<li><a href="">All Manufacturers »</a></li>
 					<li><a href="">Appliance & Grill »</a></li>
@@ -164,15 +173,18 @@ if(strpos($actual_link, 'find-local-professionals')) {
 					<li><a href="">Glass Enclosed Structures »</a></li>
 					<li><a href="">Hot Tubs & Swim Spa »</a></li>
 					<li><a href="">Kitchen Cabinets »</a></li>
+					<li><a href="">Media & Tech »</a></li>
 					<li><a href="">Outdoor Furniture »</a></li>
 					<li><a href="">Outdoor Lighting »</a></li>
 					<li><a href="">Shade Products »</a></li>
 					<li><a href="">Stone & Pavers »</a></li>
+					<li><a href="">Swimming Pool Equipment & Supplies »</a></li>
+					<li><a href="">Window & Door Manufacturers »</a></li>
 				</ul>
 			</div>
 			
 			<div class="side_block side_browse_block">
-				<h4 class="<?php echo esc_url( home_url( '/' ) ); ?>find-associations">Find Associations</h4>
+				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-associations" class="dark_link">Find Associations</a></h4>
 				<ul>
 					<li><a href="">All Associations »</a></li>
 				</ul>
@@ -182,9 +194,6 @@ if(strpos($actual_link, 'find-local-professionals')) {
 
 </div><!-- End Row -->
 </div><!-- End Container -->
-
-
-
 
 
 

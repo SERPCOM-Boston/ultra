@@ -10,28 +10,22 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp-bootstrap-starter' ); ?></h1>
+	<header class="page-header text-center">
+		<h1 class="page-title">It Seems You&rsquo;ve Wandered Off the Path.</h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
-		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wp-bootstrap-starter' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+			<p class="text-center mt-3 mb-3">We can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.</p>
+			
+			<div class="text-center search_wrapper mb-3">
+				<?php get_search_form(); ?>
+			</div>
+			
+			<div class="img_wrapper_wrap">
+				<img src="https://ultraoutdoors.net/stock/garden-path.jpg" alt="Garden Path Photo" style="width: 100%;height: auto;">
+			</div>
+			
 
-		<?php elseif ( is_search() ) : ?>
-
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wp-bootstrap-starter' ); ?></p>
-			<?php
-				get_search_form();
-
-		else : ?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp-bootstrap-starter' ); ?></p>
-			<?php
-				get_search_form();
-
-		endif; ?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

@@ -21,6 +21,9 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
+		<a href="<?php the_permalink(); ?>">
+			<?php the_post_thumbnail(); ?>
+  		</a>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 

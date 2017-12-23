@@ -24,6 +24,10 @@ get_header(); ?>
 							<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wp-bootstrap-starter' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 						</header><!-- .page-header -->
 
+						<div class="mb-3">
+							<?php get_search_form(); ?>
+						</div>
+
 						<?php
 						/* Start the Loop */
 						while ( have_posts() ) : the_post();

@@ -34,6 +34,27 @@ if ( is_page(74) ) {
 			endwhile; // End of the loop.
 			?>
 
+
+
+<?php 
+
+if ( is_page(15) ) { 
+
+// Function in functions.php: echo display_images_from_media_library();
+
+
+	$attachments = get_posts( array(
+	    'post_type' => 'attachment',
+	    'posts_per_page' => 16,
+	    'post_status' => null,
+	    'post_mime_type' => 'image'
+	) );
+
+	foreach ( $attachments as $attachment ) {
+	    echo wp_get_attachment_image( $attachment->ID, 'thumbnail' );
+	} 
+} ?>
+
 					</div><!-- End Col -->
 				</div><!-- End Row -->
 			</div><!-- End Container -->
