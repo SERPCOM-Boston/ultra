@@ -244,18 +244,18 @@ if(isset($wp_query->query['name'])) { ?>
 	</div><!-- End FW Header -->
 
 	<!-- Galleries -->
-		<div class="container container_wide">
 			
 		<?php if ($account_details['gallery_1_shortcode_c']) { ?>
-		<div class="row pt-5 pb-5">
-			<div class="col-sm-6 text-center">
-				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
+		<div class="row no-gutters pt-5 pb-5 pl-5 pr-5">
+			<div class="col-sm-3 pr-5 profile_gallery_info">
+				<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
+					<h3 class="underline_headline mt-0"><?php echo $account_details['gallery_1_title_c']; ?></h3>
+					<p><?php echo $account_details['gallery_1_description_c']; ?></p>
+				<?php } ?>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-sm-9">
 				<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
-					<h3><?php echo $account_details['gallery_1_title_c']; ?></h3>
-					<p><?php echo $account_details['gallery_1_description_c']; ?></p>
 					<?php echo do_shortcode($account_details['gallery_1_shortcode_c']); ?>
 				<?php } ?>
 			</div>
@@ -263,31 +263,33 @@ if(isset($wp_query->query['name'])) { ?>
 		<?php } ?>
 			
 		<?php if ($account_details['gallery_2_shortcode_c']) { ?>
-		<div class="row pt-5 pb-5">
-			<div class="col-sm-6 text-center">
-				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
+		<div class="row no-gutters pt-5 pb-5 pl-5 pr-5" style="background-color: #f8f8f8;">
+			<div class="col-sm-9">
+				<?php if (($account_details['gallery_2_shortcode_c']) && ($account_details['premium_c'])) { ?>
+					<?php echo do_shortcode($account_details['gallery_2_shortcode_c']); ?>
+				<?php } ?>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-sm-3 pl-5 profile_gallery_info">
 				<?php if (($account_details['gallery_2_shortcode_c']) && ($account_details['premium_c'])) { ?>
-					<h3><?php echo $account_details['gallery_2_title_c']; ?></h3>
+					<h3 class="underline_headline mt-0"><?php echo $account_details['gallery_2_title_c']; ?></h3>
 					<p><?php echo $account_details['gallery_2_description_c']; ?></p>
-					<?php echo do_shortcode($account_details['gallery_2_shortcode_c']); ?>
 				<?php } ?>
 			</div>
 		</div>
 		<?php } ?>
 			
 		<?php if ($account_details['gallery_3_shortcode_c']) { ?>
-		<div class="row pt-5 pb-5">
-			<div class="col-sm-6 text-center">
-				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
+		<div class="row no-gutters pt-5 pb-5 pl-5 pr-5">
+			<div class="col-sm-3 pr-5 profile_gallery_info">
+				<?php if (($account_details['gallery_3_shortcode_c']) && ($account_details['premium_c'])) { ?>
+					<h3 class="underline_headline mt-0"><?php echo $account_details['gallery_3_title_c']; ?></h3>
+					<p><?php echo $account_details['gallery_3_description_c']; ?></p>
+				<?php } ?>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-sm-9">
 				<?php if (($account_details['gallery_3_shortcode_c']) && ($account_details['premium_c'])) { ?>
-					<h3><?php echo $account_details['gallery_3_title_c']; ?></h3>
-					<p><?php echo $account_details['gallery_3_description_c']; ?></p>
 					<?php echo do_shortcode($account_details['gallery_3_shortcode_c']); ?>
 				<?php } ?>
 			</div>
@@ -295,22 +297,22 @@ if(isset($wp_query->query['name'])) { ?>
 		<?php } ?>
 			
 		<?php if ($account_details['gallery_4_shortcode_c']) { ?>
-		<div class="row pt-5 pb-5">
-			<div class="col-sm-6 text-center">
-				<img src="http://ultraoutdoors.net/stock/400-300-1.jpg">
+		<div class="row no-gutters pt-5 pb-5 pl-5 pr-5" style="background-color: #f8f8f8;">
+			<div class="col-sm-9">
+				<?php if (($account_details['gallery_4_shortcode_c']) && ($account_details['premium_c'])) { ?>
+					<?php echo do_shortcode($account_details['gallery_4_shortcode_c']); ?>
+				<?php } ?>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-sm-3 pl-5 profile_gallery_info">
 				<?php if (($account_details['gallery_4_shortcode_c']) && ($account_details['premium_c'])) { ?>
-					<h3><?php echo $account_details['gallery_4_title_c']; ?></h3>
+					<h3 class="underline_headline mt-0"><?php echo $account_details['gallery_4_title_c']; ?></h3>
 					<p><?php echo $account_details['gallery_4_description_c']; ?></p>
-					<?php echo do_shortcode($account_details['gallery_4_shortcode_c']); ?>
 				<?php } ?>
 			</div>
 		</div>
 		<?php } ?>
 			
-		</div>
 	<?php } ?>
 
 

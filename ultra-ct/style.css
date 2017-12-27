@@ -116,6 +116,12 @@ address {
 	border-bottom: none;
 }
 
+input[type="text"], textarea, a:focus {
+	outline: none;
+	box-shadow:none !important;
+	border:1px solid rgba(255,255,255,0) !important;
+}
+
 .btn-group-lg>.btn, .btn-lg {
     padding: .8rem 1.2rem;
     font-size: 1.1rem;
@@ -132,6 +138,7 @@ address {
 	background-color: #000;
     outline: 3px solid #000 !important;
 }
+
 
 /* :root {
     --blue: #007bff;
@@ -541,7 +548,7 @@ header#masthead {
 	margin-bottom: 80px;
 }
 
-.col_profile_right h4 {
+.col_profile_right h4, .underline_headline {
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 8px;
 	font-size: 1.2rem;
@@ -549,6 +556,10 @@ header#masthead {
 
 .award {
 	font-size: .85rem;
+}
+
+.profile_gallery_info p {
+	font-size: 14px;
 }
 
 @media (max-width: 1199px) { 
@@ -1369,9 +1380,31 @@ h3.widget-title:first-of-type {
 	right: 6px;
 }
 
+/* User Post Gallery */
 .wc-gallery-captions-onhover .gallery-caption {
 	display: none !important;
 }
+
+
+#sui_upload_image_form #sui_image_caption{
+  width:500px;
+}
+#user_images{
+  font-size:12px;
+}
+#user_images th{
+  text-align:left;
+}
+#user_images td{
+  vertical-align:middle;
+}
+#user_images td input{
+  margin:0px;
+}
+
+
+
+
 
 
 
