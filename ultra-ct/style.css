@@ -1345,10 +1345,33 @@ h3.widget-title:first-of-type {
 	display: none;
 }
 
+/* Galleries */
+.mfp-figure, .mfp-bottom-bar {
+	padding: 0 15px;
+	background-color: #fff;
+	border-radius: 3px;
+}
 
+.mfp-bottom-bar {
+	padding: 15px 18px;
+}
 
+.mfp-bottom-bar p {
+	line-height: 1.4em;
+}
 
+.mfp-counter {
+	display: none;
+}
 
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
+	color: #333;
+	right: 6px;
+}
+
+.wc-gallery-captions-onhover .gallery-caption {
+	display: none !important;
+}
 
 
 

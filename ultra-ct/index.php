@@ -256,7 +256,6 @@ if(isset($wp_query->query['name'])) { ?>
 				<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
 					<h3><?php echo $account_details['gallery_1_title_c']; ?></h3>
 					<p><?php echo $account_details['gallery_1_description_c']; ?></p>
-					<?php echo $account_details['gallery_1_shortcode_c']; ?>
 					<?php echo do_shortcode($account_details['gallery_1_shortcode_c']); ?>
 				<?php } ?>
 			</div>
@@ -273,7 +272,6 @@ if(isset($wp_query->query['name'])) { ?>
 				<?php if (($account_details['gallery_2_shortcode_c']) && ($account_details['premium_c'])) { ?>
 					<h3><?php echo $account_details['gallery_2_title_c']; ?></h3>
 					<p><?php echo $account_details['gallery_2_description_c']; ?></p>
-					<?php echo $account_details['gallery_2_shortcode_c']; ?>
 					<?php echo do_shortcode($account_details['gallery_2_shortcode_c']); ?>
 				<?php } ?>
 			</div>
@@ -290,7 +288,6 @@ if(isset($wp_query->query['name'])) { ?>
 				<?php if (($account_details['gallery_3_shortcode_c']) && ($account_details['premium_c'])) { ?>
 					<h3><?php echo $account_details['gallery_3_title_c']; ?></h3>
 					<p><?php echo $account_details['gallery_3_description_c']; ?></p>
-					<?php echo $account_details['gallery_3_shortcode_c']; ?>
 					<?php echo do_shortcode($account_details['gallery_3_shortcode_c']); ?>
 				<?php } ?>
 			</div>
@@ -307,7 +304,6 @@ if(isset($wp_query->query['name'])) { ?>
 				<?php if (($account_details['gallery_4_shortcode_c']) && ($account_details['premium_c'])) { ?>
 					<h3><?php echo $account_details['gallery_4_title_c']; ?></h3>
 					<p><?php echo $account_details['gallery_4_description_c']; ?></p>
-					<?php echo $account_details['gallery_4_shortcode_c']; ?>
 					<?php echo do_shortcode($account_details['gallery_4_shortcode_c']); ?>
 				<?php } ?>
 			</div>
