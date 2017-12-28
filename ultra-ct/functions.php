@@ -386,3 +386,22 @@ function display_images_from_media_library() {
 
 }
 
+// Edit Profile Form
+add_shortcode( 'edit_profile_form', 'edit_profile_form' );
+function edit_profile_form( $atts ) {
+
+	/* Turn on buffering */
+	ob_start();
+	
+	include('edit_profile_form.php');	
+
+	/* Get the buffered content into a var */
+	$edit_profile_form = ob_get_contents();
+
+	/* Clean buffer */
+	ob_end_clean();
+
+	/* Return the content as usual */
+	return $edit_profile_form;
+
+};
