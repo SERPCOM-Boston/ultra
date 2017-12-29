@@ -445,3 +445,13 @@ function advertising_information( $atts ) {
 	ob_end_clean();
 	return $advertising_information;
 };
+
+// Contact Page
+add_shortcode( 'contact_us', 'contact_us' );
+function contact_us( $atts ) {
+	ob_start();
+	include('contact_us.php');	
+	$contact_us = ob_get_contents();
+	ob_end_clean();
+	return $contact_us;
+};

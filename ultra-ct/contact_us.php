@@ -13,11 +13,15 @@
 		</div>
 
 		<div class="col-md-8">
-			<h2 class="mt-0">Need Info</h2>
 
-			<p>Info to come.</p>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
 
-			
+				<p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+
+
+				<div class="edit_profile_form side_form">
+				<?php echo do_shortcode( '[gravityform id=1 title=false name=false description=false ajax=true]' ); ?>
+			</div>
 		</div>
 	</div>
 </div><!-- End Container -->

@@ -116,9 +116,9 @@ address {
 	border-bottom: none;
 }
 
-textarea:focus, a:focus {
+a:focus {
 	outline: none;
-	box-shadow:none !important;
+	box-shadow: none !important;
 	border:1px solid rgba(255,255,255,0) !important;
 }
 
@@ -696,15 +696,30 @@ footer#colophon a, #footer-widget a {
 }
 
 .gfield {
+	font-size: 13px !important;
 	margin-bottom: 10px;
+}
+
+body .gform_wrapper .top_label div.ginput_container {
+    margin-top: 0 !important;
 }
 
 input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], textarea.textarea {
     width: 100%;
-	font-size: 16px;
+	font-size: 16px !important;
 	padding: 8px 12px;
 	border: 1px solid #aaa;
 	border-radius: 2px;
+}
+
+textarea:focus, input:focus {
+	outline: none;
+	box-shadow: 0 1px 1px rgba(0,142,135,0.075) inset, 0 0 8px rgba(0,142,135,0.6) !important;
+	border:1px solid rgba(0,142,135,.6) !important;
+}
+
+input[type="text"],input[type="email"],input[type="url"] {
+	padding: 10px 15px !important;
 }
 
 textarea {
@@ -809,6 +824,53 @@ form button {
 	}
 }
 
+/* Edit Profile */
+.edit_profile_form_container {
+	background-color: #f4f4f4;
+	padding: 25px;
+}
+
+.edit_profile_form {
+	background-color: #fff;
+	border-top: 14px solid #008E87;
+	border-bottom: 14px solid #008E87;
+	padding: 25px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+    -webkit-box-shadow: 0px .6rem 12px rgba(0,0,0,0,.3), inset 0 1px 0 rgba(0,0,0,.1);
+            box-shadow: 0px .6rem 12px rgba(0,0,0,.3), inset 0 1px 0 rgba(0,0,0,.1);
+}
+
+.side_form {
+	padding: 15px 15px 5px 30px;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.edit_profile_form label {
+	font-family: 'Palanquin', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+	margin-bottom: .5rem;
+}
+
+.form-control-plaintext {
+	color: #c4c4c4;
+}
+
+@media (max-width: 767px) {
+	.edit_profile_form_container {
+		background-color: rgba(255,255,255,0);
+		padding: 0;
+	}
+	.edit_profile_form {
+		border-top: none;
+		border-bottom: none;
+		padding: 0;
+	    -webkit-box-shadow: none;
+	            box-shadow: none;
+	}
+}
 
 /* Browse */
 .entry_list {
@@ -1403,35 +1465,8 @@ h3.widget-title:first-of-type {
 	display: none !important;
 }
 
-/* Edit Profile */
-.edit_profile_form_container {
-	background-color: #f4f4f4;
-	padding: 25px;
-}
 
-.edit_profile_form {
-	background-color: #fff;
-	border-top: 14px solid #008E87;
-	border-bottom: 14px solid #008E87;
-	padding: 25px;
-	border-radius: 8px;
-    -webkit-box-shadow: 0px .6rem 12px rgba(0,0,0,0,.3), inset 0 1px 0 rgba(0,0,0,.1);
-            box-shadow: 0px .6rem 12px rgba(0,0,0,.3), inset 0 1px 0 rgba(0,0,0,.1);
-}
 
-@media (max-width: 767px) {
-	.edit_profile_form_container {
-		background-color: rgba(255,255,255,0);
-		padding: 0;
-	}
-	.edit_profile_form {
-		border-top: none;
-		border-bottom: none;
-		padding: 0;
-	    -webkit-box-shadow: none;
-	            box-shadow: none;
-	}
-}
 
 
 

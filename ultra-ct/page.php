@@ -14,6 +14,15 @@ if ( is_page(74) ) {
 	require('blog.php');
 } else { ?>
 
+<!-- Top Band -->
+<div class="row no-gutters">
+
+	<div class="col-12">
+		 <img class="" src="https://ultraoutdoors.net/stock/topband1.jpg" alt="" style="width: 100%;height: auto;z-index: 0;">
+	</div>
+
+</div><!-- End Top Band -->
+
 	<section id="primary" class="content-area col-sm-12">
 		<main id="main" class="site-main" role="main">
 
