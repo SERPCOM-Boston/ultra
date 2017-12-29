@@ -405,3 +405,43 @@ function edit_profile_form( $atts ) {
 	return $edit_profile_form;
 
 };
+
+// About Page
+add_shortcode( 'about', 'about' );
+function about( $atts ) {
+	ob_start();
+	include('about.php');	
+	$about = ob_get_contents();
+	ob_end_clean();
+	return $about;
+};
+
+// Privacy Policy Page
+add_shortcode( 'privacy_policy', 'privacy_policy' );
+function privacy_policy( $atts ) {
+	ob_start();
+	include('privacy_policy.php');	
+	$privacy_policy = ob_get_contents();
+	ob_end_clean();
+	return $privacy_policy;
+};
+
+// Terms of Use Page
+add_shortcode( 'terms_of_use', 'terms_of_use' );
+function terms_of_use( $atts ) {
+	ob_start();
+	include('terms_of_use.php');	
+	$terms_of_use = ob_get_contents();
+	ob_end_clean();
+	return $terms_of_use;
+};
+
+// Advertising Information Page
+add_shortcode( 'advertising_information', 'advertising_information' );
+function advertising_information( $atts ) {
+	ob_start();
+	include('advertising_information.php');	
+	$advertising_information = ob_get_contents();
+	ob_end_clean();
+	return $advertising_information;
+};
