@@ -1,3 +1,4 @@
+
 <!-- FW Header -->
 <div class="col-12 no-gutters pl-0 pr-0">
 	 <div class="fullwidth_header" style="background-image:url(https://ultraoutdoors.net/splash/lewis-aquatech.jpg)">
@@ -16,12 +17,31 @@
 			<!-- <h3 class="text-center no_underline">Featured News From UltraOutdoors</h3> -->
 
 			<?php
-			add_filter( 'the_title', 'max_title_length');
+			/*add_filter( 'the_title', 'max_title_length');
 	    	global $post;
-	    	$args = array( 'posts_per_page' => 10 );
+			$posts_per_page = 10;
+			if(!$wp_query->query['page']) $wp_query->query['page'] = 1;
+	    	$args = array( 
+				'posts_per_page' => $posts_per_page ,
+				'offset' => $posts_per_page * ($wp_query->query['page'] - 1)		
+			);
 	    	$myposts = get_posts( $args );
+			print_r($myposts);
 	    	foreach( $myposts as $post ) :  setup_postdata($post); ?>
+			*/
 			
+			$btpgid=get_queried_object_id();
+		
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+			$args = array( 'posts_per_page' => 10, 'paged' => $paged );
+			$postslist = new WP_Query( $args );
+			
+		if ( $postslist->have_posts() ) :
+        while ( $postslist->have_posts() ) : 
+		$postslist->the_post(); 
+		//print_r($postslist);
+		?>
 			<div class="card">
 				<div class="img_wrapper">
 				<a href="<?php the_permalink(); ?>">
@@ -45,12 +65,20 @@
 				  <a href="<?php the_permalink(); ?>" class="card-link">Read More »</a>
 				</div>
 			</div>
-			
-			<?php endforeach; ?>
+			<?php
+         endwhile;  
+
+           
+	
+			?>
 				<div class="clearfix"></div>
 			
 			<!-- Pagination To Come -->	
-			<?php // ?>	
+<?php   next_posts_link( 'Older Entries', $postslist->max_num_pages );
+             previous_posts_link( 'Next Entries &raquo;' ); 
+        wp_reset_postdata();
+    endif;
+	?>
 				
 			</div>
 		</div>

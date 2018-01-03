@@ -54,13 +54,13 @@
 			        </div>
 					
 					
-					<form class="top_search_form" role="search" method="get">
+					<form class="top_search_form" role="search" method="get" >
 					  <div class="form-row align-items-center">
 					    <div class="col-auto">
 					      <label class="sr-only" for="inlineFormInput">Search photos, manufacturers, & more</label>
 					      <input type="search" value="" name="s" title="Search photos, manufacturers, & more:" class="form-control mb-2 mb-sm-0 d-none d-sm-block" id="inlineFormInput" placeholder="Search photos, manufacturers, & more">
 						  <!-- Mobile -->
-						  <input type="search" value="" name="s" title="Search photos, manufacturers, & more:" class="form-control mb-2 mb-sm-0 d-block d-sm-none" id="inlineFormInput" placeholder="Search">
+						  <!--<input type="search" value="" name="s" title="Search photos, manufacturers, & more:" class="form-control mb-2 mb-sm-0 d-block d-sm-none" id="inlineFormInput" placeholder="Search">!-->
 					    </div>
 					    <div class="col-auto">
 					      <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>

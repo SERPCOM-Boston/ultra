@@ -15,7 +15,7 @@ if(isset($wp_query->query['name'])) {
 	$account_seo = urldecode($wp_query->query['name']);
 	$account_details = get_account_details($account_seo);
 	$account_associations = get_associations($account_details['id']);
-
+	$account_groups = get_groups($account_details['id']);
 //print_r($account_associations);
 get_header();
 
@@ -215,6 +215,16 @@ if(isset($wp_query->query['name'])) { ?>
 					<div class="profile_associations">
 						<h4>Association Memberships</h4>
 						<?php foreach($account_associations['associations'] as $a) { 
+							echo "<p class='award'><a href='" . get_site_url() . "/" . $a['url_c'] . "' >" . $a['name'] . "</a></p>
+							";
+						} ?>
+					</div>
+					<?php } ?>
+
+					<?php if(isset($account_groups['groups']) && count($account_groups['groups']) > 0) { ?>
+					<div class="profile_associations">
+						<h4>Association Memberships</h4>
+						<?php foreach($account_groups['groups'] as $a) { 
 							echo "<p class='award'><a href='" . get_site_url() . "/" . $a['url_c'] . "' >" . $a['name'] . "</a></p>
 							";
 						} ?>

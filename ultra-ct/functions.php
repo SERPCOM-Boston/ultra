@@ -156,6 +156,56 @@ function get_associations($id){
 	);
 }
 
+function get_groups($id){
+
+	
+	global $suitecrm_link;
+	
+	//member of associations	
+	$handle = $suitecrm_link->prepare(
+		"SELECT name, url_c
+		from accounts a, accounts_cstm ac, accounts_accounts_1_c a_to_a
+		WHERE a.id = ac.id_c
+		AND a.id = a_to_a.accounts_accounts_1accounts_ida
+		AND a.deleted = 0
+		AND a_to_a.deleted = 0
+		AND a_to_a.accounts_accounts_1accounts_idb = :id;"
+	);
+	
+	$handle->bindValue(':id', $id);
+	$handle->execute();	
+	
+	$groups = $handle->fetchAll(PDO::FETCH_ASSOC);
+	//print_r($associations);
+	/*for($i=0;$i<count($associations);$i++){
+		$associations[$i] = format_account($associations[$i]);
+	}*/
+	
+	//association members
+	$handle = $suitecrm_link->prepare(
+		"SELECT name, url_c
+		from accounts a, accounts_cstm ac, accounts_accounts_1_c a_to_a
+		WHERE a.id = ac.id_c
+		AND a.id = a_to_a.accounts_accounts_1accounts_idb
+		AND a.deleted = 0
+		AND a_to_a.deleted = 0
+		AND a_to_a.accounts_accounts_1accounts_ida = :id;"
+	);
+	
+	$handle->bindValue(':id', $id);
+	$handle->execute();	
+	
+	$members = $handle->fetchAll(PDO::FETCH_ASSOC);
+
+	/*for($i=0;$i<count($members);$i++){
+		$members[$i] = format_account($members[$i]);
+	}*/
+	
+	return array(
+		'groups' => $groups,
+		'members' => $members
+	);
+}
 
 
 function my_query_vars( $query_vars ){
@@ -352,6 +402,7 @@ function wp_bootstrap_starter_entry_footer() {
 		}
 	}
 }
+
 
 function get_images_from_media_library() {
     $args = array(
