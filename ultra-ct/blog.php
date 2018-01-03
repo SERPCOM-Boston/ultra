@@ -1,4 +1,4 @@
-
+<?php if (!is_paged()) { ?>
 <!-- FW Header -->
 <div class="col-12 no-gutters pl-0 pr-0">
 	 <div class="fullwidth_header" style="background-image:url(https://ultraoutdoors.net/splash/lewis-aquatech.jpg)">
@@ -8,40 +8,24 @@
 <!-- End FW Header -->
 
 
-
 <!-- Featured Posts -->
 <section id="primary" class="content-area col-sm-12">
 		<div class="row card_section blog_card_section blog_card_section_featured pt-3 pb-5" style="max-width: 1800px;margin-left: auto;margin-right: auto;">
 			<div class="col-12">
 
-			<!-- <h3 class="text-center no_underline">Featured News From UltraOutdoors</h3> -->
-
 			<?php
-			/*add_filter( 'the_title', 'max_title_length');
-	    	global $post;
-			$posts_per_page = 10;
-			if(!$wp_query->query['page']) $wp_query->query['page'] = 1;
-	    	$args = array( 
-				'posts_per_page' => $posts_per_page ,
-				'offset' => $posts_per_page * ($wp_query->query['page'] - 1)		
-			);
-	    	$myposts = get_posts( $args );
-			print_r($myposts);
-	    	foreach( $myposts as $post ) :  setup_postdata($post); ?>
-			*/
-			
 			$btpgid=get_queried_object_id();
 		
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-			$args = array( 'posts_per_page' => 10, 'paged' => $paged );
+			$args = array( 'posts_per_page' => 10, 'paged' => $paged, 'category__in' => array(10) );
 			$postslist = new WP_Query( $args );
 			
-		if ( $postslist->have_posts() ) :
-        while ( $postslist->have_posts() ) : 
-		$postslist->the_post(); 
-		//print_r($postslist);
-		?>
+			if ( $postslist->have_posts() ) :
+        	while ( $postslist->have_posts() ) : 
+			$postslist->the_post(); 
+			//print_r($postslist);
+			?>
 			<div class="card">
 				<div class="img_wrapper">
 				<a href="<?php the_permalink(); ?>">
@@ -66,20 +50,12 @@
 				</div>
 			</div>
 			<?php
-         endwhile;  
-
-           
-	
+         		endwhile; 
+				wp_reset_postdata();
+			    endif;
 			?>
-				<div class="clearfix"></div>
-			
-			<!-- Pagination To Come -->	
-<?php   next_posts_link( 'Older Entries', $postslist->max_num_pages );
-             previous_posts_link( 'Next Entries &raquo;' ); 
-        wp_reset_postdata();
-    endif;
-	?>
-				
+			<div class="clearfix"></div>
+
 			</div>
 		</div>
 </section>
@@ -93,7 +69,7 @@
 	</a>
 </div>
 <!-- End Ad -->
-
+<?php } ?>
 
 
 <!-- FW Header -->
@@ -111,15 +87,19 @@
 		<div class="row card_section blog_card_section blog_card_section_all pt-3 pb-5" style="max-width: 1800px;margin-left: auto;margin-right: auto;">
 			<div class="col-12">
 
-			<!-- <h3 class="text-center no_underline">News, Ideas & Inspiration for Outdoor Living</h3> -->
-
 			<?php
-			add_filter( 'the_title', 'max_title_length');
-	    	global $post;
-	    	$args = array( 'posts_per_page' => 16 );
-	    	$myposts = get_posts( $args );
-	    	foreach( $myposts as $post ) :  setup_postdata($post); ?>
+			$btpgid=get_queried_object_id();
+		
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+			$args = array( 'posts_per_page' => 16, 'paged' => $paged );
+			$postslist = new WP_Query( $args );
 			
+			if ( $postslist->have_posts() ) :
+        	while ( $postslist->have_posts() ) : 
+			$postslist->the_post(); 
+			//print_r($postslist);
+			?>
 			<div class="card">
 				<div class="img_wrapper">
 				<a href="<?php the_permalink(); ?>">
@@ -143,12 +123,19 @@
 				  <a href="<?php the_permalink(); ?>" class="card-link">Read More »</a>
 				</div>
 			</div>
+			<?php
+         		endwhile;  
+			?>
+			<div class="clearfix"></div>
 			
-			<?php endforeach; ?>
-				<div class="clearfix"></div>
-			
-			<!-- Pagination To Come -->	
-			<?php // ?>	
+			<div class="text-center mt-3">
+			<!-- Pagination -->	
+			<?php next_posts_link( ' &laquo; Older Entries', $postslist->max_num_pages );
+				previous_posts_link( 'Next Entries &raquo;' ); 
+				wp_reset_postdata();
+			    endif;
+			?>
+			</div>
 				
 			</div>
 		</div>

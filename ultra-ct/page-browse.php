@@ -28,7 +28,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
  	$page_title = "Associations";	
 	$accounts = get_accounts('association', $subcats, $search, $results_per_page, $page_num);
  } 
- 
+
 ?>
 
 
@@ -60,9 +60,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 <!-- Browse Entries -->
 <div class="entry_list">
 
-
-
-	<h2><?php echo $page_title; ?></h2>
+	<h2><?php echo $page_title; ?><?php if ($subcats) { echo ': ' . $subcats; ?><?php } ?></h2>
 
 	<?php foreach($accounts as $account_details) { ?>
 	<div class="media">
@@ -156,7 +154,7 @@ require_once('suitecrm/custom/include/language/en_us.lang.php');
 		);
 		
 	}
-	?>
+?>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals">All Local Professionals »</a></li>
 				<?php
 					if(isset($subcats['Local Professionals'])){

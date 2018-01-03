@@ -78,7 +78,7 @@ function format_scrm_account($result){
 	return $result;
 }
 
-function get_accounts($account_type, $results_per_page, $page_num){
+function get_accounts($account_type, $subcat, $search, $results_per_page, $page_num){
 	global $suitecrm_link;
 	
 	$handle = $suitecrm_link->prepare(
@@ -86,11 +86,15 @@ function get_accounts($account_type, $results_per_page, $page_num){
 		from accounts, accounts_cstm
 		WHERE id = id_c
 		AND deleted = 0
-		AND accounts.account_type like :search_val
+		AND accounts.account_type like :account_type
+		AND category_c like :subcat
+		AND name like :name
 		LIMIT :pn, :rpp;"
 	);
 	
-	$handle->bindValue(':search_val', '%' . $account_type . '%');
+	$handle->bindValue(':account_type', '%' . $account_type . '%');
+	$handle->bindValue(':subcat', '%' . $subcat . '%');
+	$handle->bindValue(':name', '%' . $name . '%');
 	$handle->bindValue(':pn', $results_per_page * ($page_num -1), PDO::PARAM_INT);
 	$handle->bindValue(':rpp', $results_per_page, PDO::PARAM_INT);
 	$handle->execute();

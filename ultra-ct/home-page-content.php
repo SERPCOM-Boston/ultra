@@ -313,29 +313,30 @@
 			<div class="row pl-3 pr-3">
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Glass Enclosed Structures Manufacturers »</a></li>
-					<li><a href="">Appliance & Grill Manufacturers »</a></li>
-					<li><a href="">Deck, Pergola & Gazebo Manufacturers »</a></li>
-					<li><a href="">Garden Ornaments Manufacturers »</a></li>
-					<li><a href="">Hot Tubs & Swim Spa Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=GlassEnclosedStructuresManufacturers">Glass Enclosed Structures Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=ApplianceGrillManufacturers">Appliance & Grill Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=DeckPergolaGazeboManufacturers">Deck, Pergola & Gazebo Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=GardenOrnamentsManufacturers">Garden Ornaments Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=HotTubsSwimSpaManufacturers">Hot Tubs & Swim Spa Manufacturers »</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Kitchen Cabinets Manufacturers »</a></li>
-					<li><a href="">Outdoor Furniture Manufacturers »</a></li>
-					<li><a href="">Outdoor Lighting Manufacturers »</a></li>
-					<li><a href="">Shade Products Manufacturers »</a></li>
-					<li><a href="">Stone & Pavers Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=KitchenCabinetsManufacturers">Kitchen Cabinets Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=MediaTechEntertainment">Media, Tech & Entertainment »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=OutdoorFurnitureManufacturers">Outdoor Furniture Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=OutdoorLightingManufacturers">Outdoor Lighting Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=ShadeProductsManufacturers">Shade Products Manufacturers »</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Swimming Pool Equipment & Supplies »</a></li>
-					<li><a href="">Window & Door Manufacturers »</a></li>
-					<li><a href="">Swimming Pool Accessories »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=StonePaversManufacturers">Stone & Pavers Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=SwimmingPoolEquipmentSupplies">Swimming Pool Equipment & Supplies »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=WindowDoorManufacturers">Window & Door Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers/?subcat=SwimmingPoolAccessories">Swimming Pool Accessories »</a></li>
 					</ul>
 				</div>
 			</div>
@@ -466,25 +467,25 @@
 			<div class="row pl-3 pr-3">
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Landscape Architects & Designers »</a></li>
-					<li><a href="">Landscape Design-Build Firms »</a></li>
-					<li><a href="">Landscape Contractors »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=LandscapeArchitectsDesigners">Landscape Architects & Designers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=LandscapeDesignBuildFirms">Landscape Design-Build Firms »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=Architects">Landscape Contractors »</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Swimming Pool Designers & Builders »</a></li>
-					<li><a href="">Builders & Remodelers »</a></li>
-					<li><a href="">Tree Surgeons & Arborists »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=SwimmingPoolDesignersBuilders">Swimming Pool Designers & Builders »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=BuildersRemodelers">Builders & Remodelers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=TreeSurgeonsArborists">Tree Surgeons & Arborists »</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Architects »</a></li>
-					<li><a href="">Kitchen Designers & Builders »</a></li>
-					<li><a href="">Interior Designers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=Architects/?subcat=Architects">Architects »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=Architects">Kitchen Designers & Builders »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals/?subcat=InteriorDesigners">Interior Designers »</a></li>
 					</ul>
 				</div>
 			</div>
@@ -614,25 +615,25 @@
 			<div class="row pl-3 pr-3">
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Appliance & Grills »</a></li>
-					<li><a href="">Fences, Sheds, & Playground »</a></li>
-					<li><a href="">Hot Tubs & Swim Spas »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=ApplianceGrills">Appliance & Grills »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=FencesShedsPlayground">Fences, Sheds, & Playground »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=HotTubsSwimSpas">Hot Tubs & Swim Spas »</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Nurseries & Garden Centers »</a></li>
-					<li><a href="">Outdoor Furniture Stores »</a></li>
-					<li><a href="">Outdoor Lighting Stores »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=NurseriesGardenCenters">Nurseries & Garden Centers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=OutdoorFurnitureStores">Outdoor Furniture Stores »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=OutdoorLightingStores">Outdoor Lighting Stores »</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-sm-4">
 					<ul class="browse_links">
-					<li><a href="">Swimming Pool Supplies »</a></li>
-					<li><a href="">Tile & Countertops »</a></li>
-					<li><a href="">Windows & Doors »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=SwimmingPoolSupplies">Swimming Pool Supplies »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=TileCountertops">Tile & Countertops »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores/?subcat=WindowsDoors">Windows & Doors »</a></li>
 					</ul>
 				</div>
 			</div>

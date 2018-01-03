@@ -223,7 +223,7 @@ if(isset($wp_query->query['name'])) { ?>
 
 					<?php if(isset($account_groups['groups']) && count($account_groups['groups']) > 0) { ?>
 					<div class="profile_associations">
-						<h4>Association Memberships</h4>
+						<h4>Groups</h4>
 						<?php foreach($account_groups['groups'] as $a) { 
 							echo "<p class='award'><a href='" . get_site_url() . "/" . $a['url_c'] . "' >" . $a['name'] . "</a></p>
 							";
