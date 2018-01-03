@@ -10,18 +10,23 @@ global $wp;
 $actual_link = home_url( $wp->request );
 if(is_numeric($wp_query->query['page'])) {$page_num = $wp_query->query['page']; } else {$page_num = 1;}
 $results_per_page = 20;
+$subcats = '';
+if(isset($_GET['subcat'])){$subcats = urldecode($_GET['subcat']);}
+$search = '';
+if(isset($_GET['search'])){$search = urldecode($_GET['search']);}
+
 if(strpos($actual_link, 'find-local-professionals')) {
 	$page_title = "Local Professionals";	
-	$accounts = get_accounts('local_professionals', $results_per_page, $page_num);
+	$accounts = get_accounts('local_professionals', $subcats, $search, $results_per_page, $page_num);
  } elseif(strpos($actual_link, 'find-local-stores')) {	 
  	$page_title = "Local Stores";	
-	$accounts = get_accounts('store', $results_per_page, $page_num);
+	$accounts = get_accounts('store', $subcats, $search, $results_per_page, $page_num);
  } elseif(strpos($actual_link, 'find-manufacturers')) { 
  	$page_title = "Local Manufacturers";	
-	$accounts = get_accounts('manufacturer', $results_per_page, $page_num);
+	$accounts = get_accounts('manufacturer', $subcats, $search, $results_per_page, $page_num);
  } elseif(strpos($actual_link, 'find-associations')) { 
  	$page_title = "Associations";	
-	$accounts = get_accounts('association', $results_per_page, $page_num);
+	$accounts = get_accounts('association', $subcats, $search, $results_per_page, $page_num);
  } 
  
 ?>
@@ -120,7 +125,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 				  <div class="form-row align-items-center">
 				    <div class="col-auto">
 				      <label class="sr-only" for="inlineFormInput">Search</label>
-				      <input type="search" value="" name="s" title="Search:" class="form-control mb-2 mb-sm-0" id="side_account_search" placeholder="Search">
+				      <input type="search" value="" name="search" title="Search:" class="form-control mb-2 mb-sm-0" id="side_account_search" placeholder="Search">
 				    </div>
 				    <div class="col-auto">
 				      <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -133,60 +138,68 @@ if(strpos($actual_link, 'find-local-professionals')) {
 			<div class="side_block side_browse_block">
 				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals" class="dark_link">Find Local Professionals</a></h4>
 				<ul>
-					<li><a href="">All Local Professionals »</a></li>
-					<li><a href="">Architects »</a></li>
-					<li><a href="">Builders & Remodelers »</a></li>
-					<li><a href="">Interior Designers »</a></li>
-					<li><a href="">Kitchen Designers & Builders »</a></li>
-					<li><a href="">Landscape Architects & Designers »</a></li>
-					<li><a href="">Landscape Contractors »</a></li>
-					<li><a href="">Landscape Design-Build Firms »</a></li>
-					<li><a href="">Swimming Pool Designers & Builders »</a></li>
-					<li><a href="">Tree Surgeons & Arborists »</a></li>
+<?php 
+require_once('suitecrm/custom/include/language/en_us.lang.php');
+	global $app_list_strings;
+	
+	$subcats = array();
+	foreach($app_list_strings['category_list'] as $cat_name => $category) {
+		//echo $cat_name. $category;
+		$category = explode(":",$category);
+		//print_r($category);
+		
+		if(!isset($subcats[$category[0]])) $subcats[$category[0]] = array();
+		if(!isset($category[1])) $category[1] = $category[0];
+		$subcats[$category[0]][] = array(
+			'id' => $cat_name,
+			'name' => $category[1],
+		);
+		
+	}
+	?>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals">All Local Professionals »</a></li>
+				<?php
+					if(isset($subcats['Local Professionals'])){
+						foreach($subcats['Local Professionals'] as $s){
+							echo "<li><a href='" . esc_url( home_url( '/' ) ) ."find-local-professionals/?subcat=". $s['id'] . "'>" . $s['name'] ." »</a></li>";
+						}
+					}
+					?>
 				</ul>
 			</div>
 			
 			<div class="side_block side_browse_block">
 				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores" class="dark_link">Find Local Stores</a></h4>
 				<ul>
-					<li><a href="">All Local Stores »</a></li>
-					<li><a href="">Appliance & Grills »</a></li>
-					<li><a href="">Fences, Sheds, & Playground »</a></li>
-					<li><a href="">Hot Tubs & Swim Spas »</a></li>
-					<li><a href="">Nurseries & Garden Centers »</a></li>
-					<li><a href="">Outdoor Furniture Stores »</a></li>
-					<li><a href="">Outdoor Lighting Stores »</a></li>
-					<li><a href="">Swimming Pool Supplies »</a></li>
-					<li><a href="">Tile & Countertops »</a></li>
-					<li><a href="">Windows & Doors »</a></li>
-					<li><a href="">Appliance & Grills »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-stores">All Local Stores »</a></li>
+					<?php
+					if(isset($subcats['Stores'])){
+						foreach($subcats['Stores'] as $s){
+							echo "<li><a href='" . esc_url( home_url( '/' ) ) ."find-local-stores/?subcat=". $s['id'] . "'>" . $s['name'] ." »</a></li>";
+						}
+					}
+					?>
 				</ul>
 			</div>
 			
 			<div class="side_block side_browse_block">
 				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers" class="dark_link">Find Manufacturers</a></h4>
 				<ul>
-					<li><a href="">All Manufacturers »</a></li>
-					<li><a href="">Appliance & Grill »</a></li>
-					<li><a href="">Deck, Pergola & Gazebo »</a></li>
-					<li><a href="">Garden Ornaments »</a></li>
-					<li><a href="">Glass Enclosed Structures »</a></li>
-					<li><a href="">Hot Tubs & Swim Spa »</a></li>
-					<li><a href="">Kitchen Cabinets »</a></li>
-					<li><a href="">Media & Tech »</a></li>
-					<li><a href="">Outdoor Furniture »</a></li>
-					<li><a href="">Outdoor Lighting »</a></li>
-					<li><a href="">Shade Products »</a></li>
-					<li><a href="">Stone & Pavers »</a></li>
-					<li><a href="">Swimming Pool Equipment & Supplies »</a></li>
-					<li><a href="">Window & Door Manufacturers »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-manufacturers">All Manufacturers »</a></li>
+					<?php
+					if(isset($subcats['Manufacturers'])){
+						foreach($subcats['Manufacturers'] as $s){
+							echo "<li><a href='" . esc_url( home_url( '/' ) ) ."find-local-stores/?subcat=". $s['id'] . "'>" . $s['name'] ." »</a></li>";
+						}
+					}
+					?>
 				</ul>
 			</div>
 			
 			<div class="side_block side_browse_block">
 				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-associations" class="dark_link">Find Associations</a></h4>
 				<ul>
-					<li><a href="">All Associations »</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-associations">All Associations »</a></li>
 				</ul>
 			</div>
 
