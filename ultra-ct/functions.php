@@ -94,7 +94,7 @@ function get_accounts($account_type, $subcat, $search, $results_per_page, $page_
 	
 	$handle->bindValue(':account_type', '%' . $account_type . '%');
 	$handle->bindValue(':subcat', '%' . $subcat . '%');
-	$handle->bindValue(':name', '%' . $name . '%');
+	$handle->bindValue(':name', '%' . $search . '%');
 	$handle->bindValue(':pn', $results_per_page * ($page_num -1), PDO::PARAM_INT);
 	$handle->bindValue(':rpp', $results_per_page, PDO::PARAM_INT);
 	$handle->execute();
@@ -165,7 +165,7 @@ function get_groups($id){
 	
 	global $suitecrm_link;
 	
-	//member of associations	
+	//member of groups	
 	$handle = $suitecrm_link->prepare(
 		"SELECT name, url_c
 		from accounts a, accounts_cstm ac, accounts_accounts_1_c a_to_a
@@ -185,7 +185,7 @@ function get_groups($id){
 		$associations[$i] = format_account($associations[$i]);
 	}*/
 	
-	//association members
+	//group members
 	$handle = $suitecrm_link->prepare(
 		"SELECT name, url_c
 		from accounts a, accounts_cstm ac, accounts_accounts_1_c a_to_a
@@ -288,7 +288,44 @@ function check_for_pages(){
 }
 add_action( 'template_redirect', 'check_for_pages' );
 
+/*
+add_filter('the_title','check_title');
 
+function check_title($title){
+	print_r($title);
+	global $account_details;
+	if(isset($account_details['name'])) {
+		return $title . " | " . $account_details['name'];
+	}
+ 
+    return $title;
+}*/
+if (has_action('wp_head','_wp_render_title_tag') == 1) {
+    remove_action('wp_head','_wp_render_title_tag',1);
+    add_action('wp_head','custom_wp_render_title_tag_filtered',1);
+}
+
+function custom_wp_render_title_tag_filtered() {
+    if (function_exists('_wp_render_title_tag')) {
+        ob_start(); 
+        _wp_render_title_tag(); 
+        $titletag = ob_get_contents();
+        ob_end_clean();
+    } else {$titletag = '';}
+    return apply_filters('wp_render_title_tag_filter',$titletag);
+}
+
+add_filter('wp_render_title_tag_filter','custom_wp_render_title_tag');
+
+function custom_wp_render_title_tag($titletag) {
+	global $account_details;
+	
+	if(isset($account_details) && isset($account_details['name'])) {
+		$titletag = str_replace('</title>',' | ' . $account_details['name'] . '</title>',$titletag);
+	}
+   echo  $titletag;
+   return $titletag;
+}
 
 //print_r($_SERVER);
 // If Page is Blog or Archive

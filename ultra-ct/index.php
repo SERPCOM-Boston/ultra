@@ -221,7 +221,9 @@ if(isset($wp_query->query['name'])) { ?>
 					</div>
 					<?php } ?>
 
-					<?php if(isset($account_groups['groups']) && count($account_groups['groups']) > 0) { ?>
+					<?php 
+					//print_r($account_groups);
+					if(isset($account_groups['groups']) && count($account_groups['groups']) > 0) { ?>
 					<div class="profile_associations">
 						<h4>Groups</h4>
 						<?php foreach($account_groups['groups'] as $a) { 

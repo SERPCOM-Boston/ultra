@@ -5,6 +5,8 @@
  *
  * @package WP_Bootstrap_Starter
  */
+ 
+ global $account_details;
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -49,12 +51,12 @@
 			                    <img src="<?php echo esc_attr(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 			                </a>
 			            <?php else : ?>
-			                <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
+			                <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php if(isset($account_details['name'])) {echo $account_details['name']; } else {esc_url(bloginfo('name')); } ?></a>
 			            <?php endif; ?>
 			        </div>
 					
 					
-					<form class="top_search_form" role="search" method="get" >
+					<form class="top_search_form" role="search" method="get" action="<?php echo esc_url( home_url( '/' )); ?>">
 					  <div class="form-row align-items-center">
 					    <div class="col-auto">
 					      <label class="sr-only" for="inlineFormInput">Search photos, manufacturers, & more</label>

@@ -5,7 +5,7 @@ Template Name: Browse Template
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-get_header();
+
 global $wp;
 $actual_link = home_url( $wp->request );
 if(is_numeric($wp_query->query['page'])) {$page_num = $wp_query->query['page']; } else {$page_num = 1;}
@@ -28,7 +28,28 @@ if(strpos($actual_link, 'find-local-professionals')) {
  	$page_title = "Associations";	
 	$accounts = get_accounts('association', $subcats, $search, $results_per_page, $page_num);
  } 
+ 
+ $subcat_name = $subcats;
+ require_once('suitecrm/custom/include/language/en_us.lang.php');
+	global $app_list_strings;
+	
+	$subcats = array();
+	foreach($app_list_strings['category_list'] as $cat_name => $category) {
+		//echo $cat_name. $category;
+		$category = explode(":",$category);
+		//print_r($category);
+		
+		if(!isset($subcats[$category[0]])) $subcats[$category[0]] = array();
+		if(!isset($category[1])) $category[1] = $category[0];
+		$subcats[$category[0]][] = array(
+			'id' => $cat_name,
+			'name' => $category[1],
+		);
+		if($cat_name == $subcat_name) $subcat_name = $category[1];
+		
+	}
 
+ get_header();
 ?>
 
 
@@ -60,7 +81,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 <!-- Browse Entries -->
 <div class="entry_list">
 
-	<h2><?php echo $page_title; ?><?php if ($subcats) { echo ': ' . $subcats; ?><?php } ?></h2>
+	<h2><?php echo $page_title; ?><?php if ($subcat_name) { echo ': ' . $subcat_name; ?><?php } ?></h2>
 
 	<?php foreach($accounts as $account_details) { ?>
 	<div class="media">
@@ -137,23 +158,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 				<h4><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals" class="dark_link">Find Local Professionals</a></h4>
 				<ul>
 <?php 
-require_once('suitecrm/custom/include/language/en_us.lang.php');
-	global $app_list_strings;
 	
-	$subcats = array();
-	foreach($app_list_strings['category_list'] as $cat_name => $category) {
-		//echo $cat_name. $category;
-		$category = explode(":",$category);
-		//print_r($category);
-		
-		if(!isset($subcats[$category[0]])) $subcats[$category[0]] = array();
-		if(!isset($category[1])) $category[1] = $category[0];
-		$subcats[$category[0]][] = array(
-			'id' => $cat_name,
-			'name' => $category[1],
-		);
-		
-	}
 ?>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>find-local-professionals">All Local Professionals »</a></li>
 				<?php
