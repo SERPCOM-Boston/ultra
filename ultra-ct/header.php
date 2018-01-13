@@ -13,6 +13,19 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<?php // If a Business Page 
+$og_name = str_replace(array('\'', '"'), '', $account_details['name']); 
+$og_description = str_replace(array('\'', '"'), '', $account_details['description']); 
+if(isset($wp_query->query['name'])) { ?>
+<meta property="og:title" content="<?php echo $og_name; ?>" />  
+<meta property="og:description" content="<?php echo $og_description; ?>" />  
+<meta property="og:image" content="<?php if ($account_details['splash_image_url_c']) { echo $account_details['splash_image_url_c'];} elseif ($account_details['logo_image_url_c']) { echo $account_details['logo_image_url_c']; } else { echo 'https://hulafrog.com/hulastock/hula_share.jpg'; } ?>" />
+<meta property="og:image:alt" content="<?php echo $account_details['name']; ?>" />
+<meta property="og:url" content="<?php echo home_url( $wp->request ); ?>" />  
+<meta property="og:type" content="website" />  
+<?php } ?>
+
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
