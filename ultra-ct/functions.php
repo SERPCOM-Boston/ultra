@@ -1,5 +1,6 @@
 <?php 
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 function pdo_db_connect($host = DB_HOST, $dbname = DB_NAME, $dbuser = DB_USER, $dbpw= DB_PASSWORD) {
 	$link = new \PDO(  'mysql:host=' . $host .';dbname=' . $dbname . ';charset=utf8mb4', 
 		$dbuser, 
@@ -50,8 +51,9 @@ function get_account_details($seo_url){
 	return false;
 }
 
+$suitecrm_language_file = 'suitecrm/custom/include/language/en_us.lang.php';
+if(file_exists('suitecrm/custom/include/language/en_us.lang.php')) require_once('suitecrm/custom/include/language/en_us.lang.php');
 function format_scrm_account($result){
-	require_once('suitecrm/custom/include/language/en_us.lang.php');
 	global $app_list_strings;
 	
 	if(!$result) return false;
@@ -326,6 +328,49 @@ function custom_wp_render_title_tag($titletag) {
    echo  $titletag;
    return $titletag;
 }
+
+
+//$theuser = array('wp_info' => false, 'suitecrm_info' => false);
+$theuser = array('accounts' => false);
+function load_user_details(){
+	global $theuser;
+    if ( is_user_logged_in() )  {
+       // $theuser['wp_info'] = wp_get_current_user();
+		global $suitecrm_link;
+		$handle = $suitecrm_link->prepare(
+			"SELECT * from accounts, accounts_cstm
+			WHERE id = id_c
+			AND deleted = 0
+			AND wordpress_user_id_c = ?;"
+		);
+			$handle->bindValue(1,get_current_user_id());
+	
+		$handle->execute();
+		$theuser['accounts'] = $handle->fetchAll(PDO::FETCH_ASSOC);
+		
+		//Get E-Mail Addresses
+		for($i=0;$i<count($theuser['accounts']);$i++){
+			$handle = $suitecrm_link->prepare(
+			"SELECT email_address 
+			FROM email_addresses ea, email_addr_bean_rel eabr
+			WHERE ea.id = eabr.email_address_id
+			AND eabr.bean_id = ?
+			AND ea.deleted = 0
+			AND eabr.deleted = 0
+			ORDER BY primary_address DESC;"
+		);
+			$handle->bindValue(1,$theuser['accounts'][$i]['id']);
+		
+			$handle->execute();
+			$result = $handle->fetch(PDO::FETCH_ASSOC);
+			$theuser['accounts'][$i]['email_address'] = $result['email_address'];
+		}
+    }
+	//print_r($theuser);
+}
+add_action('init', 'load_user_details');
+
+
 
 //print_r($_SERVER);
 // If Page is Blog or Archive

@@ -48,10 +48,59 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', 'none' );
 
 					endif; ?>
+					
+					
 					</div><!-- End Col -->
 					
 					<div class="col-md-3 sidebar">
-					<?php get_sidebar(); ?>
+					<?php
+					//Search Categories
+					global $app_list_strings;
+					
+					$subcats = array();
+					foreach($app_list_strings['category_list'] as $cat_name => $category) {
+						if(stripos($cat_name,$_GET['s']) !== false || stripos($category,$_GET['s']) !== false) {
+							$category = explode(":",$category);
+							
+							if(!isset($subcats[$category[0]])) $subcats[$category[0]] = array();
+							if(!isset($category[1])) $category[1] = $category[0];
+							$subcats[$category[0]][] = array(
+								'id' => $cat_name,
+								'name' => $category[1],
+							);
+						}
+					}
+					if($subcats){
+						 echo "<h4>Categories</h4><ul>";
+						if(isset($subcats['Local Professionals'])){
+							foreach($subcats['Local Professionals'] as $s){
+								echo "<li><a href='" . esc_url( home_url( '/' ) ) ."find-local-professionals/?subcat=". $s['id'] . "'>" . $s['name'] ." »</a></li>";
+							}
+						}
+						if(isset($subcats['Stores'])){
+							foreach($subcats['Stores'] as $s){
+								echo "<li><a href='" . esc_url( home_url( '/' ) ) ."find-local-stores/?subcat=". $s['id'] . "'>" . $s['name'] ." »</a></li>";
+							}
+						}
+						if(isset($subcats['Manufacturers'])){
+							foreach($subcats['Manufacturers'] as $s){
+								echo "<li><a href='" . esc_url( home_url( '/' ) ) ."find-local-stores/?subcat=". $s['id'] . "'>" . $s['name'] ." »</a></li>";
+							}
+						}
+						echo "</ul>";
+					}
+					
+					//Search accounts
+					$accounts = get_accounts("", "", $_GET['s'], 20, 1);
+					if($accounts) echo "<h4>Accounts</h4><ul>";
+					foreach($accounts as $a){
+						echo "<li><a href='" . esc_url( home_url( '/' ) ) . $a['url_c'] . "/'>{$a['name']}</a></li>
+						";
+					}
+					if($accounts) echo "</ul>";
+					
+					//print_r($accounts);
+					//get_sidebar(); ?>
 					</div><!-- End Col -->
 					
 				</div><!-- End Row -->
