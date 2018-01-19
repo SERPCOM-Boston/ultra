@@ -49,7 +49,6 @@ get_header(); ?>
 
 					endif; ?>
 					
-					
 					</div><!-- End Col -->
 					
 					<div class="col-md-3 sidebar">
@@ -71,7 +70,7 @@ get_header(); ?>
 						}
 					}
 					if($subcats){
-						 echo "<h4>Categories</h4><ul>";
+						 echo "<section class='widget'><h4>Categories</h4><ul>";
 						if(isset($subcats['Local Professionals'])){
 							foreach($subcats['Local Professionals'] as $s){
 								echo "<li><a href='" . esc_url( home_url( '/' ) ) ."find-local-professionals/?subcat=". $s['id'] . "'>" . $s['name'] ." »</a></li>";
@@ -87,17 +86,17 @@ get_header(); ?>
 								echo "<li><a href='" . esc_url( home_url( '/' ) ) ."find-local-stores/?subcat=". $s['id'] . "'>" . $s['name'] ." »</a></li>";
 							}
 						}
-						echo "</ul>";
+						echo "</ul></section>";
 					}
 					
 					//Search accounts
 					$accounts = get_accounts("", "", $_GET['s'], 20, 1);
-					if($accounts) echo "<h4>Accounts</h4><ul>";
+					if($accounts) echo "<section class='widget'><h4>Accounts</h4><ul>";
 					foreach($accounts as $a){
 						echo "<li><a href='" . esc_url( home_url( '/' ) ) . $a['url_c'] . "/'>{$a['name']}</a></li>
 						";
 					}
-					if($accounts) echo "</ul>";
+					if($accounts) echo "</ul></section>";
 					
 					//print_r($accounts);
 					//get_sidebar(); ?>

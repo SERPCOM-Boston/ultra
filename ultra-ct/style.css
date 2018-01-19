@@ -524,7 +524,7 @@ header#masthead {
     margin-bottom: 20px;
 }
 
-.profile_socials .fab {
+.profile_socials .fab, .profile_socials .svg:not(:root).svg-inline--fa {
     font-size: 20px;
     line-height: 20px;
 	margin: .25rem;

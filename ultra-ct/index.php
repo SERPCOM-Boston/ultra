@@ -138,47 +138,47 @@ if(isset($wp_query->query['name'])) { ?>
 						<?php if ($account_details['phone_office']) { 
 							echo $account_details['phone_office'] . '<br>'; } ?>
 						<?php if ($account_details['website']) { 
-							echo '<a href="' . $account_details['website_corrected'] . '" target="blank">' . $clean_url . '</a>'; } ?>
+							echo '<a href="http://' . $clean_url . '" target="blank">' . $clean_url . '</a>'; } ?>
 					</address>
 					
 					<div class="profile_socials">
 						<?php if ($account_details['facebook_url_c']) { ?>
-						<a href="<?php echo $account_details['facebook_url_c_cleaned']; ?>" target="blank">
+						<a href="<?php echo $account_details['facebook_url_c']; ?>" target="blank">
 						<i class="fab fa-facebook-f"></i>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['instagram_url_c']) { ?>
-						<a href="<?php echo $account_details['instagram_url_c_corrected']; ?>" target="blank">
+						<a href="<?php echo $account_details['instagram_url_c']; ?>" target="blank">
 						<i class="fab fa-instagram"></i>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['twitter_url_c']) { ?>
-						<a href="<?php echo $account_details['twitter_url_c_corrected']; ?>" target="blank">
+						<a href="<?php echo $account_details['twitter_url_c']; ?>" target="blank">
 						<i class="fab fa-twitter"></i>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['pinterest_url_c']) { ?>
-						<a href="<?php echo $account_details['pinterest_url_c_corrected']; ?>" target="blank">
+						<a href="<?php echo $account_details['pinterest_url_c']; ?>" target="blank">
 						<i class="fab fa-pinterest-p"></i>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['tumblr_url_c']) { ?>
-						<a href="<?php echo $account_details['tumblr_url_c_corrected']; ?>" target="blank">
+						<a href="<?php echo $account_details['tumblr_url_c']; ?>" target="blank">
 						<i class="fab fa-tumblr"></i>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['youtube_url_c']) { ?>
-						<a href="<?php echo $account_details['youtube_url_c_corrected']; ?>" target="blank">
+						<a href="<?php echo $account_details['youtube_url_c']; ?>" target="blank">
 						<i class="fab fa-youtube"></i>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['google_plus_url_c']) { ?>
-						<a href="<?php echo $account_details['google_plus_url_c_corrected']; ?>" target="blank">
+						<a href="<?php echo $account_details['google_plus_url_c']; ?>" target="blank">
 						<i class="fab fa-google-plus-g"></i>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['linkedin_url_c']) { ?>
-						<a href="<?php echo $account_details['linkedin_url_c_corrected']; ?>" target="blank">
+						<a href="<?php echo $account_details['linkedin_url_c']; ?>" target="blank">
 						<i class="fab fa-linkedin-in"></i>
 						</a>
 						<?php } ?>
@@ -240,9 +240,7 @@ if(isset($wp_query->query['name'])) { ?>
 
 				<div class="clearfix"></div>
 
-				</div>
-			</div>
-		</div>
+
 
 
 	<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
