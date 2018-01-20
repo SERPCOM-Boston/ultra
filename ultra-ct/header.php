@@ -6,20 +6,24 @@
  * @package WP_Bootstrap_Starter
  */
  
- if(us_user_logged_in()){
+ //if(us_user_logged_in()){
 	 //load account details if they have any
-	  $user = wp_get_current_user();
-	  print_r($user);
-	 
-	 
- }
- global $account_details;
+	 // $user = wp_get_current_user();
+	 // print_r($user);
+//}
 
-?><!DOCTYPE html>
+global $account_details;
+
+?>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php // If a Business Page 
 $og_name = str_replace(array('\'', '"'), '', $account_details['name']); 
@@ -33,8 +37,6 @@ if(isset($wp_query->query['name'])) { ?>
 <meta property="og:type" content="website" />  
 <?php } ?>
 
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 <script>
 	jQuery(document).ready(function() {
@@ -76,7 +78,7 @@ if(isset($wp_query->query['name'])) { ?>
 			        </div>
 					
 					
-					<form class="top_search_form" role="search" method="get" action="<?php echo esc_url( home_url( '/' )); ?>">
+					<form class="top_search_form d-none d-sm-block" role="search" method="get" action="<?php echo esc_url( home_url( '/' )); ?>">
 					  <div class="form-row align-items-center">
 					    <div class="col-auto">
 					      <label class="sr-only" for="inlineFormInput">Search photos, manufacturers, & more</label>

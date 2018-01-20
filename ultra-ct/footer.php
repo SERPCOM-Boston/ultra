@@ -7,31 +7,55 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		
 		
-		<div class="footer_socials">
+		<div class="profile_socials footer_socials">
 			<a href="http://facebook.com" target="blank">
-			<i class="fab fa-facebook-f"></i>
-			</a>
-			<a href="http://twitter.com" target="blank">
-			<i class="fab fa-twitter"></i>
+				<span class="fa-layers fa-fw">
+					<i class="fas fa-circle"></i>
+					<i class="fa-inverse fab fa-facebook-f" data-fa-transform="shrink-9"></i>
+				</span>
 			</a>
 			<a href="http://instagram.com" target="blank">
-			<i class="fab fa-instagram"></i>
+				<span class="fa-layers fa-fw">
+					<i class="fas fa-circle"></i>
+					<i class="fa-inverse fab fa-instagram" data-fa-transform="shrink-9"></i>
+				</span>
+			</a>
+			<a href="http://twitter.com" target="blank">
+				<span class="fa-layers fa-fw">
+					<i class="fas fa-circle"></i>
+					<i class="fa-inverse fab fa-twitter" data-fa-transform="shrink-9"></i>
+				</span>
 			</a>
 			<a href="http://pinterest.com" target="blank">
-			<i class="fab fa-pinterest-p"></i>
-			</a>
-			<a href="http://linkedin.com" target="blank">
-			<i class="fab fa-linkedin-in"></i>
+				<span class="fa-layers fa-fw">
+					<i class="fas fa-circle"></i>
+					<i class="fa-inverse fab fa-pinterest-p" data-fa-transform="shrink-9"></i>
+				</span>
 			</a>
 			<a href="http://tumblr.com" target="blank">
-			<i class="fab fa-tumblr"></i>
-			</a>
-			<a href="http://google.com" target="blank">
-			<i class="fab fa-google-plus-g"></i>
+				<span class="fa-layers fa-fw">
+					<i class="fas fa-circle"></i>
+					<i class="fa-inverse fab fa-tumblr" data-fa-transform="shrink-9"></i>
+				</span>
 			</a>
 			<a href="http://youtube.com" target="blank">
-			<i class="fab fa-youtube"></i>
-			</a>			
+				<span class="fa-layers fa-fw">
+					<i class="fas fa-circle"></i>
+					<i class="fa-inverse fab fa-youtube" data-fa-transform="shrink-9"></i>
+				</span>
+			</a>
+			<a href="http://google.com" target="blank">
+				<span class="fa-layers fa-fw">
+					<i class="fas fa-circle"></i>
+					<i class="fa-inverse fab fa-google-plus-g" data-fa-transform="shrink-9"></i>
+				</span>
+			</a>
+			<a href="http://linkedin.com" target="blank">
+				<span class="fa-layers fa-fw">
+					<i class="fas fa-circle"></i>
+					<i class="fa-inverse fab fa-linkedin-in" data-fa-transform="shrink-9"></i>
+				</span>
+			</a>
 		</div>
 		
 		

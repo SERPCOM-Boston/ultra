@@ -81,7 +81,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 <!-- Browse Entries -->
 <div class="entry_list">
 
-	<h2><?php echo $page_title; ?><?php if ($subcat_name) { echo ': ' . $subcat_name; ?><?php } ?></h2>
+	<h2><?php echo $page_title; ?><?php if ($subcat_name) { echo ': ' . $subcat_name; } ?></h2>
 
 	<?php foreach($accounts as $account_details) { ?>
 	<div class="media">

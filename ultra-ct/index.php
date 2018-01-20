@@ -143,43 +143,67 @@ if(isset($wp_query->query['name'])) { ?>
 					
 					<div class="profile_socials">
 						<?php if ($account_details['facebook_url_c']) { ?>
-						<a href="<?php echo $account_details['facebook_url_c']; ?>" target="blank">
-						<i class="fab fa-facebook-f"></i>
+						<a href="<?php echo $account_details['facebook_url_c']; ?>" target="blank" class="fa_link">
+							<span class="fa-layers fa-fw">
+								<i class="fas fa-circle"></i>
+								<i class="fa-inverse fab fa-facebook-f" data-fa-transform="shrink-9"></i>
+							</span>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['instagram_url_c']) { ?>
-						<a href="<?php echo $account_details['instagram_url_c']; ?>" target="blank">
-						<i class="fab fa-instagram"></i>
+						<a href="<?php echo $account_details['instagram_url_c']; ?>" target="blank" class="fa_link">
+							<span class="fa-layers fa-fw">
+								<i class="fas fa-circle"></i>
+								<i class="fa-inverse fab fa-instagram" data-fa-transform="shrink-9"></i>
+							</span>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['twitter_url_c']) { ?>
-						<a href="<?php echo $account_details['twitter_url_c']; ?>" target="blank">
-						<i class="fab fa-twitter"></i>
+						<a href="<?php echo $account_details['twitter_url_c']; ?>" target="blank" class="fa_link">
+							<span class="fa-layers fa-fw">
+								<i class="fas fa-circle"></i>
+								<i class="fa-inverse fab fa-twitter" data-fa-transform="shrink-9"></i>
+							</span>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['pinterest_url_c']) { ?>
-						<a href="<?php echo $account_details['pinterest_url_c']; ?>" target="blank">
-						<i class="fab fa-pinterest-p"></i>
+						<a href="<?php echo $account_details['pinterest_url_c']; ?>" target="blank" class="fa_link">
+							<span class="fa-layers fa-fw">
+								<i class="fas fa-circle"></i>
+								<i class="fa-inverse fab fa-pinterest-p" data-fa-transform="shrink-9"></i>
+							</span>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['tumblr_url_c']) { ?>
-						<a href="<?php echo $account_details['tumblr_url_c']; ?>" target="blank">
-						<i class="fab fa-tumblr"></i>
+						<a href="<?php echo $account_details['tumblr_url_c']; ?>" target="blank" class="fa_link">
+							<span class="fa-layers fa-fw">
+								<i class="fas fa-circle"></i>
+								<i class="fa-inverse fab fa-tumblr" data-fa-transform="shrink-9"></i>
+							</span>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['youtube_url_c']) { ?>
-						<a href="<?php echo $account_details['youtube_url_c']; ?>" target="blank">
-						<i class="fab fa-youtube"></i>
+						<a href="<?php echo $account_details['youtube_url_c']; ?>" target="blank" class="fa_link">
+							<span class="fa-layers fa-fw">
+								<i class="fas fa-circle"></i>
+								<i class="fa-inverse fab fa-youtube" data-fa-transform="shrink-9"></i>
+							</span>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['google_plus_url_c']) { ?>
-						<a href="<?php echo $account_details['google_plus_url_c']; ?>" target="blank">
-						<i class="fab fa-google-plus-g"></i>
+						<a href="<?php echo $account_details['google_plus_url_c']; ?>" target="blank" class="fa_link">
+							<span class="fa-layers fa-fw">
+								<i class="fas fa-circle"></i>
+								<i class="fa-inverse fab fa-google-plus-g" data-fa-transform="shrink-9"></i>
+							</span>
 						</a>
 						<?php } ?>
 						<?php if ($account_details['linkedin_url_c']) { ?>
-						<a href="<?php echo $account_details['linkedin_url_c']; ?>" target="blank">
-						<i class="fab fa-linkedin-in"></i>
+						<a href="<?php echo $account_details['linkedin_url_c']; ?>" target="blank" class="fa_link">
+							<span class="fa-layers fa-fw">
+								<i class="fas fa-circle"></i>
+								<i class="fa-inverse fab fa-linkedin-in" data-fa-transform="shrink-9"></i>
+							</span>
 						</a>
 						<?php } ?>
 					</div>
@@ -238,10 +262,11 @@ if(isset($wp_query->query['name'])) { ?>
 			</div><!-- End Row -->
 		</div><!-- End Container -->
 
-				<div class="clearfix"></div>
+<div class="clearfix"></div>
 
+</main></section>
 
-
+<section>
 
 	<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
 	<!-- FW Header -->
@@ -392,20 +417,18 @@ if(isset($wp_query->query['name'])) { ?>
 
 
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
 
 
 
 <!-- Ad -->
 <div class="col-12 no-gutters pt-5 pl-0 pr-0 pb-5 text-center d-none d-xl-block">
 	<a href="http://www.atlanticpediatricdentistry.com/" target="blank">
-		<img src="https://ultraoutdoors.net/stock/728ad-1.gif" style="width: 728px;height: 90px;">
+		<img src="https://ultraoutdoors.net/stock/728ad-1.gif" style="width: 728px;height: 90px;" alt="ad">
 	</a>
 </div>
 <!-- End Ad -->
 
-
+</section>
 
 
 <?php include("modal-contact-company.php"); ?>
