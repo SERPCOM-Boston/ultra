@@ -6,11 +6,11 @@
  * @package WP_Bootstrap_Starter
  */
  
- //if(us_user_logged_in()){
-	 //load account details if they have any
-	 // $user = wp_get_current_user();
+ if(is_user_logged_in()){
+	// load account details if they have any
+	  $user = wp_get_current_user();
 	 // print_r($user);
-//}
+}
 
 global $account_details;
 

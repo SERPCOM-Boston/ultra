@@ -6,16 +6,19 @@
  //Testing Use (TODO Program add-on for SEO plugin to load the correct business based on SEO
  //$rules = get_option( 'rewrite_rules' );
 	//print_r($rules);
+	global $theuser;
 if(isset($wp_query->query['name'])) {
 	
 }
 	//check if is a page name in the wp schema
 	$page = get_page_by_title($wp_query->query_vars['name']);
 	print_r($page);
-	$account_seo = urldecode($wp_query->query['name']);
-	$account_details = get_account_details($account_seo);
-	$account_associations = get_associations($account_details['id']);
-	$account_groups = get_groups($account_details['id']);
+	if(isset($wp_query->query['name'])){
+		$account_seo = urldecode($wp_query->query['name']);
+		$account_details = get_account_details($account_seo);
+		$account_associations = get_associations($account_details['id']);
+		$account_groups = get_groups($account_details['id']);
+	}
 //print_r($account_associations);
 get_header();
 
@@ -30,7 +33,10 @@ if(isset($wp_query->query['name'])) { ?>
 	}
 </style>
 
-<?php if ($account_details['premium_c']) { ?>
+<?php
+
+
+if ($account_details['premium_c']) { ?>
 	<!-- Swiper -->
 	<div class="swiper-container">
 		<div class="swiper-wrapper swiper-splash">
@@ -122,7 +128,19 @@ if(isset($wp_query->query['name'])) { ?>
 				</div>
 				
 				<div class="col-12 col-md-7 profile_main_col">
-					<h1><?php echo $account_details['name']; ?></h1>			
+					<h1><?php echo $account_details['name']; ?></h1>	
+					<?php
+					if(isset($theuser['accounts']) && $theuser['accounts']){
+						 foreach($theuser['accounts'] as $a){
+							if($a['id'] == $account_details['id']) {
+								//This is one of the users account and we can edit it.
+								?>
+								<a href="<?php echo esc_url( home_url( '/' )) . "edit-profile/?business_id=" . $account_details['id']; ?>">Edit Business</a>
+								<?php
+							}	
+						}
+					}		
+?>					
 					<address>
 						<?php if ($account_details['billing_address_street_1_c']) { 
 							echo $account_details['billing_address_street_1_c'] . '<br>'; } ?>
