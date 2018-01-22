@@ -129,18 +129,23 @@ if ($account_details['premium_c']) { ?>
 				
 				<div class="col-12 col-md-7 profile_main_col">
 					<h1><?php echo $account_details['name']; ?></h1>	
+
 					<?php
 					if(isset($theuser['accounts']) && $theuser['accounts']){
 						 foreach($theuser['accounts'] as $a){
 							if($a['id'] == $account_details['id']) {
 								//This is one of the users account and we can edit it.
 								?>
-								<a href="<?php echo esc_url( home_url( '/' )) . "edit-profile/?business_id=" . $account_details['id']; ?>">Edit Business</a>
+								<div class="edit_btn_wrapper">
+									<button type="button" class="btn btn-dark btn-sm"><a href="<?php echo esc_url( home_url( '/' )) . "edit-profile/?business_id=" . $account_details['id']; ?>">Edit Your Business</a></button>
+								</div>
 								<?php
 							}	
 						}
 					}		
-?>					
+					?>
+
+
 					<address>
 						<?php if ($account_details['billing_address_street_1_c']) { 
 							echo $account_details['billing_address_street_1_c'] . '<br>'; } ?>

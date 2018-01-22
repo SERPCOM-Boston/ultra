@@ -371,7 +371,7 @@ foreach($theuser['accounts'] as $a){
 
 
 	<div class="text-center">
-		<button type="submit" class="btn btn-dark btn-lg">Submit</button>
+		<button type="submit" class="btn btn-dark btn-lg">Save</button>
 	</div>
 
 </form>
