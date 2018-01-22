@@ -92,11 +92,11 @@ if(isset($_POST['business_id'])){
 			$handle->execute();
 			
 			?>
-			Updated! Now forwarding you to your profile.
 			<script>
 			window.location.href="<?php echo esc_url( home_url( '/' ) ) . $url; ?>";
 			</script>
 			<?php
+			exit();
 		}
 	}
 }
