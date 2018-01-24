@@ -194,7 +194,7 @@
 	<!-- FW Header -->
 	<div class="row no-gutters">
 		<div class="col-12">
-			 <div class="fullwidth_header" style="background-image:url(https://ultraoutdoors.net/splash/lewis-aquatech.jpg)">
+			 <div class="fullwidth_header" style="background-image:url(https://ultraoutdoors.net/splash/lux-pool1.jpg)">
 		 		 <h2>Manufacturers</h2>
 			 </div>
 		</div>
@@ -347,7 +347,7 @@
 	<!-- FW Header -->
 	<div class="row no-gutters">
 		<div class="col-12">
-			 <div class="fullwidth_header" style="background-image:url(https://ultraoutdoors.net/splash/green.jpg)">
+			 <div class="fullwidth_header" style="background-image:url(https://ultraoutdoors.net/splash/covered-patio-orange-roof.jpg)">
 		 		 <h2>Local Professionals</h2>
 			 </div>
 		</div>
@@ -496,7 +496,7 @@
 	<!-- FW Header -->
 	<div class="row no-gutters">
 		<div class="col-12">
-			 <div class="fullwidth_header" style="background-image:url(https://ultraoutdoors.net/splash/aura-mike.jpg)">
+			 <div class="fullwidth_header" style="background-image:url(https://ultraoutdoors.net/splash/patio-sky.jpg)">
 		 		 <h2>Stores</h2>
 			 </div>
 		</div>
