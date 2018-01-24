@@ -1,13 +1,12 @@
 <?php
 /*
- * The template for displaying all pages
-	Fullwidth
+ * The template for displaying all pages Fullwidth
  */
  //Testing Use (TODO Program add-on for SEO plugin to load the correct business based on SEO
  //$rules = get_option( 'rewrite_rules' );
 	//print_r($rules);
 	global $theuser;
-if(isset($wp_query->query['name'])) {
+	if(isset($wp_query->query['name'])) {
 	
 }
 	//check if is a page name in the wp schema
@@ -34,7 +33,6 @@ if(isset($wp_query->query['name'])) { ?>
 </style>
 
 <?php
-
 
 if ($account_details['premium_c']) { ?>
 	<!-- Swiper -->
@@ -139,7 +137,7 @@ if ($account_details['premium_c']) { ?>
 								<div class="edit_btn_wrapper">
 									<button type="button" class="btn btn-dark btn-sm"><a href="<?php echo esc_url( home_url( '/' )) . "edit-profile/?business_id=" . $account_details['id']; ?>">Edit Your Business</a></button>
 								</div>
-								<?php
+					<?php
 							}	
 						}
 					}		
