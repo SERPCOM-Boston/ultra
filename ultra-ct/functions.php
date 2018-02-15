@@ -22,25 +22,38 @@ if(!isset($suitecrm_link)) $suitecrm_link = pdo_db_connect();
 $app_list_strings = array('account_type_dom' => array(), 'category_list' => '', 'regions_list' => '');
 
 
-function get_account_details($seo_url){
+function get_account_details($seo_url = false, $id = false){
 	//echo getcwd();
 	
 	global $suitecrm_link;
 	//print_r($app_list_strings);
 	//echo "SEO: " . $seo_url;
-	$handle = $suitecrm_link->prepare(
-		"SELECT *
-		from accounts, accounts_cstm
-		WHERE id = id_c
-		AND deleted = 0
-		AND accounts_cstm.url_c = :seo_url
-		LIMIT 1;"
-	);
-	
-	$handle->bindValue(':seo_url', $seo_url);
+	if($seo_url) {
+		$handle = $suitecrm_link->prepare(
+			"SELECT *
+			from accounts, accounts_cstm
+			WHERE id = id_c
+			AND deleted = 0
+			AND accounts_cstm.url_c = :seo_url
+			LIMIT 1;"
+		);
+		
+		$handle->bindValue(':seo_url', $seo_url);
+	}
+	else {
+		$handle = $suitecrm_link->prepare(
+			"SELECT *
+			from accounts, accounts_cstm
+			WHERE id = id_c
+			AND deleted = 0
+			AND id = :id
+			LIMIT 1;"
+		);
+		
+		$handle->bindValue(':id', $id);
+	}
 	$handle->execute();
 	
-		
 	$result = $handle->fetch(PDO::FETCH_ASSOC);
 	//print_r($result);
 	if(!$result) return false;
