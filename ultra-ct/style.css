@@ -888,6 +888,10 @@ form button {
 	border-bottom: 1px solid #ddd;
 }
 
+.side_browse_block li {
+	padding-top: 5px;
+}
+
 .sidebar .widget li a {
 	margin-top: 2px;
 	padding-bottom: 2px;
