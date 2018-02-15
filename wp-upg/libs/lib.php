@@ -284,19 +284,21 @@ function upg_droplist_category()
     
     //$categories = get_categories( array( 'taxonomy'=> 'upg_cate','hide_empty'         => 0 ) ); 
 	global $theuser;
+	$business_id = "";
 	foreach($theuser['accounts'] as $a){
 		$business_id = $a['id'];
 	}
 
-	
+
 	$account_details = get_account_details(false, $business_id);
+	//print_r($account_details);
 	$categories = array();
 	if($account_details['gallery_1_shortcode_c']) $categories[] = array('id' => $account_details['gallery_1_shortcode_c'], 'name' => $account_details['gallery_1_title_c']);
 	if($account_details['gallery_2_shortcode_c']) $categories[] = array('id' => $account_details['gallery_2_shortcode_c'], 'name' => $account_details['gallery_2_title_c']);
 	if($account_details['gallery_3_shortcode_c']) $categories[] = array('id' => $account_details['gallery_3_shortcode_c'], 'name' => $account_details['gallery_3_title_c']);
 	if($account_details['gallery_4_shortcode_c']) $categories[] = array('id' => $account_details['gallery_4_shortcode_c'], 'name' => $account_details['gallery_4_title_c']);
-	if(count($categories < 4)){
-		$disp.='<option value=0">Add New Gallery</option>';
+	if(count($categories) < 4){
+		$disp.='<option value="'. $account_details['seo_url']."--g".(count($categories)+1). '">Add New Gallery</option>';
 	}
 	$i=0;
     foreach ( $categories as $category ) 
@@ -313,11 +315,11 @@ function upg_droplist_category()
 			
 			if($selected_album==$category['name'])
 			{
-			$disp.='<option value="'.$category['id'].'" selected>'.$category->['name'].'</option>'; 	
+			$disp.='<option value="'.$category['id'].'" selected>'.$category['name'].'</option>'; 	
 			}
 			else
 			{
-			$disp.='<option value="'.$category['id'].'">'.$category->['name'].'</option>'; 
+			$disp.='<option value="'.$category['id'].'">'.$category['name'].'</option>'; 
 			}
 			$i++;
 		//}
@@ -325,7 +327,6 @@ function upg_droplist_category()
     
 $disp.='</select>';
 $disp.='Gallery Name: <input name="cat_name" id="cat_name" />';				
-	
 return $disp;
 
 }
