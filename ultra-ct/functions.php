@@ -1,6 +1,18 @@
 <?php 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
+
+function attachment_search( $query ) {
+    if ( $query->is_search ) {
+       $query->set( 'post_type', array( 'post', 'attachment' ) );
+       $query->set( 'post_status', array( 'publish', 'inherit' ) );
+    }
+ 
+   return $query;
+}
+
+add_filter( 'pre_get_posts', 'attachment_search' );
+
 function pdo_db_connect($host = DB_HOST, $dbname = DB_NAME, $dbuser = DB_USER, $dbpw= DB_PASSWORD) {
 	$link = new \PDO(  'mysql:host=' . $host .';dbname=' . $dbname . ';charset=utf8mb4', 
 		$dbuser, 

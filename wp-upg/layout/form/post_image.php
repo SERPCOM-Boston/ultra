@@ -89,7 +89,7 @@ else
 		$content=str_replace("]","]]",$content);
 		
 		$result = upg_submit($title, $files, $content, $gallery, $preview);
-		
+		print_r($result);
 		$post_id = false; 
 		if (isset($result['id'])) $post_id = $result['id'];
 		
@@ -109,8 +109,10 @@ else
 			//Ended to submit extra fields
 			if($_POST['tags']){
 					wp_set_post_tags($post_id, $_POST['tags']);
+					wp_set_post_tags($post_id+1, $_POST['tags']);
 				}
 			wp_set_post_categories( $post_id, $post_category,true );
+			wp_set_post_categories( $post_id+1, $post_category,true );
 			
 			$post   = get_post( $post_id );
 			
@@ -120,7 +122,7 @@ else
 			
 			if(isset($options['publish']) && $options['publish']=='1' )
 			{
-			
+
 			echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
 			echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
 			

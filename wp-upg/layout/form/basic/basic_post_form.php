@@ -76,8 +76,36 @@ function updateCatName(){
 		   <div class="pure-control-group">
             <label for="tags">Category</label>
 			 <?php 
-			 $args = array('orderby' => 'name');
-			 wp_dropdown_categories($args );
+			// $args = array('orderby' => 'name');
+			 //wp_dropdown_categories($args );
+			$taxonomy = 'category';
+            // Add filter to change the default taxonomy
+            $taxonomy = apply_filters( 'wpmediacategory_taxonomy', $taxonomy );
+            if ( $taxonomy != 'category' ) {
+                $dropdown_options = array(
+                    'taxonomy'        => $taxonomy,
+                    'name'            => $taxonomy,
+                    'show_option_all' => __( 'View all categories', 'wp-media-library-categories' ),
+                    'hide_empty'      => false,
+                    'hierarchical'    => true,
+                    'orderby'         => 'name',
+                    'show_count'      => true,
+                    'walker'          => new wpmediacategory_walker_category_filter(),
+                    'value'           => 'slug'
+                );
+            } else {
+                $dropdown_options = array(
+                    'taxonomy'        => $taxonomy,
+                    'show_option_all' => __( 'View all categories', 'wp-media-library-categories' ),
+                    'hide_empty'      => false,
+                    'hierarchical'    => true,
+                    'orderby'         => 'name',
+                    'show_count'      => false,
+                    'walker'          => new wpmediacategory_walker_category_filter(),
+                    'value'           => 'id'
+                );
+            }
+            wp_dropdown_categories( $dropdown_options );
 			 ?>
         </div> 
 		
