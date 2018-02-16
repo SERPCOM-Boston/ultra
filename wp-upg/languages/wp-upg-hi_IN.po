@@ -76,7 +76,7 @@ msgid "Select Image"
 msgstr "चित्र चुनें"
 
 #: layout/post_image.php:199
-msgid "Only picture files are allowed."
+msgid "Only image files are allowed."
 msgstr "केवल तस्वीर फ़ाइलों की अनुमति है"
 
 #: layout/post_image.php:200

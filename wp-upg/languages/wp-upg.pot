@@ -71,7 +71,7 @@ msgid "Select Image"
 msgstr ""
 
 #: layout/form/basic/basic_post_form.php:95
-msgid "Only picture files are allowed."
+msgid "Only image files are allowed."
 msgstr ""
 
 #: layout/form/basic/basic_post_form.php:96

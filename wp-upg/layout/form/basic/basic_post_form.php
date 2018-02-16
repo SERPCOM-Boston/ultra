@@ -10,22 +10,43 @@ function updateCatName(){
 	 }
 }
 </script>
+<div class="pure-form-wrapper">
 <form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="">
 <fieldset>
+	
+		<div class="pure-control-group">
+    	    <?php
+			$put="";
+			ob_start ();
+				?>
+				<label for="file"><?php _e('Select Image', 'wp-upg'); ?></label>
+				<input class="pure-input-1" id="file" name="user-submitted-image[]" type="file" size="25" 
+				  <?php
+					if($options['image_required']=='1')
+					{
+						echo "required";
+					}
+					?>>
+				
+				<?php
+			$put=ob_get_clean (); 
+			echo apply_filters('upg_bulk_limit_submit_form',$put);
+    	
+			?>
+		</div>
+	
         <div class="pure-control-group">
             <label for="name">Photo Caption</label>
-            <input class="pure-input-1 pure-input-rounded" id="name" name="user-submitted-title" type="text" value="" placeholder="Photo Caption" required>
+            <input class="pure-input-1" id="name" name="user-submitted-title" type="text" value="" placeholder="Photo Caption">
         </div>
 
-           
-           
-		   
+
 		   <?php 
 		    if($options['primary_show_formshow_desp']=='1')
 			{
 				
-		   if ($editor) 
-		   { ?>
+		   	if ($editor) 
+		   	{ ?>
 				<div class="pure-controls">
 					<div class="usp_text-editor">
 			<?php $settings = array(
@@ -43,28 +64,26 @@ function updateCatName(){
 				    'drag_drop_upload' => true, // enable drag-drop
 				);
 				wp_editor('', 'upgcontent', apply_filters('upg_editor_settings', $settings)); ?>
-				
+					</div>
 				</div>
-			</div>
 			<?php 
 			} 
 			else 
 			{ 
 		?>
-		  <div class="pure-control-group">
+			<div class="pure-control-group">
 				 <label for="desp"><?php _e('Description', 'wp-upg'); ?></label>
 			
-			<textarea class="pure-input-1 pure-input-rounded" id="desp"  name="user-submitted-content" rows="5" placeholder="<?php _e('Post Content', 'wp-upg'); ?>" required></textarea>
-			  </div>
+				 <textarea class="pure-input-1" id="desp"  name="user-submitted-content" rows="5" placeholder="<?php _e('Post Content', 'wp-upg'); ?>" required></textarea>
+			</div>
 			<?php 
 			}
-
 				}
 			else
 			{
 				echo "<input type='hidden' name='user-submitted-content' value='No Information'> ";
 			}
-						?>
+			?>
 		   
 		   
       
@@ -111,42 +130,16 @@ function updateCatName(){
 		
 		   
 
-		  
-        </div>
 		<div class="pure-control-group">
-            <label for="tags">Tags</label><br />
+            <label for="tags">Tags</label>
 			<textarea name="tags" id="tags"></textarea>
-			<p class="howto" id="new-tag-post_tag-desc">Separate tags with commas</p>
+			<p class="howto" id="new-tag-post_tag-desc">Separate Tags with Commas</p>
         </div>
 		
-		
-		
-		<div class="pure-control-group">
-		
-            <?php
-			$put="";
-			ob_start ();
-				?>
-					<label for="file"><?php _e('Select Image', 'wp-upg'); ?></label>
-				  <input class="pure-input-1-2 pure-input-rounded" id="file" name="user-submitted-image[]" type="file" size="25" 
-				  <?php
-					if($options['image_required']=='1')
-					{
-						echo "required";
-					}
-					?>>
-				
-				<?php
-			$put=ob_get_clean (); 
-			echo apply_filters('upg_bulk_limit_submit_form',$put);
 
-			?>
-			
-		
-		</div>
 	
 		  <ul>
-		  <li><?php echo _e('Only picture files are allowed.','wp-upg') ?></li>
+		  <li><?php echo _e('Only image files are allowed.','wp-upg') ?></li>
 		  <li><?php echo _e('Maximum upload file size limit is','wp-upg') ?> <b><?php //echo ini_get('post_max_size'); ?> <?php echo size_format( wp_max_upload_size() ); ?></b></li>
 		  </ul>
         
@@ -197,4 +190,4 @@ function updateCatName(){
 		</div>
 </fieldset>
 </form>	
-	
+</div>	

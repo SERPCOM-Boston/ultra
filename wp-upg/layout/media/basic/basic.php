@@ -44,7 +44,7 @@ function upg_product_content($post)
 	
 	 <div class="pure-u-1-1" style="text-align:center;"><?php echo upg_position1(); ?></div>
 	
-	<div class="pure-u-1 pure-u-md-4-5"> 
+	<div class="pure-u-1"> 
 
 	<div class="margin-box">
 	<?php
@@ -73,16 +73,7 @@ function upg_product_content($post)
 
 
 	</div>
-	
-	
-    <div class="pure-u-1 pure-u-md-1-5"> 
 
-		<?php 
-	echo upg_author($author);
-	?>
-
-
-	</div>
 	
 		<div class="pure-u-1"><div class="margin-box">
 	

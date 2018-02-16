@@ -123,8 +123,9 @@ else
 			if(isset($options['publish']) && $options['publish']=='1' )
 			{
 
-			echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
-			echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
+			echo "<h2>".__('Your Photo Has Been Added.','wp-upg')."</h2>";
+			echo "<a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('View Photo Here','wp-upg')."</a><br><br><hr>";
+			echo "<h2>".__('Add Another Photo:')."</h2>";
 			
 			}
 		else
@@ -132,7 +133,6 @@ else
 			echo "<h2>".__('Your submission is under review.','wp-upg')."</h2>";
 			
 		}
-			
 			
 			//echo "<h1 class=\"archive-title\">".$post->post_title."</h1>";
 			//echo "<img src='$image'>";

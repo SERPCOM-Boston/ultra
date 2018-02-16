@@ -81,7 +81,7 @@ msgid "Select Image"
 msgstr "Wähle Bild"
 
 #: layout/post_image.php:199
-msgid "Only picture files are allowed."
+msgid "Only image files are allowed."
 msgstr "Nur Bilddateien sind erlaubt."
 
 #: layout/post_image.php:200

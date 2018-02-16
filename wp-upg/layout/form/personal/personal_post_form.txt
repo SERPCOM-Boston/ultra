@@ -32,7 +32,7 @@
 		</div>
 	
 		  <ul>
-		  <li><?php echo _e('Only picture files are allowed.','wp-upg') ?></li>
+		  <li><?php echo _e('Only image files are allowed.','wp-upg') ?></li>
 		  <li><?php echo _e('Maximum upload file size limit is','wp-upg') ?> <b><?php //echo ini_get('post_max_size'); ?> <?php echo size_format( wp_max_upload_size() ); ?></b></li>
 		  </ul>
         
