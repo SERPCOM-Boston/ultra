@@ -36,9 +36,10 @@ else
 		
 		
 		if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
-		if (isset($_POST['cat'])) $category = $_POST['cat'];
+		if (isset($_POST['gallery'])) $gallery = $_POST['gallery'];
+		$post_category =  $_POST['cat'];
 		//check if cat exists
-		$cat_exists = term_exists($category, 'upg_cate' );	
+		$cat_exists = term_exists($gallery, 'upg_cate' );	
 		global $suitecrm_link;
 		global $theuser;
 		$business_id = "";
@@ -48,12 +49,12 @@ else
 		
 
 		if($cat_exists) {
-			$term_info = get_term_by('slug', $_POST['cat'], 'upg_cate'); 
+			$term_info = get_term_by('slug',$gallery , 'upg_cate'); 
 			//check if gallery name has been updated
 			if($term_info->name != $_POST['cat_name']){
 				wp_update_term($term_info->term_id, 'upg_cate', array('name'=>$_POST['cat_name']));
 			}
-			$category = $term_info->term_id;
+			$gallery = $term_info->term_id;
 		}
 			
 		if(!$cat_exists && $business_id) { 
@@ -62,14 +63,14 @@ else
 			  'upg_cate', // the taxonomy
 			  array(
 				'description' => 'Gallery',
-				'slug' => $_POST['cat'],
+				'slug' => $gallery ,
 			  )
 			);
 		//	print_r($result);
 		//add taxonomy, add to user's business, etc.
-			$category = $result['term_id'];
+			$gallery = $result['term_id'];
 			
-			$gpos = substr($_POST['cat'], -1);
+			$gpos = substr($gallery , -1);
 			
 			$sql = "UPDATE accounts_cstm 
 			SET gallery_" . $gpos . "_shortcode_c = :pos,
@@ -77,7 +78,7 @@ else
 			WHERE id_c = :id;";
 			
 			$handle = $suitecrm_link->prepare($sql);
-			$handle->bindValue(":pos", $category);
+			$handle->bindValue(":pos", $gallery);
 			$handle->bindValue(":title", $_POST['cat_name']);
 			$handle->bindValue(":id",$business_id);
 			
@@ -87,7 +88,7 @@ else
 		$content=str_replace("[","[[",$content);
 		$content=str_replace("]","]]",$content);
 		
-		$result = upg_submit($title, $files, $content, $category, $preview);
+		$result = upg_submit($title, $files, $content, $gallery, $preview);
 		
 		$post_id = false; 
 		if (isset($result['id'])) $post_id = $result['id'];
@@ -102,11 +103,17 @@ else
 			{
 				if (isset($_POST['upg_custom_field_'.$x]))
 				add_post_meta($post_id, 'upg_custom_field_'.$x, $_POST['upg_custom_field_'.$x]);
+				
 			}
 			
 			//Ended to submit extra fields
+			if($_POST['tags']){
+					wp_set_post_tags($post_id, $_POST['tags']);
+				}
+			wp_set_post_categories( $post_id, $post_category,true );
 			
 			$post   = get_post( $post_id );
+			
 			$image=upg_image_src('large',$post);
 			
 			do_action( "upg_submit_complete");

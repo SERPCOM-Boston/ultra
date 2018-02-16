@@ -279,7 +279,7 @@ function upg_droplist_category()
 
 	 //$disp.=wp_dropdown_categories( $args );*/
 	 
-	 $disp.='<select name="cat" id="cat" oninput="updateCatName();">'; 
+	 $disp.='<select name="gallery" id="gallery" oninput="updateCatName();">'; 
     
     
     //$categories = get_categories( array( 'taxonomy'=> 'upg_cate','hide_empty'         => 0 ) ); 
@@ -326,7 +326,7 @@ function upg_droplist_category()
     }
     
 $disp.='</select>';
-$disp.='Gallery Name: <input name="cat_name" id="cat_name" />';				
+$disp.='<label for="cat_name">Add/Rename Gallery</label> <input name="cat_name" id="cat_name" />';				
 return $disp;
 
 }

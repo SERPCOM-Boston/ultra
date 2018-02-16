@@ -1,6 +1,6 @@
 <script>
 function updateCatName(){
-	var elt = document.getElementById('cat');
+	var elt = document.getElementById('gallery');
 	 if (elt.selectedIndex != -1) {
 		document.getElementById('cat_name').value = elt.options[elt.selectedIndex].text;
 	 }
@@ -13,8 +13,8 @@ function updateCatName(){
 <form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="">
 <fieldset>
         <div class="pure-control-group">
-            <label for="name"><?php _e('Title', 'wp-upg'); ?></label>
-            <input class="pure-input-1 pure-input-rounded" id="name" name="user-submitted-title" type="text" value="" placeholder="<?php _e('Post Title', 'wp-upg'); ?>" required>
+            <label for="name">Photo Caption</label>
+            <input class="pure-input-1 pure-input-rounded" id="name" name="user-submitted-title" type="text" value="" placeholder="Photo Caption" required>
         </div>
 
            
@@ -69,14 +69,29 @@ function updateCatName(){
 		   
       
 		<div class="pure-control-group">
-            <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
+            <label for="cat">Select Gallery</label>
            <?php echo upg_droplist_category(); ?>
+		   </div>
 		   
-		   
+		   <div class="pure-control-group">
+            <label for="tags">Category</label>
+			 <?php 
+			 $args = array('orderby' => 'name');
+			 wp_dropdown_categories($args );
+			 ?>
+        </div> 
+		
 		   
 
 		  
         </div>
+		<div class="pure-control-group">
+            <label for="tags">Tags</label><br />
+			<textarea name="tags" id="tags"></textarea>
+			<p class="howto" id="new-tag-post_tag-desc">Separate tags with commas</p>
+        </div>
+		
+		
 		
 		<div class="pure-control-group">
 		
