@@ -27,9 +27,6 @@ else
 		$author = ''; $url = ''; $email = ''; $tags = ''; $captcha = ''; $verify = ''; $content = ''; $category = ''; 
 	
 		
-		
-		
-		
 		if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
 		if (isset($_POST['gallery'])) $gallery = $_POST['gallery'];
 		$post_category =  $_POST['cat'];
@@ -136,7 +133,6 @@ else
 
 				echo "<h2>".__('Your Photo Has Been Added.','wp-upg')."</h2>";
 				echo "<a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('View Photo Here','wp-upg')."</a><br><br><hr>";
-				//echo "<h2>".__('Add Another Photo:')."</h2>";
 				
 				}
 			else
@@ -162,8 +158,10 @@ else
 				
 				echo "<h1>".__($e.' error','wp-upg')."</h1>";
 			}
-		}		
-		
+			
+		}	
+			
+		echo "<h2>".__('Add Another Photo:')."</h2>";		
 	?>
 
 	<?php

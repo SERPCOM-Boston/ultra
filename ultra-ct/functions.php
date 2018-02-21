@@ -682,21 +682,21 @@ function display_images_from_media_library() {
 // Edit Profile Form
 add_shortcode( 'edit_profile_form', 'edit_profile_form' );
 function edit_profile_form( $atts ) {
-
-	/* Turn on buffering */
 	ob_start();
-	
 	include('edit_profile_form.php');	
-
-	/* Get the buffered content into a var */
 	$edit_profile_form = ob_get_contents();
-
-	/* Clean buffer */
 	ob_end_clean();
-
-	/* Return the content as usual */
 	return $edit_profile_form;
+};
 
+// Edit Slideshow Form
+add_shortcode( 'edit_slideshow', 'edit_slideshow' );
+function edit_slideshow( $atts ) {
+	ob_start();
+	include('edit_slideshow.php');	
+	$edit_slideshow = ob_get_contents();
+	ob_end_clean();
+	return $edit_slideshow;
 };
 
 // About Page

@@ -118,6 +118,8 @@ foreach($theuser['accounts'] as $a){
 	<div class="row">
 		<div class="col-xs-12 col-lg-8 offset-lg-2">
 
+<p><a href="https://ultraoutdoors.net/ultra/post-image/">Manage Galleries »</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://ultraoutdoors.net/ultra/edit-slideshow/">Manage Slideshow »</a></p>
+
 <form class="edit_profile_form" action="<?php echo esc_url( home_url( '/' ) ); ?>edit-profile/" method="post">
 
 <!-- Basic Info -->
@@ -206,6 +208,15 @@ foreach($theuser['accounts'] as $a){
 		<label for="award_textarea_c">Awards </label>
 		<textarea class="form-control" id="award_textarea_c" name="award_textarea_c"  rows="10" aria-describedby="award_textarea_c_help"><?php echo $theaccount['award_textarea_c']; ?></textarea>
 		<small class="form-text text-muted" id="award_textarea_c_help">List any industry-related awards or special recognition you have received.</small>
+	</div>
+
+	<div class="form-group col-12">
+		<label for="file_logo">Logo </label>
+		<div id="" style="padding: 8px;border: 1px solid #ddd;">
+			<label for="file_logo"><?php _e('Select Image', 'wp-upg'); ?></label>
+		  	<input class="pure-input-1-2" id="file_logo" name="user-submitted-image-1[]" style="margin-bottom: 10px;" type="file" size="25">
+			<button type="submit" name="SN" class="pure-button pure-button-primary"><i class="fa fa-upload fa-lg"></i> <?php esc_html_e( 'Upload Logo', 'wp-upg' ); ?></button>
+		</div>
 	</div>
 
 </div>
