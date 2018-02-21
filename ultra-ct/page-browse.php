@@ -112,9 +112,9 @@ if(strpos($actual_link, 'find-local-professionals')) {
 <nav aria-label="Page navigation example">
   <ul class="pagination">
 <?php if($page_num > 1) { ?>
-	   <li class="page-item"><a class="page-link" href="<?php echo "../" . $page_num-1; ?>">Previous »</a></li> <?php } ?>
+	   <li class="page-item"><a class="page-link" href="<?php echo "../" . ($page_num-1); ?>">« Previous</a></li> <?php } ?>
 <?php for($i=1;$i< $page_num;$i++) { ?>   
-	 <li class="page-item"><a class="page-link" href="<?php echo "../" . $i;  ?>"><?php echo $i; ?> »</a></li>
+	 <li class="page-item"><a class="page-link" href="<?php echo "../" . $i;  ?>"><?php echo $i; ?></a></li>
 <?php } if(count($accounts) == $results_per_page) { ?>
 	 <li class="page-item"><a class="page-link" href="<?php if($page_num == 1) { echo "2/"; } else { echo "../" . $page_num+1; } ?>">Next »</a></li> 
 <?php } ?>

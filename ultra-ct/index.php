@@ -76,7 +76,9 @@ if ($account_details['premium_c']) { ?>
 <?php } else { ?>
 	<div class="swiper-container">
 	  <div class="swiper-wrapper swiper-splash">
-	    <div class="swiper-slide" style="background-image:url(<?php echo $account_details['splash_image_url_c']; ?>)"></div>
+		  <?php if ($account_details['splash_image_url_c']) { ?>
+	    	  <div class="swiper-slide" style="background-image:url(<?php echo $account_details['splash_image_url_c']; ?>)"></div>
+		  <?php } ?>
 	  </div>
 	</div>
 <?php } ?>
@@ -110,7 +112,6 @@ if ($account_details['premium_c']) { ?>
 ?>	
 
 	<section id="primary" class="content-area col-sm-12">
-		<main id="main" class="site-main" role="main">
 
         <div class="container profile_section1">
 			<div class="row">
@@ -242,11 +243,12 @@ if ($account_details['premium_c']) { ?>
 					</div>
 					<?php } ?>
 
+					<?php if ($account_details['regions_c']) { ?>
 					<div class="profile_regions">
 						<h4>Regions Serviced</h4>
 						<p><?php echo $account_details['regions_c']; ?></p>
 					</div>
-
+					<?php } ?>
 
 					<?php if ($account_details['award_textarea_c']) { ?>
 					<div class="profile_awards">
@@ -285,9 +287,10 @@ if ($account_details['premium_c']) { ?>
 
 <div class="clearfix"></div>
 
-</main></section>
 
-<section>
+</section>
+
+<section class="col-sm-12">
 
 	<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
 	<!-- FW Header -->
@@ -454,10 +457,12 @@ if ($account_details['premium_c']) { ?>
 
 
 <!-- Ad -->
-<div class="col-12 no-gutters pt-5 pl-0 pr-0 pb-5 text-center d-none d-xl-block">
-	<a href="http://www.atlanticpediatricdentistry.com/" target="blank">
-		<img src="https://ultraoutdoors.net/stock/728ad-1.gif" style="width: 728px;height: 90px;" alt="ad">
-	</a>
+<div class="row no-gutters">
+	<div class="col-12 no-gutters pt-5 pl-0 pr-0 pb-5 text-center d-none d-xl-block">
+		<a href="http://www.atlanticpediatricdentistry.com/" target="blank">
+			<img src="https://ultraoutdoors.net/stock/728ad-1.gif" style="width: 728px;height: 90px;" alt="ad">
+		</a>
+	</div>
 </div>
 <!-- End Ad -->
 
