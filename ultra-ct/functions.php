@@ -749,6 +749,16 @@ function contact_us( $atts ) {
 	return $contact_us;
 };
 
+// Submit Business Page
+add_shortcode( 'submit_business', 'submit_business' );
+function submit_business( $atts ) {
+	ob_start();
+	include('submit_business.php');	
+	$submit_business = ob_get_contents();
+	ob_end_clean();
+	return $submit_business;
+};
+
 // Highlight Search Results 
 function highlight_results($text){
     if(is_search()){
@@ -760,6 +770,15 @@ function highlight_results($text){
 add_filter('the_content', 'highlight_results');
 add_filter('the_excerpt', 'highlight_results');
 add_filter('the_title', 'highlight_results');
- 
+
+// Hide WP Admin Bar for non-admins 
 function highlight_results_css() {}
 add_action('wp_head','highlight_results_css');
+
+add_action('after_setup_theme', 'remove_admin_bar');
+ 
+function remove_admin_bar() {
+if (!current_user_can('administrator') && !is_admin()) {
+  show_admin_bar(false);
+}
+}

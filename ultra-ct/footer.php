@@ -6,7 +6,7 @@
     <?php // get_template_part( 'footer-widget' ); ?>
 	<div id="footer-widget" class="row m-0 border border-white">
 
-		<div class="col-12 col-md-4 p-5 pbx-0 bg-light">
+		<div class="col-12 col-md-4 pt-5 pl-5 pr-5 pb-4 bg-light">
 			<section id="nav_menu-2" class="widget widget_nav_menu">
 				<div class="menu-footer-menu-1-container">
 					<ul id="menu-footer-menu-1" class="menu nav flex-column">
@@ -22,7 +22,7 @@
 		</div>
 
 
-		<div class="col-12 col-md-4 p-5 pbtx-0 bg-light">
+		<div class="col-12 col-md-4 pt-5 pl-5 pr-5 pb-4 bg-light">
 			<section id="nav_menu-3" class="widget widget_nav_menu">
 				<div class="menu-footer-menu-2-container">
 					<ul id="menu-footer-menu-2" class="menu nav flex-column">
@@ -36,15 +36,10 @@
 		</div>
 
 
-		<div class="col-12 col-md-4 p-5 ptx-0 bg-light">
+		<div class="col-12 col-md-4 pt-5 pl-5 pr-5 pb-4 bg-light">
 			<section id="nav_menu-4" class="widget widget_nav_menu">
 				<div class="menu-footer-menu-3-container">
 					<ul id="menu-footer-menu-3" class="menu nav flex-column">
-						<li><a href="https://ultraoutdoors.net/ultra/contact-us/" class="nav-link">Contact Us</a></li>
-						
-						<?php if ( !is_user_logged_in() ) { ?>
-							<li class="nav_highlight"><a href="https://ultraoutdoors.net/ultra/wp-login.php" class="nav-link">Log In</a></li>
-						<?php } ?>
 
 						<?php
 						global $theuser;
@@ -64,9 +59,19 @@
 								if($a['id'] == $account_details['id']) {
 									//This is one of the users account and we can edit it.
 						?>
-							<li class="nav_highlight"><a href="<?php echo esc_url( home_url( '/' )) . "edit-profile/?business_id=" . $account_details['id']; ?>">Edit Your Business</a></li>
-					<?php }	} }	} ?>
-						
+							<li class="nav_highlight"><a href="<?php echo esc_url( home_url( '/' )) . "edit-profile/?business_id=" . $account_details['id']; ?>">Edit Your Business</a></li>						
+
+						<?php }	} }	} ?>
+
+						<?php if ( !is_user_logged_in() ) { ?>
+							<li class="nav_highlight"><a href="https://ultraoutdoors.net/ultra/wp-login.php" class="nav-link">Log In</a></li>
+							<li><a href="https://ultraoutdoors.net/ultra/submit-business/" class="nav-link">Submit Business Profile</a></li>
+						<?php } else { ?>
+							<li><a href="https://ultraoutdoors.net/ultra/wp-login.php?action=logout" class="nav-link">Logout</a></li>
+						<?php } ?>
+
+						<li><a href="https://ultraoutdoors.net/ultra/contact-us/" class="nav-link">Contact Us</a></li>
+					
 					</ul>
 				</div>
 			</section>
@@ -135,7 +140,7 @@
 		</div>
 		
 		
-		<div class="container-fluid p-3 p-md-5">
+		<div class="container-fluid p-1 p-md-3">
             <div class="site-info text-center">
                 &copy; <?php echo date('Y'); ?> <a class="credits" href="https://www.rmsmg.com/" target="_blank">RMS Media Group, Inc.</a> and <a class="credits" href="https://ultraoutdoors.com">ultraoutdoors.com</a>. All Rights Reserved.<br>Use of our website is subject to our Terms of Use and Privacy Policy. Website by <a class="credits" href="https://serpcom.com" target="_blank">SERPCOM</a>.
             </div><!-- close .site-info -->

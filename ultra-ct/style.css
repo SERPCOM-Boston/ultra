@@ -933,9 +933,9 @@ h3.widget-title:first-of-type {
 
 
 /* Footer */
-footer#colophon, #footer-widget {
+footer, footer#colophon, #footer-widget {
     color: #b9b9b9;
-    background-color: #000;
+    background-color: #000 !important;
     font-size: 85%;
 }
 
@@ -969,6 +969,7 @@ footer#colophon a, #footer-widget a {
 	background-color: #008E87;
     padding: 5px 16px !important;
     margin-top: 5px;
+	margin-bottom: 10px;
 }
 
 #footer-widget .nav_highlight a:hover {
