@@ -290,7 +290,7 @@ if ($account_details['premium_c']) { ?>
 
 </section>
 
-<section class="col-sm-12">
+<section>
 
 	<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
 	<!-- FW Header -->
@@ -451,10 +451,10 @@ if ($account_details['premium_c']) { ?>
 	</div>
 	<?php } ?>
 
+</section>
 
 
-
-
+<section class="col-12">
 
 <!-- Ad -->
 <div class="row no-gutters">

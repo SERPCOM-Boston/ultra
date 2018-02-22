@@ -125,6 +125,7 @@ if(strpos($actual_link, 'find-local-professionals')) {
 
 <!-- Ad -->
 <div class="col-12 no-gutters pt-5 pl-0 pr-0 pb-5 text-center d-none d-xl-block">
+	<hr>
 	<a href="http://www.atlanticpediatricdentistry.com/" target="blank">
 		<img src="https://ultraoutdoors.net/stock/728ad-1.gif" style="width: 728px;height: 90px;">
 	</a>

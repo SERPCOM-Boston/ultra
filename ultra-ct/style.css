@@ -855,6 +855,7 @@ form button {
 
 .page-link:hover, .page-link:focus {
 	color: #008E87;
+	border: 1px solid #dee2e6 !important;
 }
 
 
