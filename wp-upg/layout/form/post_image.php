@@ -89,11 +89,11 @@ else
 		$image_cnt = $_POST['image_count'];
 		for($ic = 1; $ic<= $image_cnt;$ic++){
 			$files = array();
-			if (isset($_FILES['user-submitted-image-' . $ic]))
+			if (isset($_FILES['user-submitted-image-' . $ic]) && $_FILES['user-submitted-image-' . $ic]["error"] != 0)
 			{
 				$files = $_FILES['user-submitted-image-' . $ic];
 			
-			}
+			
 			$result = upg_submit($title, $files, $content, $gallery, $preview);
 			//print_r($result);
 			$post_id = false; 
@@ -165,6 +165,7 @@ else
 	?>
 
 	<?php
+	}
 }
 
 if(isset($params['layout']))
