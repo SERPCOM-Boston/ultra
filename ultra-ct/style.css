@@ -933,7 +933,7 @@ h3.widget-title:first-of-type {
 }
 
 /* Footer */
-footer, footer#colophon, #footer-widget {
+footer#colophon, #footer-widget {
     color: #b9b9b9;
     background-color: #000 !important;
     font-size: 85%;
