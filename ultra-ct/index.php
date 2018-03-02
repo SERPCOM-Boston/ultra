@@ -320,7 +320,7 @@ if ($account_details['premium_c']) { ?>
 				<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
 					<?php //echo do_shortcode('[gallery category="' . $account_details['gallery_1_shortcode_c'] .'" size="medium" itemtag="div" icontag="span" captiontag="p" link="file"]');
 
-							echo do_shortcode('[upg-list perrow="4" perpage="4" album="' . $account_details['gallery_1_shortcode_c'] . '"]');
+							echo do_shortcode('[upg-list perrow="4" perpage="8" album="' . $account_details['gallery_1_shortcode_c'] . ']');
 					?>
 				<?php } ?>
 			</div>
@@ -333,7 +333,7 @@ if ($account_details['premium_c']) { ?>
 				<?php if (($account_details['gallery_2_shortcode_c']) && ($account_details['premium_c'])) { ?>
 					<?php //echo do_shortcode($account_details['gallery_2_shortcode_c']);
 					
-					echo do_shortcode('[upg-list perrow="4" perpage="4" album="' . $account_details['gallery_2_shortcode_c'] . '"]');
+					echo do_shortcode('[upg-list perrow="4" perpage="8" album="' . $account_details['gallery_2_shortcode_c'] . ']');
 					?>
 				<?php } ?>
 			</div>
@@ -361,7 +361,7 @@ if ($account_details['premium_c']) { ?>
 			<div class="col-md-9">
 				<?php if (($account_details['gallery_3_shortcode_c']) && ($account_details['premium_c'])) { ?>
 					<?php //echo do_shortcode($account_details['gallery_3_shortcode_c']); 
-					echo do_shortcode('[upg-list perrow="4" perpage="4" album="' . $account_details['gallery_3_shortcode_c'] . '"]');
+					echo do_shortcode('[upg-list perrow="4" perpage="8" album="' . $account_details['gallery_3_shortcode_c'] . ']');
 					?>
 				<?php } ?>
 			</div>
@@ -373,7 +373,7 @@ if ($account_details['premium_c']) { ?>
 			<div class="col-md-9 order-md-1 order-2">
 				<?php if (($account_details['gallery_4_shortcode_c']) && ($account_details['premium_c'])) { ?>
 					<?php //echo do_shortcode($account_details['gallery_4_shortcode_c']); 
-					echo do_shortcode('[upg-list perrow="4" perpage="4" album="' . $account_details['gallery_4_shortcode_c'] . '"]');
+					echo do_shortcode('[upg-list perrow="4" perpage="8" album="' . $account_details['gallery_4_shortcode_c'] . ']');
 					?>
 				<?php } ?>
 			</div>
