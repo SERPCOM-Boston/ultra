@@ -287,9 +287,12 @@ if ($account_details['premium_c']) { ?>
 
 <div class="clearfix"></div>
 
-
 </section>
+</div><!-- end first container row -->
+</div><!-- end opening container -->
 
+<div><!-- open new div to replace opening container, without that class, to get fullwidth design -->
+<div><!-- open new div to replace opening row -->
 <section>
 
 	<?php if (($account_details['gallery_1_shortcode_c']) && ($account_details['premium_c'])) { ?>
